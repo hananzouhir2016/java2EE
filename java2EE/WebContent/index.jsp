@@ -1,3 +1,4 @@
+<!doctype html>
 <html class="no-js"  lang="en">
 	<head>
 		<title>Travel</title>
@@ -18,7 +19,7 @@
 		
 	</head>
 	<body>
-		<jsp:include page="Menu.jsp" />
+		<jsp:include page="Menu.jsp"/>
 		
 		<section id="home" class="about-us">
 			<div class="container">
@@ -294,7 +295,7 @@
 
 		</section><!--/.gallery-->
 		<!--gallery end-->
-		
+		<jsp:include page="footer.jsp"/>
 		
 		
 		

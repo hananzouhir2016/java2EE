@@ -63,7 +63,7 @@
 		</div>
 	</article>
 
-	
+	<jsp:include page="footer.jsp"/>
 
 	<script>
 		function openForm(a, b, c, d) {
