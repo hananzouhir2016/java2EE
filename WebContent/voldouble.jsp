@@ -542,7 +542,7 @@
                                 </div>
                                     </div>
                                 </div>
-                                <a href="#" class="tm-recommended-price-box" style="width: 240px;">
+                                <a href="#" class="tm-recommended-price-box" style="width: 440px;">
                                     <p class="tm-recommended-price">$440</p>
                                     <p class="tm-recommended-price-link">Résérver le vol</p>
                                 </a>                        
@@ -654,7 +654,7 @@
                                     </div>
                                         </div>
                                     </div>
-                                    <a href="#" class="tm-recommended-price-box" style="width: 240px;">
+                                    <a href="#" class="tm-recommended-price-box" style="width: 440px;">
                                         <p class="tm-recommended-price">$440</p>
                                         <p class="tm-recommended-price-link">Résérver le vol</p>
                                     </a>                        
@@ -765,7 +765,7 @@
                                 
                                     </div>
                                 </div>
-                                <a href="#" class="tm-recommended-price-box" style="width: 240px;">
+                                <a href="#" class="tm-recommended-price-box" style="width: 440px;">
                                     <p class="tm-recommended-price">$460</p>
                                     <p class="tm-recommended-price-link">Résérver le vol</p>
                                 </a>
@@ -876,7 +876,7 @@
                                     
                                     </div> 
                                 </div>
-                                <a href="#" class="tm-recommended-price-box" style="width: 240px;">
+                                <a href="#" class="tm-recommended-price-box" style="width: 440px;">
                                     <p class="tm-recommended-price">$470</p>
                                     <p class="tm-recommended-price-link">Résérver le vol</p>
                                 </a>
