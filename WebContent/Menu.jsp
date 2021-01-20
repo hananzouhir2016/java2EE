@@ -34,19 +34,19 @@
 									<li>
 										<button class="book-btn"  onclick="document.getElementById('id01').style.display='block'">Connecter</button>
 										<div id="id01" class="modal">
-											<form class="modal-content animate">
+											<form class="modal-content animate" style="width: 32%;">
 												<div class="imgcontainer">
 													<span onclick="document.getElementById('id01').style.display='none'"class="close" title="Close Modal">&times;</span> 
 												</div>
-												<div class="container">
+												<div class="container" >
 													<label><b>Email</b></label> </br>
 													<input type="text" placeholder="Enter email" name="email"required></br> 
 													<label><b>Mots passe</b></label></br>
 													<input type="password" placeholder="Enter mots passe" name="psw" required></br>
-													<button type="submit" class="book-btn" style="width: 55%;">SE CONNECTER</button>
+													<button type="submit" class="book-btn" style="width: 30%;">SE CONNECTER</button>
 													</form>
 													<form>
-													<button type="submit" class="book-btn" style="width: 55%;">CREER UN COMPTE</button>
+													<button type="submit" class="book-btn" style="width: 30%;">CREER UN COMPTE</button>
 													</form>
 												</div>
 									</li>

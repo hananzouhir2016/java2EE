@@ -5,17 +5,8 @@
   <head>
      <meta charset="utf-8">
       <title>Gestion Ville</title>
-      <link rel="stylesheet" href="style_G_vol.css">
-      <link rel="stylesheet" href="style_ajout_vol.css">
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-      
+      <link rel="stylesheet" href="css1/style_G_vol.css">
+      <link rel="stylesheet" href="css1/style_ajout_vol.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   </head>
 
@@ -89,9 +80,9 @@
 
               
               <div>
-                        <table class="container" >
+                        <table class="container" style="max-width:70%;">
                           <thead>
-                            <tr>
+                            <tr class="id">
                               <th><h1>Id</h1></th>
                               <th><h1>Nom</h1></th>
                               <th><h1>Code</h1></th>
@@ -108,8 +99,8 @@
                               <td>6369</td>
                              
                               <td>
+                                <button type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
                                 <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
-                            
                               </td>
                              
                             </tr>

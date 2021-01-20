@@ -5,17 +5,8 @@
   <head>
      <meta charset="utf-8">
       <title>Gestion Vol</title>
-      <link rel="stylesheet" href="style_G_vol.css">
-      <link rel="stylesheet" href="style_ajout_vol.css">
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-      
+      <link rel="stylesheet" href="css1/style_G_vol.css">
+      <link rel="stylesheet" href="css1/style_ajout_vol.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   </head>
 
@@ -85,25 +76,24 @@
           </header>
 
             <h1 class="principTitle">GESTION VOL</h1>
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+              <button type="button" class="btn btn-success" style="background-color:#00d8ff;" data-toggle="modal" data-target="#myModal">
                       <i class="ti-plus"></i> </button>
-
-              
-              <div>
-                        <table class="container" >
+                      
+              <div >
+                        <table class="container" style="max-width:95%;">
                           <thead>
-                            <tr>
+                            <tr class="id">
                               <th><h1>id</h1></th>
                               <th><h1>Date Départ</h1></th>
                               <th><h1>Date Arrivée</h1></th>
                               <th><h1>Heure Départ</h1></th>
                               <th><h1>Heure Arrivée</h1></th>
-                              <th width="8%"><h1>Prix</h1></th>
-                              <th><h1>Nombre de Place</h1></th>
-                              <th width="8%"><h1>Durée</h1></th>
+                              <th ><h1>Prix</h1></th>
+                              <th ><h1>Nombre de Place</h1></th>
+                              <th ><h1>Durée</h1></th>
                               <th><h1>Aéroport Arrivé</h1></th>
                               <th><h1>Aéroport Départ</h1></th>
-                              <th><h1>Action</h1></th>
+                              <th width="10%"><h1>Action</h1></th>
                               
                             </tr>
                           </thead>
@@ -118,26 +108,77 @@
                               <td>6369</td>
                               <td>01:32:50</td>
                               <td>01:32:50</td>
+                              <td>00:55:22</td>
+                              <td width="15%">
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                          
+                          <tbody>
+                            <tr>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>01:32:50</td>
                               <td>00:51:22</td>
                               <td>
                                 <button type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
-
                                 <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
-                            
                               </td>
                             </tr>
-        
-                            
-                           
                           </tbody>
+                          
+                          <tbody>
+                            <tr>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>01:32:50</td>
+                              <td>00:51:22</td>
+                              <td>
+                                <button type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                          
+                       <tbody>
+                            <tr>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>01:32:50</td>
+                              <td>00:51:22</td>
+                              <td>
+                                <button type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                          
                         </table>
-
-    
                     </div>
 
                      <!-- The Modal -->
   <div class="modal fade" id="myModal" >
-    <div class="modal-dialog" style="margin-left: 15%">
+    <div class="modal-dialog" style="margin-left: 25%">
       <div class="modal-content" style="width: 1000px ;background-color:#191919; height: 600px">
       
         <!-- Modal Header -->

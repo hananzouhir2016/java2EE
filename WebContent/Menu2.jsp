@@ -57,7 +57,7 @@
 </head>
 <body>
 	<header class="top-area">
-		<div class="header-area">
+	<div class="header-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-2">
@@ -69,9 +69,8 @@
 					<div class="col-sm-10">
 						<div class="main-menu">
 							<div class="navbar-header">
-								<button type="button" class="navbar-toggle"
-									data-toggle="collapse" data-target=".navbar-collapse">
-									<i class="fa fa-bars"></i>
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+									<i class="fa fa-bars" aria-hidden="true"></i>
 								</button>
 							</div>
 							<div class="collapse navbar-collapse">
@@ -83,15 +82,14 @@
 
 
 										<div class="dropdown">
-											<button onclick="myFunction()" class=" book-btn"
-												style="width: 160px;">Se connecter</button>
+											<button onclick="myFunction()" class=" book-btn" style="width: 160px;">Se connecter</button>
 											<div id="myDropdown" class="dropdown-content">
 												<h7 href="#home">Gérer du compte</h7>
-												</br>
+												<br>
 												<h7 href="#about">Mes voyages</h7>
-												</br>
+												<br>
 												<h7 href="#contact">Déconnexion</h7>
-												</br>
+												<br>
 											</div>
 										</div>
 
@@ -105,6 +103,7 @@
 				<div class="home-border"></div>
 			</div>
 		</div>
+		
 	</header>
 	<section class="rt"
 		style="background: url(assets/images/home/offer-timer.jpg) no-repeat center fixed;">

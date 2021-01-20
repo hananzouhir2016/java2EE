@@ -5,18 +5,8 @@
   <head>
      <meta charset="utf-8">
       <title>Gestion administrateur</title>
-      <link rel="stylesheet" href="style_G_vol.css">
-      <link rel="stylesheet" href="style_ajout_vol.css">
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-      
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+      <link rel="stylesheet" href="css1/style_G_vol.css">
+      <link rel="stylesheet" href="css1/style_ajout_vol.css">
   </head>
 
   <body>
@@ -88,9 +78,9 @@
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                       <i class="ti-plus"></i> </button>
               <div>
-                        <table class="container" >
+                        <table class="container" style="max-width:95%;">
                           <thead>
-                            <tr>
+                            <tr class="id">
                               <th><h1>Id</h1></th>
                               <th><h1>Nom</h1></th>
                               <th><h1>Prénom</h1></th>
@@ -98,8 +88,6 @@
                               <th><h1>Email</h1></th>
                               <th><h1>Date Naissance</h1></th>
                               <th><h1>Action</h1></th>
-                             
-                              
                             </tr>
                           </thead>
                           <tbody>
@@ -113,8 +101,38 @@
                               <td>6369</td>
                              <td>
                                 
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              </td>
+                            </tr>
                             
+                            <tr>
+                             
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                             <td>
+                                
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                             
+                              <td>9518</td>
+                              <td>6369</td>
+                              <td>01:32:50</td>
+                              <td>Google</td>
+                              <td>9518</td>
+                              <td>6369</td>
+                             <td>
+                                
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
                               </td>
                             </tr>
                             
@@ -127,9 +145,9 @@
 
 
                     <!-- The Modal -->
-  <div class="modal fade" id="myModal" >
-    <div class="modal-dialog" style="margin-left: 15%">
-      <div class="modal-content" style="width: 1000px ;background-color:#191919; height: 600px">
+                   <div class="modal fade" id="myModal" >
+                      <div class="modal-dialog" style="margin-left: 35%;">
+                          <div class="modal-content" style="width: 700px ;background-color:#191919; height: 700px">
       
                 <!-- Modal Header -->
                 <div class="modal-header">
@@ -139,26 +157,29 @@
                 
                 <!-- Modal body -->
                 <div class="modal-body">
+                
                       <div class="login-box">
-          
+           
           <form class="box" action="ajout_vol.html" method="post">
-              <h1 class="title">Ajouter Admin</h1>
-                 
+             <h1 class="title">Ajouter Admin</h1>
                  <table   width="100%" align="center">
+                 
                   <tr>
                     <td width="20%" align="center">
                       <label for="nom">Nom</label>  
                     </td>
-                    <td width="30%">
-                <input class="nom" type="text" required="required">
-              </td>
-              <td width="20%" align="center">
-                <label for="prenom">Prénom</label>
-               </td>
-               <td width="30%"> 
-                      <input class="prenom" type="text" required="required">
-              </td>
-          
+                    <td width="60%">
+                    <input  style="width:90%;" class="nom" type="text" required="required">
+                    </td>
+                    </tr>
+                    
+                    <tr>
+                     <td width="20%" align="center">
+                     <label for="prenom">Prénom</label>
+                     </td>
+                     <td width="60%"> 
+                      <input  style="width:90%;" class="prenom" type="text" required="required">
+                     </td>
                   </tr>
 
 
@@ -166,19 +187,19 @@
                     <td width="20%" align="center">
                       <label for="date">Date Naissance</label>
                     </td>
-
-                    <td width="30%">
-                       <input type="date" name="date" required>
+                    <td width="60%">
+                       <input   style="width:90%;" type="date" name="date" required>
                     </td>
-
+                   </tr>
+                   
+                   <tr>
                     <td width="20%" align="center">
                       <label for="tele">téléphone</label>
                     </td>
 
                     <td width="30%"> 
-                       <input type="text" name="tele" required>
+                       <input  style="width:90%;" type="text" name="tele" required>
                     </td>
-
                   </tr>
 
                   <tr>
@@ -187,23 +208,21 @@
                     </td>
 
                     <td width="32%">
-                      <input type="email" name="" class="email" required="required">
+                      <input  style="width:90%;" type="email" name="" class="email" required="required">
                    </td>
-                      
+                   </tr> 
                     
-
+  
+                   <tr>
                     <td width="20%" align="center">
                       <label for="motpasse">Mot de Passe</label>
                     </td>
                     <td width="30%">
-                      <input type="password" min="100" max="500" step="3" name="" class="nbplace" required="required">
+                      <input   style="width:90%;" type="password" min="100" max="500" step="3" name="" class="nbplace" required="required">
                     </td>
-
                   </tr>
 
                 </table>
-
-                 
                  <input type="submit" name="" value="Ajouter Admin">
             </form>
 

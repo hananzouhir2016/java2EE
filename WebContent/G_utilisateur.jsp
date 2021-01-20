@@ -5,16 +5,8 @@
   <head>
      <meta charset="utf-8">
       <title>Gestion Utilisateur</title>
-      <link rel="stylesheet" href="style_G_vol.css">
-      <link rel="stylesheet" href="style_ajout_vol.css">
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-      
+      <link rel="stylesheet" href="css1/style_G_vol.css">
+      <link rel="stylesheet" href="css1/style_ajout_vol.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   </head>
 
@@ -83,12 +75,12 @@
             </div>
           </header>
 
-            <h1 class="principTitle">GESTION Utilisateur</h1>
+            <h1 class="principTitle" style="margin-top:50px;">GESTION Utilisateur</h1>
               
               <div>
-                        <table class="container" >
+                        <table class="container"  style="margin-top:50px;max-width:95%">
                           <thead>
-                            <tr>
+                            <tr class="id">
                               <th><h1>Id</h1></th>
                               <th><h1>Nom</h1></th>
                               <th><h1>Prénom</h1></th>
@@ -108,9 +100,9 @@
                               <td>01:32:50</td>
                               <td>Google</td>
                               <td>9518</td>
-                              <td>
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
-                            
+                              <td >
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
                               </td>
                              
                             </tr>
@@ -122,11 +114,38 @@
                               <td>Twitter</td>
                               <td>7326</td>
                               <td>
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
-                            
+                               
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
                               </td>
-                             
-
+                            </tr>
+                            
+                            <tr>
+                              <td>Twitter</td>
+                              <td>7326</td>
+                              <td>10437</td>
+                              <td>00:51:22</td>
+                              <td>Twitter</td>
+                              <td>7326</td>
+                              <td>
+                               
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td>Twitter</td>
+                              <td>7326</td>
+                              <td>10437</td>
+                              <td>00:51:22</td>
+                              <td>Twitter</td>
+                              <td>7326</td>
+                              <td>
+                               
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              </td>
                             </tr>
     
                           </tbody>

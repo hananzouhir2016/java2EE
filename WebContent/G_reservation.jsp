@@ -5,16 +5,8 @@
   <head>
      <meta charset="utf-8">
       <title>Gestion Réservation</title>
-      <link rel="stylesheet" href="style_G_vol.css">
-      <link rel="stylesheet" href="style_ajout_vol.css">
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-      
+     <link rel="stylesheet" href="css1/style_G_vol.css">
+      <link rel="stylesheet" href="css1/style_ajout_vol.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   </head>
 
@@ -83,12 +75,12 @@
             </div>
           </header>
 
-            <h1 class="principTitle">GESTION Réservation</h1>
+            <h1 class="principTitle" style="margin-top:20px;">GESTION Réservation</h1>
               
               <div>
-                        <table class="container" >
+                        <table class="container" style="width: 90%; margin-top:20px;">
                           <thead>
-                            <tr>
+                            <tr class="id">
                               <th><h1>Id</h1></th>
                               <th><h1>Nom</h1></th>
                               <th><h1>Prénom</h1></th>
@@ -102,13 +94,13 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Google</td>
-                              <td>9518</td>
-                              <td>6369</td>
-                              <td>01:32:50</td>
-                              <td>Google</td>
-                              <td>9518</td>
-                              <td>
+                              <td width="10%">Google</td>
+                              <td width="10%">9518</td>
+                              <td width="10%">6369</td>
+                              <td width="10%">01:32:50</td>
+                              <td width="10%" >Google</td>
+                              <td width="10%">9518</td>
+                              <td width="20%" >
                                 <button type="button" class="btn btn-warning" title="Annuler" data-toggle="modal" data-target="#myModal"><i class="ti-close"></i></button>
                                 <button type="button" class="btn btn-primary" title="Valider"><i class="ti-check"></i></button>
                                 <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
@@ -116,8 +108,59 @@
                               </td>
                              
                             </tr>
+                          </tbody>
+                          <tbody>
+                            <tr>
+                              <td width="10%">Google</td>
+                              <td width="10%">9518</td>
+                              <td width="10%">6369</td>
+                              <td width="10%">01:32:50</td>
+                              <td width="10%" >Google</td>
+                              <td width="10%">9518</td>
+                              <td width="15%" >
+                                <button type="button" class="btn btn-warning" title="Annuler" data-toggle="modal" data-target="#myModal"><i class="ti-close"></i></button>
+                                <button type="button" class="btn btn-primary" title="Valider"><i class="ti-check"></i></button>
+                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                            
+                              </td>
+                             
+                            </tr>
+                          </tbody>
                           
-    
+                          <tbody>
+                            <tr>
+                              <td width="10%">Google</td>
+                              <td width="10%">9518</td>
+                              <td width="10%">6369</td>
+                              <td width="10%">01:32:50</td>
+                              <td width="10%" >Google</td>
+                              <td width="10%">9518</td>
+                              <td width="15%" >
+                                <button type="button" class="btn btn-warning" title="Annuler" data-toggle="modal" data-target="#myModal"><i class="ti-close"></i></button>
+                                <button type="button" class="btn btn-primary" title="Valider"><i class="ti-check"></i></button>
+                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                            
+                              </td>
+                             
+                            </tr>
+                          </tbody>
+                          
+                          <tbody>
+                            <tr>
+                              <td width="10%">Google</td>
+                              <td width="10%">9518</td>
+                              <td width="10%">6369</td>
+                              <td width="10%">01:32:50</td>
+                              <td width="10%" >Google</td>
+                              <td width="10%">9518</td>
+                              <td width="15%" >
+                                <button type="button" class="btn btn-warning" title="Annuler" data-toggle="modal" data-target="#myModal"><i class="ti-close"></i></button>
+                                <button type="button" class="btn btn-primary" title="Valider"><i class="ti-check"></i></button>
+                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                            
+                              </td>
+                             
+                            </tr>
                           </tbody>
                         </table>
                       </div>

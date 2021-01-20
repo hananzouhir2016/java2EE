@@ -5,17 +5,8 @@
   <head>
      <meta charset="utf-8">
       <title>Gestion Aéroport</title>
-      <link rel="stylesheet" href="style_G_vol.css">
-      <link rel="stylesheet" href="style_ajout_vol.css">
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="vendors/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-      
+      <link rel="stylesheet" href="css1/style_G_vol.css">
+      <link rel="stylesheet" href="css1/style_ajout_vol.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   </head>
 
@@ -88,12 +79,12 @@
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
                       <i class="ti-plus"></i> </button>
               <div>
-                        <table class="container" >
+                        <table class="container" style="width: 70%;">
                           <thead>
-                            <tr>
+                            <tr class="id">
                               <th><h1>Id</h1></th>
-                              <th><h1>Nom</h1></th>
-                              <th><h1>Ville</h1></th>
+                              <th ><h1>Nom</h1></th>
+                              <th ><h1>Ville</h1></th>
                               <th><h1>Action</h1></th>
                              
                               
@@ -101,13 +92,13 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Google</td>
-                              <td>9518</td>
-                              <td>6369</td>
-                              <td>
+                              <td width="10%">Google</td>
+                              <td width="10%">9518</td>
+                              <td width="10%">6369</td>
+                              <td width="15%">
                               
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
-                            
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
                               </td>
                              
                             </tr>
@@ -117,7 +108,8 @@
                               <td>10437</td>
                               <td>
                                 
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
                             
                               </td>
                              
@@ -129,7 +121,8 @@
                               <td>5327</td>
                               <td>
                                  
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
                             
                               </td>
                              
@@ -141,7 +134,8 @@
                               <td>2961</td>
                               <td>
                                 
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                                <button id="k" type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
+                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
                             
                               </td>
                              
@@ -158,8 +152,8 @@
 
                     <!-- The Modal -->
   <div class="modal fade" id="myModal" style="height: 500px" >
-    <div class="modal-dialog" style="margin-left: 15%">
-      <div class="modal-content" style="width: 1000px ;background-color:#191919; height: 600px">
+    <div class="modal-dialog" style="margin-left: 35%">
+      <div class="modal-content" style="width: 700px ;background-color:#191919; height: 600px;margin-top:100px;">
       
               <!-- Modal Header -->
               <div class="modal-header">
@@ -176,35 +170,32 @@
               <br>
                  
                  <table   width="100%" align="center">
+                 
                   <tr>
                     <td width="20%" align="center">
                       <label for="nom">Nom</label>  
                     </td>
                     <td width="30%">
-                <input class="nom" type="text" required="required">
-              </td>
-              <td width="20%" align="center">
-                                <div class="mb-3">
-
-                                <td width="20%" align="center">
-                                    <label for="pre" class="form-label">Ville </label>
-                                </td>
-
-                                <td width="20%" align="center">
-                                    <div class="input-group flex-nowrap">
-                                        <select  id="pet-select" >
+                    <input class="nom" type="text" required="required">
+                    </td>
+                 </tr>
+                 
+                 <tr>
+                    
+                    <td width="20%" align="center">
+                    <label for="pre" class="form-label">Ville </label>
+                    </td>
+                    <td width="20%" align="center">
+                     <div class="input-group flex-nowrap">
+                                       <select  id="pet-select" >
                                             <option value="">--Choisir une Ville--</option>
                                             <option value="dog">Agadir</option>
                                             <option value="cat">Titouane</option>
                                             <option value="hamster">Tanger</option>
-                                           
                                         </select>
                                      </div>
-                                </td>  
-                               
-                                 
-                                </div>
-                             </td>
+                      </td>  
+                  
                   </tr>
 
 
@@ -212,7 +203,7 @@
                 </table>
 
                  
-                 <input type="submit" name="" value="Ajouter Aéroport">
+                 <input type="submit" name="" value="Ajouter Aéroport" >
             </form>
 
        </div>
