@@ -1427,14 +1427,11 @@ input.checked {
 --------------------------------------*/
 .blog{
     background: #fff;
-        padding: 115px 0 92px;
+        padding: 50px 0 92px;
 }
 
 /*blog-content*/
-.blog-content {
-    margin-top: 66px;
-    
-}
+
 .blog-content .thumbnail {
     background:transparent;
     border:transparent;
@@ -1860,7 +1857,7 @@ input.checked {
     font-family: "Arial Narrow", Arial, sans-serif;
     display: block;
     position: absolute;
-    background: green;
+    background: #00d8ff;
     color: white;
     top: 50%;
     transform: translate(0, -50%);
@@ -1904,7 +1901,7 @@ ol {
     opacity: 0;
 }
 .seat input[type=checkbox]:checked + label {
-    background: #bada55;
+    background: #00d8ff;
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
     animation-duration: 300ms;
@@ -1936,7 +1933,7 @@ ol {
     font-weight: bold;
     line-height: 1.5rem;
     padding: 4px 0;
-    background: #f42536;
+    background: #FF5722;
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
@@ -2189,6 +2186,8 @@ label { font-weight: 700; }
     font-size: 0.85rem;
     font-weight: 600;  
     padding: 12px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(14,15,18,.2);
 }
 
 .tm-btn-white { background: white; }
@@ -2388,9 +2387,6 @@ label { font-weight: 700; }
 
 .tm-recommended-img { width: 270px; }
 
-.tm-recommended-description-box {
-    width: 500px;
-}
 
 .tm-recommended-price-box {    
     background-color: #00d8ff;
@@ -2940,4 +2936,1449 @@ margin-left: 60px;
         background: white;
     }
 
+    .Timeline_circles__1CHmt {
+        display: flex;
+        padding-top: .375rem;
+        padding-right: 1.125rem;
+        padding-bottom: .375rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_track__9T1lp {
+        position: relative;
+        left: .25rem;
+        display: flex;
+        flex-grow: 1;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    
+    .Timeline_track__9T1lp:after {
+        position: relative;
+        content: "";
+        width: .125rem;
+        background-color: #b2b2bf;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_track__9T1lp:after {
+        position: relative;
+        content: "";
+        width: .125rem;
+        background-color: #b2b2bf;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Times_segmentTimes__2D_aD {
+        display: flex;
+        margin-right: .75rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-shrink: 0;
+    }
+    
+    .BpkText_bpk-text--base__3REoZ {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+    }
+    
+    .Routes_routes__2_FZu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-grow: 2;
+    }
+    element.style {
+    }
+    .LegSegmentDetails_splitDurationLeft__1Bvzk {
+        display: inline-block;
+        width: 4rem;
+    }
+    .Duration_duration__2Evn6 {
+        color: #444560;
+    }
+    .BpkText_bpk-text--xs__1ycc8 {
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 400;
+    }
+    .BpkText_bpk-text__2VouB {
+        margin: 0;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .LegSegmentDetails_splitDurationLeft__1Bvzk {
+        display: inline-block;
+        width: 4rem;
+    }
+    .Duration_duration__2Evn6 {
+        color: #444560;
+    }
+    .BpkText_bpk-text--xs__1ycc8 {
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 400;
+    }
+    .BpkText_bpk-text__2VouB {
+        margin: 0;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .LegSegmentDetails_segmentDetails__Ni1c- {
+        display: flex;
+        min-height: 3.75rem;
+        flex-grow: 1;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_circles__1CHmt {
+        display: flex;
+        padding-top: .375rem;
+        padding-right: 1.125rem;
+        padding-bottom: .375rem;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_track__9T1lp {
+        position: relative;
+        left: .25rem;
+        display: flex;
+        flex-grow: 1;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_track__9T1lp:after {
+        position: relative;
+        content: "";
+        width: .125rem;
+        background-color: #b2b2bf;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_track__9T1lp:after {
+        position: relative;
+        content: "";
+        width: .125rem;
+        background-color: #b2b2bf;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Timeline_circles__1CHmt:after, .Timeline_circles__1CHmt:before {
+        content: "";
+        display: block;
+        z-index: 2;
+        width: .625rem;
+        height: .625rem;
+        border: .125rem solid #b2b2bf;
+        border-radius: 100%;
+        background: #fff;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Times_segmentTimes__2D_aD {
+        display: flex;
+        margin-right: .75rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-shrink: 0;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .BpkText_bpk-text--base__3REoZ {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+    }
+    .BpkText_bpk-text__2VouB {
+        margin: 0;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .BpkText_bpk-text--base__3REoZ {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+    }
+    .BpkText_bpk-text__2VouB {
+        margin: 0;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .Routes_routes__2_FZu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-grow: 2;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .BpkText_bpk-text--base__3REoZ {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+    }
+    
+    .BpkText_bpk-text__2VouB {
+        margin: 0;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .BpkText_bpk-text--base__3REoZ {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+    }
+    .BpkText_bpk-text__2VouB {
+        margin: 0;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    .FlightsBookingPanel_content__2-HnK {
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+    }
+    #app-root {
+        text-align: center;
+    }
+    body {
+        color: #111236;
+        font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    html {
+        font-size: 100%;
+        box-sizing: border-box;
+    }
+    html {
+        font-family: sans-serif;
+        line-height: 1.15;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    *, :after, :before {
+        box-sizing: inherit;
+    }
+    #myDIV{
+        
+             width: 100%; 
+             margin-top: .375rem; 
+         padding: .75rem; 
+             border: 0; 
+             border-radius: .375rem; 
+             background-color: #fff; 
+             cursor: pointer; 
+             box-shadow: inset 0 0 0 1px #dddde5; 
+
+    }    
+
 /*========================Thank you=================*/
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+/*---------------------------------------------*/
+.container {
+	max-width: 1200px;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+
+.bg0 {background-color: #fff;}
+.bg1 {background-color: #f7f7f7;}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Contact ]*/
+
+.container-contact100 {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #e6e6e6;
+  
+}
+
+
+#myDIV2,#myDIV3 {
+
+    width: 100%; 
+    margin-top: .375rem; 
+padding: .75rem; 
+    border: 0; 
+    border-radius: .375rem; 
+    background-color: #fff; 
+    cursor: pointer; 
+    box-shadow: inset 0 0 0 1px #dddde5; 
+}
+
+
+/*------------------------------------------------------------------
+[  ]*/
+
+.contact100-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact100-form-title {
+  display: block;
+  width: 100%;
+  font-family: Montserrat-Black;
+  font-size: 25px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 59px;
+}
+
+
+
+/*------------------------------------------------------------------
+[  ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  border-radius: 13px;
+  padding: 10px 30px 9px 22px;
+  margin-bottom: 20px;
+}
+
+.rs1-wrap-input100 {
+  width: calc((100% - 30px) / 2);
+}
+
+.label-input100 {
+  font-family: Montserrat-SemiBold;
+  font-size: 10px;
+  color: #393939;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.input100 {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-family: Montserrat-SemiBold;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+  padding-right: 15px;
+}
+
+
+/*---------------------------------------------*/
+input.input100 {
+  height: 40px;
+}
+
+
+textarea.input100 {
+  min-height: 120px;
+  padding-top: 9px;
+  padding-bottom: 13px;
+}
+
+
+.input100:focus + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+
+@media (max-width: 768px) {
+  .rs1-wrap-input100 {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .wrap-contact100 {
+    padding: 62px 15px 90px 15px;
+  }
+
+  .wrap-input100 {
+    padding: 10px 10px 9px 10px;
+  }
+}
+
+
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  min-height: 40px;
+  background-color: #f7f7f7;
+  top: 35px;
+  left: 0px;
+  padding: 0 45px 0 22px;
+  pointer-events: none;
+
+  font-family: Montserrat-SemiBold;
+  font-size: 18px;
+  color: #fa4251;
+  line-height: 1.2;
+}
+
+.btn-hide-validate {
+  font-family: Material-Design-Iconic-Font;
+  font-size: 18px;
+  color: #fa4251;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 35px;
+  right: 12px;
+}
+
+.rs1-alert-validate.alert-validate::before {
+  background-color: #fff;
+}
+
+.true-validate::after {
+  content: "\f26b";
+  font-family: Material-Design-Iconic-Font;
+  font-size: 18px;
+  color: #00ad5f;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 35px;
+  right: 10px;
+}
+
+/*---------------------------------------------*/
+@media (max-width: 576px) {
+  .alert-validate::before {
+    padding: 0 10px 0 10px;
+  }
+
+  .true-validate::after,
+  .btn-hide-validate {
+    right: 0px;
+    width: 30px;
+  }
+}
+
+
+/*==================================================================
+[ Restyle Select2 ]*/
+
+.select2-container {
+  display: block;
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+.select2-container .select2-selection--single {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  outline: none;
+  position: relative;
+}
+
+/*------------------------------------------------------------------
+[ in select ]*/
+.select2-container .select2-selection--single .select2-selection__rendered {
+  font-family: Montserrat-SemiBold;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.2;
+  padding-left: 0px ;
+  background-color: transparent;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.select2-selection__arrow b {
+  display: none;
+}
+
+.select2-selection__arrow::before {
+  content: '\f312';
+  font-family: Material-Design-Iconic-Font;
+  font-size: 18px;
+  color: #555555;
+}
+
+
+/*------------------------------------------------------------------
+[ Dropdown option ]*/
+.select2-container--open .select2-dropdown {
+  z-index: 1251;
+  width: calc(100% + 2px);
+  border: 0px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  left: -24px;
+
+  box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+  .select2-container--open .select2-dropdown {
+    left: -12px;
+  }
+}
+
+.select2-dropdown--above {top: -38px;}
+.select2-dropdown--below {top: 10px;}
+
+.select2-container .select2-results__option[aria-selected] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 24px;
+}
+
+@media (max-width: 576px) {
+  .select2-container .select2-results__option[aria-selected] {
+    padding-left: 12px;
+  }
+}
+
+.select2-container .select2-results__option[aria-selected="true"] {
+  background: #00ad5f;
+  color: white;
+}
+
+.select2-container .select2-results__option--highlighted[aria-selected] {
+  background: #00ad5f;
+  color: white;
+}
+
+.select2-results__options {
+  font-family: Montserrat-SemiBold;
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.2;
+}
+
+.select2-search--dropdown .select2-search__field {
+  border: 1px solid #aaa;
+  outline: none;
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.2;
+}
+
+.wrap-input100 .dropDownSelect2 .select2-container--open {
+  width: 100% !important;
+}
+
+.wrap-input100 .dropDownSelect2 .select2-dropdown {
+  width: calc(100% + 2px) !important;
+}
+
+/*==================================================================
+[ Restyle Radio ]*/
+.wrap-contact100-form-radio {
+  width: 100%;
+  padding: 15px 25px 0 25px;
+}
+
+.contact100-form-radio {
+  padding-bottom: 5px;
+}
+
+.input-radio100 {
+  display: none;
+}
+
+.label-radio100 {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-family: Montserrat-SemiBold;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.2;
+}
+
+.label-radio100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #cdcdcd;
+  background: #fff;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.label-radio100::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  background: #00ad5f;
+  -moz-background-clip: padding;     
+  -webkit-background-clip: padding;  
+  background-clip: padding-box; 
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: none;
+
+}
+
+.input-radio100:checked + .label-radio100::after {
+  display: block;
+}
+
+
+/*==================================================================
+[ rs NoUI ]*/
+.wrap-contact100-form-range {
+  width: 100%;
+  padding: 20px 25px 57px 25px;
+}
+
+.contact100-form-range-value {
+  font-family: Montserrat-SemiBold;
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.2;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.contact100-form-range-value input {
+  display: none;
+}
+
+#filter-bar {
+  height: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 9px;
+  background-color: #f7f7f7;
+}
+#filter-bar .noUi-connect {
+  border: 1px solid #e6e6e6;
+  border-radius: 9px;
+  background-color: #00ad5f;
+  box-shadow: none;
+}
+#filter-bar .noUi-handle {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #cccccc;
+  border-radius: 9px;
+  background: #f5f5f5;
+  cursor: pointer;
+  box-shadow: none;
+  outline: none;
+  top: -8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#filter-bar .noUi-handle.noUi-handle-lower {
+  left: -1px;
+}
+
+#filter-bar .noUi-handle.noUi-handle-upper {
+  left: -39px;
+}
+
+#filter-bar .noUi-handle:before {
+  content: "";
+  display: block;
+  position: unset;
+  height: 12px;
+  width: 9px;
+  background-color: transparent;
+  border-left: 2px solid #cccccc;
+  border-right: 2px solid #cccccc;
+}
+#filter-bar .noUi-handle:after {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .wrap-contact100-form-range {
+    padding: 20px 0px 57px 0px;
+  }
+
+  .wrap-contact100-form-radio {
+    padding: 15px 0px 0 0px;
+  }
+}
+/*------------ COVID----------*/
+.FlexibleTicketPolicy_container__SbRnx {
+    padding-top: .75rem;
+    color: #444560;
+    text-align: left;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.FlexibleTicketPolicy_title__uhIjc {
+    margin-bottom: .75rem;
+}
+.BpkText_bpk-text--bold__NhE9P {
+    font-weight: 700;
+}
+.BpkText_bpk-text--base__3REoZ {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+.BpkText_bpk-text__2VouB {
+    margin: 0;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+user agent stylesheet
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+body {
+    color: #111236;
+    font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+.DetailsPanelContent_covidContainer__3c8mU {
+    margin-bottom: .75rem;
+    padding-top: .75rem;
+    box-shadow: inset 0 -1px 0 0 #dddde5;
+}
+.AirlineSafetyGrid_tableLayout__3jSvb {
+    color: #112d36;
+    box-shadow: none;
+}
+.BpkTable_bpk-table__2AncS {
+    width: 100%;
+    margin-bottom: .75rem;
+    border-collapse: collapse;
+    table-layout: fixed;
+   
+}
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+.AirlineSafetyGrid_tableCell__2nacw {
+    padding: .75rem .375rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.BpkTable_bpk-table__cell__HQevH {
+    padding: .75rem;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+user agent stylesheet
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.AirlineSafetyGrid_tableLayout__3jSvb {
+    color: #111236;
+    box-shadow: none;
+}
+
+user agent stylesheet
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.FlightsBookingPanel_content__2-HnK {
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+}
+#app-root {
+    text-align: center;
+}
+body {
+    color: #111236;
+    font-family: "Skyscanner Relative",-apple-system,BlinkMacSystemFont,"Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue","Arial",sans-serif;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+.AirlineSafetyGrid_descriptionCell__2Rnha {
+    display: flex;
+    padding: .75rem .375rem;
+    text-align: left;
+}
+.BpkTable_bpk-table__cell--head__O1PC6 {
+    
+    font-weight: 400;
+    text-align: left;
+}
+.BpkTable_bpk-table__cell__HQevH {
+    padding: .75rem;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+user agent stylesheet
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+.AirlineSafetyGrid_tableLayout__3jSvb {
+    color: #111236;
+    box-shadow: none;
+}
+
+user agent stylesheet
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+.FlightsBookingPanel_content__2-HnK {
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+}
+
+
+
+.AirlineSafetyGrid_tickIcon__1wLQ0 {
+    fill: #00d8ff;
+}
+.AirlineSafetyGrid_featureIcon__2Io98 {
+    margin-right: 1.125rem;
+    align-self: center;
+    flex-shrink: 0;
+    fill: #ff5100;
+}
