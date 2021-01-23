@@ -4382,3 +4382,8 @@ table {
     flex-shrink: 0;
     fill: #ff5100;
 }
+#k, #s {
+	display: inline-block;
+	vertical-align: top;
+	text-align: justify;
+}

@@ -1,3 +1,4 @@
+
 package com.projet.dao;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,10 +7,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+/*
+* la mise en place de notre couche de données
+* classe qui va être en charge de l'instanciation des différents DAO de notre application
+*/
 
-public class DAOFactory {
+/*
+* lire les informations de configuration depuis le fichier propertie
+charger le driver JDBC du SGBD utilisé
+fournir une connexion à la base de données
+*/
+public class DAOFactory 
+{
 	
-	private static final String FICHIER_PROPERTIES ="/com/projet/dao/daoproprietie";
+	private static final String FICHIER_PROPERTIES ="/com/projet/config/dao.properties";
 	private static final String PROPERTY_URL = "url";
 	private static final String PROPERTY_DRIVER = "driver";
 	private static final String PROPERTY_NOM_UTILISATEUR ="nomutilisateur";
@@ -25,17 +36,22 @@ public class DAOFactory {
 	}
 	/*
 	* Méthode chargée de récupérer les informations de connexion à la
-	base de
-	* données, charger le driver JDBC et retourner une instance de la
-	Factory
+	base de données, charger le driver JDBC et retourner une instance de la
+	Factory nous voulons instancier notre DAOFactory uniquement sous certaines conditions :
+    si le fichier dao.properties est accessible ;
+    si les données qu'il contient sont valides ;
+    si le driver JDBC est bien présent dans l'application.
 	*/
 	public static DAOFactory getInstance() throws DAOConfigurationException
 	{
+	/*permettre de gérer notre fichier de configuration*/
 	Properties properties = new Properties();
 	String url;
 	String driver;
 	String nomUtilisateur;
 	String motDePasse;
+	
+	/*l'ouverture du fichier dao.properties*/
 	ClassLoader classLoader =Thread.currentThread().getContextClassLoader();
 	InputStream fichierProperties =classLoader.getResourceAsStream( FICHIER_PROPERTIES );
 	if ( fichierProperties == null ) 
@@ -44,42 +60,48 @@ public class DAOFactory {
 	}
 	try 
 	{
+	/*chargement des propriétés contenues dans le fichier*/
 	properties.load( fichierProperties );
 	url = properties.getProperty( PROPERTY_URL );
 	driver = properties.getProperty( PROPERTY_DRIVER );
 	nomUtilisateur = properties.getProperty(PROPERTY_NOM_UTILISATEUR );
 	motDePasse = properties.getProperty(PROPERTY_MOT_DE_PASSE );
+	System.out.print(driver);
 	} 
 	catch ( IOException e ) 
 	{
-	throw new DAOConfigurationException( "Impossible de charger le fichier properties " + FICHIER_PROPERTIES, e );
+	throw new DAOConfigurationException( "format du fichier properties incorrect " + FICHIER_PROPERTIES, e );
 	}
+	/*les informations lues avec succès, nous tentons de charger le driver JDBC dont le nom est précisé dans le fichierdao.properties*/
 	try 
 	{
-	Class.forName( driver );
+	Class.forName("com.mysql.jdbc.Driver");
 	} 
 	catch ( ClassNotFoundException e ) 
 	{
-	throw new DAOConfigurationException( "Le driver est introuvable dans le classpath.", e );
+	throw new DAOConfigurationException(e.getMessage(),e );
 	}
-	
+
 	DAOFactory instance = new DAOFactory( url, nomUtilisateur,motDePasse );
 	return instance;
 	}
 	/* Méthode chargée de fournir une connexion à la base de
 	données */
-	/* package */ 
-	Connection getConnection() throws SQLException 
+	
+	public Connection getConnection() throws SQLException 
 	{
 	return DriverManager.getConnection( url, username, password);
 	}
 	/*
-	* Méthodes de récupération de l'implémentation des différents DAO
-	(un seul
-	* pour le moment)
+	Méthodes de récupération de l'implémentation des différents DAO dans application
+	qui va permetre que le DAO va pouvoir acquérir une connexion à la base de données,
+     en appelant sa méthode getConnection().
 	*/
 	public Utilisateurdao getUtilisateurDao()
 	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
 	return new UtilisateurDaoImpl( this );
 	}
 	}

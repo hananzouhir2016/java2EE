@@ -1,11 +1,26 @@
 <!doctype html>
 <html>
 <head>
+<title>Travel</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="assets/css/login.css" />
-<title>Travel</title>
+<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="assets/css/animate.css" />
+<link rel="stylesheet" href="assets/css/hover-min.css">
+<link rel="stylesheet"  href="assets/css/datepicker.css" >
+<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="assets/css/owl.theme.default.min.css"/>
+<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/css/bootsnav.css"/>
+<link rel="stylesheet" href="assets/css/style3.css" />
+<link rel="stylesheet" href="assets/css/responsive.css" />
+<link rel="stylesheet"  href="assets/css/datepicker.css" >
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 </head>
 <body>
@@ -34,7 +49,7 @@
 									<li>
 										<button class="book-btn"  onclick="document.getElementById('id01').style.display='block'">Connecter</button>
 										<div id="id01" class="modal">
-											<form class="modal-content animate" style="width: 32%;">
+											<form class="modal-content animate" style="width: 30%;" method="post" action="Connexions">
 												<div class="imgcontainer">
 													<span onclick="document.getElementById('id01').style.display='none'"class="close" title="Close Modal">&times;</span> 
 												</div>
@@ -42,11 +57,12 @@
 													<label><b>Email</b></label> </br>
 													<input type="text" placeholder="Enter email" name="email"required></br> 
 													<label><b>Mots passe</b></label></br>
-													<input type="password" placeholder="Enter mots passe" name="psw" required></br>
+													<input type="password" placeholder="Enter mots passe" name="mdp" required></br>
+													
 													<button type="submit" class="book-btn" style="width: 30%;">SE CONNECTER</button>
 													</form>
-													<form>
-													<button type="submit" class="book-btn" style="width: 30%;">CREER UN COMPTE</button>
+													<form method="post" action="GestionUtilis">
+													<button type="submit" class="book-btn" style="width: 30%;margin-top:30px;">CREER UN COMPTE</button>
 													</form>
 												</div>
 									</li>
@@ -59,6 +75,8 @@
 			</div>
 		</div>
 	</header>
+	
+	
 	<script src="assets/js/jquery.js"></script>
 	<script type="text/javascript">
 	var modal = document.getElementById('id01');

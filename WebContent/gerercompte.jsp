@@ -3,29 +3,46 @@
 <head>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="assets/css/style2.css" />
+<link rel="stylesheet" href="assets/css/style2.css" />
+
+
 </head>
 <body>
 	<jsp:include page="Menu2.jsp" />
+	
+	
+
 	<article>
 
-		<div id="s">
+		<div id="s" style="width:29%;margin-right: 80px;">
 			<a style="color: #00d8ff;" href="gerercompte.jsp"> 
-			<i class='fas'>&#xf4fe;</i>Information personnelles
+			<i class='fas'>&#xf4fe;</i>
+			Information personnelles
 			</a>
 			<hr>
 			<a style="color: #00d8ff;" href="Securiter.jsp"> 
-			<i class='fas'>&#xf502;</i>Sécurité
+			<i class='fas'>&#xf502;</i>
+			Sécurité
 			</a>
 			<hr>
 			<a style="color: #00d8ff;">
-		  <i class="fa fas" style="	padding: 15px;">&#xf011;</i>Déconnection
+		  <i class="fa fas" style="	padding: 15px;">&#xf011;</i>
+		  Déconnection
 			</a>
 			<hr>
 		</div>
 
 		<div id="k">
-			<a style="color: #00d8ff;">Informations personnelles</a></br> Mettez à
-			jour vos informations et découvrez comment elles sont utilisées
+			<div class="gallary-header text-center">
+					<h2>
+						Information personnelles
+					</h2>
+					<p>
+						Mettez à jours vos informations et decouvrez comment elles
+				                                           sont utilisées
+					</p>
+
+				</div><!--/.gallery-header-->
 			<hr>
 
 			<table>
@@ -34,15 +51,15 @@
 					<td>
 						<div id="myFor">hanan zouhir</div>
 						<div id="myForm" style="display: none;">
-						<label class="er">Nom</label> 
-						<input id="rtt" type="text" value="entrer nom" /></br>
-						<label class="er">Prénom</label>
-						<input id="rtt" type="text" value="entrer nom" /></br>
+						<label class="er" style="margin-right:70px;">Nom </label>
+                        <input id="rtt" type="text" value="entrer nom" /> <br> 
+                        <label class="er" style="margin-right:51px;">Prénom </label>
+                       <input id="rtt" type="text" value="entrer nom" /><br>
 						<input type="submit" class="btn default" value="enregistrer" />	
 						</div>
 					</td>
 					<td>
-						<button class="btn default" id="myt"
+						<button class="book-btn" id="myt"
 							onclick="openForm(document.getElementById('myForm'),document.getElementById('myFor'), document.getElementById('my'), document.getElementById('myt'))">Modifier</button>
 						</br>
 						<button class="btn default" style="display: none;" id="my"
@@ -54,14 +71,14 @@
 					<td>
 						<div id="myForr">hananinfo@gmail.com</div>
 						<div id="myFormr" style="display: none;">
-							<label class="er">Adress-Email</label> 
+							<label class="er" style="margin-right:22px;">Adress-Email</label> 
 							<input id="rtt" type="text" value="entrer nom" /></br> 
-							<input type="submit" class=" book-btn" value="enregistrer" />
+							<input type="submit" class="btn default" value="enregistrer" />
 						</div>
 					</td>
 
 					<td>
-						<button class="btn default" id="mytt"
+						<button class="book-btn" id="mytt"
 							onclick="openForm(document.getElementById('myFormr'),document.getElementById('myForr'), document.getElementById('myy'), document.getElementById('mytt'))">Modifier</button>
 						</br>
 						<button class="btn default" style="display: none;" id="myy"
@@ -78,12 +95,12 @@
 						<div id="myFormrr" style="display: none;">
 							<label class="er">Numero Téléphone</label>
 							 <input id="rtt" type="text" value="entrer nom" /></br> 
-							 <input type="submit" class=" book-btn" value="enregistrer" />
+							 <input type="submit" class="btn default" value="enregistrer" />
 						</div>
 					</td>
 
 					<td>
-						<button class="btn default" id="myttt"
+						<button class="book-btn" id="myttt"
 							onclick="openForm(document.getElementById('myFormrr'),document.getElementById('myForrr'), document.getElementById('myyy'), document.getElementById('myttt'))">Modifier</button>
 						</br>
 						<button class="btn default" style="display: none;" id="myyy"
@@ -93,12 +110,16 @@
 				<tr>
 					<td>Adress</td>
 					<td>Taroudant/Maroc</td>
-					<td><button class="btn default">Modifier</button></td>
+					<td><button class="book-btn">Modifier</button></td>
 				</tr>
 			</table>
 
 		</div>
 	</article>
+	
+
+		<!--travel-box start-->
+		
 
 	<jsp:include page="footer.jsp" />
 

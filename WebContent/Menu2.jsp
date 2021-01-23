@@ -4,11 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Rufina:400,700"
-	rel="stylesheet" />
-<link
-	href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
-	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/animate.css" />
 <link rel="stylesheet" href="assets/css/hover-min.css">
 <link rel="stylesheet" href="assets/css/datepicker.css">
@@ -23,41 +20,17 @@
 <link rel="stylesheet" href="assets/css/responsive.css" />
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-<style>
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: white;
-	min-width: 160px;
-	overflow: auto;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.dropdown-content a {
-	color: red;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-}
-
-.dropdown a:hover {
-	background-color: #ddd;
-}
-
-.show {
-	display: block;
-}
-</style>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png" />
+<link rel="stylesheet" href="assets/css/style3.css" />
+<link rel="stylesheet" href="assets/css/datepicker.css">
 </head>
 <body>
 	<header class="top-area">
-	<div class="header-area">
+		<div class="header-area">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-2">
@@ -69,7 +42,8 @@
 					<div class="col-sm-10">
 						<div class="main-menu">
 							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<button type="button" class="navbar-toggle"
+									data-toggle="collapse" data-target=".navbar-collapse">
 									<i class="fa fa-bars" aria-hidden="true"></i>
 								</button>
 							</div>
@@ -78,45 +52,74 @@
 									<li class="smooth-menu"><a href="#home">home</a></li>
 									<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 									<li>
-
-
-
-										<div class="dropdown">
-											<button onclick="myFunction()" class=" book-btn" style="width: 160px;">Se connecter</button>
-											<div id="myDropdown" class="dropdown-content">
-												<h7 href="#home">Gérer du compte</h7>
-												<br>
-												<h7 href="#about">Mes voyages</h7>
-												<br>
-												<h7 href="#contact">Déconnexion</h7>
-												<br>
-											</div>
-										</div>
-
-
+										<button class="book-btn"
+											onclick="document.getElementById('id01').style.display='block'">Connecter</button>
+										<div id="id01" class="modal">
+											<form class="modal-content animate" style="width: 26%;">
+												<div class="imgcontainer">
+													<span
+														onclick="document.getElementById('id01').style.display='none'"
+														class="close" title="Close Modal">&times;</span>
+												</div>
+												<div class="container">
+													<a style="color: #00d8ff; margin-left: 40px;"><i
+														style='font-size: 24px' class='fas'>&#xf502;</i>Détails compte</a></br> 
+														<a style="color: #00d8ff; margin-left: 40px;"><i style='font-size: 24px' class='fas'>&#xf072;</i>Mes voyages</a></br> 
+														<a style="color: #00d8ff; margin-left: 40px;">Déconnexion</a></br>
+												</div>
 									</li>
 								</ul>
 							</div>
+
+
+							</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="home-border"></div>
 			</div>
+			<div class="home-border"></div>
 		</div>
-		
-	</header>
-	<section class="rt"
-		style="background: url(assets/images/home/offer-timer.jpg) no-repeat center fixed;">
-		<div class="collapse navbar-collapse">
-			<ul class="nav1 navbar-nav ">
-				<li class="smooth-menu"><a href="utilisateur.jsp" style="color: #f3f4f4;">Accuiel</a></li>
-				<li class="smooth-menu"><a  style="color: #f3f4f4;">Mes
-						voyages</a></li>
-				<li class="smooth-menu"><a href="parametre.jsp" style="color: #f3f4f4;">Details
-						du compte</a></li>
-			</ul>
 		</div>
 
+	</header>
+
+	<section id="home" class="about-flights"
+		style="min-height: 260px; background: url(assets/images/home/banner.jpg) no-repeat center fixed;">
+		<div class="container">
+			<div class="about-us-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="single-about-us">
+							<div class="about-us-txt" style="margin-top: 200px;">
+								<div class="collapse navbar-collapse">
+									<ul class="nav1 navbar-nav ">
+										<li class="smooth-menu"><a href="utilisateur.jsp"
+											style="color: #f3f4f4;">Accuiel</a></li>
+										<li class="smooth-menu"><a href="index.jsp"
+											style="color: #f3f4f4;">Mes voyages</a></li>
+										<li class="smooth-menu"><a href="parametre.jsp"
+											style="color: #f3f4f4;">Details du compte</a></li>
+									</ul>
+								</div>
+
+							</div>
+							<!--/.about-us-txt-->
+						</div>
+						<!--/.single-about-us-->
+					</div>
+					<!--/.col-->
+
+				</div>
+				<!--/.row-->
+			</div>
+			<!--/.about-us-content-->
+		</div>
+		<!--/.container-->
+
+	</section>
+	<!--/.about-us-->
+	<!--about-us end -->
 
 	</section>
 	<script src="assets/js/jquery.js"></script>

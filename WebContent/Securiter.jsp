@@ -4,13 +4,15 @@
 <title>Travel</title>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="assets/css/style2.css" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="assets/css/style2.css" />
 </head>
 
 <body>
 	<jsp:include page="Menu2.jsp" />
 
 	<article style="background-color: #f9f9f9;">
-		<div id="s">
+		<div id="s" style="width:29%;margin-right: 80px;">
 			<a  href="gerercompte.jsp" style="color: #00d8ff;"> <i class='fas'>&#xf4fe;</i>Information
 				personnelles
 			</a>
@@ -22,9 +24,18 @@
 			<hr>
 		</div>
 		<div id="k" style="margin-top: 20px;">
-			<a style="color: #00d8ff;">Sécurité<a></a></br> Ajustez vos paramètres
-				de sécurité.
-				<hr>
+			
+				<div class="gallary-header text-center">
+					<h2>
+						Sécurité
+					</h2>
+					<p>
+					Ajustez vos paramètres
+				de sécurité
+					</p>
+
+				</div><!--/.gallery-header-->
+			<hr>
 				<table>
 
 					<tr>
@@ -32,13 +43,14 @@
 						<td>
 							<div id="myFor">Réinitialisez votre mot de passe.</div>
 							<div id="myForm" style="display: none;">
-								<label>Mots passe</label></br> <input id="rtt" type="text"
-									value="entrer nom" /></br> <input type="submit" class=" book-btn"
-									value="enregistrer" />
+								<label class="er" style="margin-right:10px;">Nom </label>
+                        <input id="rtt" type="text" value="entrer nom" /> <br> 
+						<input type="submit" class="btn default" value="enregistrer" />	
+						</div>
 							</div>
 						</td>
 						<td>
-							<button class="btn default" id="myt"
+							<button class="book-btn" id="myt"
 								onclick="openForm(document.getElementById('myForm'),document.getElementById('myFor'), document.getElementById('my'), document.getElementById('myt'))">Réinitialisez</button>
 							</br>
 							<button class="btn default" style="display: none;" id="my"
@@ -48,16 +60,15 @@
 
 					<tr>
 						<td>Sessions actives</td>
-						<td>Cliquez sur « Me déconnecter »</br> pour vous déconnecter
+						<td>Cliquez sur « Me déconnecter »<br>pour vous déconnecter
 						</td>
-						<td><button class="btn default">Me déconnecter</button></td>
+						<td><button class="book-btn" style="width:75%;">Me déconnecter</button></td>
 					</tr>
 
 					<tr>
 						<td>Suppression du compte</td>
-						<td>Supprimez définitivement votre</br> compte SKYFLY.com.
-						</td>
-						<td><button class="btn default">supprimer le compte</button></td>
+						<td>Supprimez définitivement votre<br> compte SKYFLY.com.</td>
+						<td><button class="book-btn" style="width:75%;">Supprission</button></td>
 					</tr>
 				</table>
 		</div>

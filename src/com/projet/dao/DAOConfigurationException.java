@@ -10,9 +10,9 @@ public class DAOConfigurationException extends RuntimeException
 		super(message);
 	}
 
-	public DAOConfigurationException(String message, Throwable cause)
+	public DAOConfigurationException(String message,Throwable cause)
 	{
-		super(message, cause);
+		super(message,cause);
 	}
 
     public DAOConfigurationException( Throwable cause ) 
