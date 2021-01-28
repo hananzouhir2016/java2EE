@@ -104,5 +104,21 @@ public class DAOFactory
 		*/
 	return new UtilisateurDaoImpl( this );
 	}
+	
+	public VilleDao getVilleDao()
+	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
+	return new VilleDaoImpl( this );
+	}
+	
+	public AdminDao getAdminDao()
+	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
+	return new AdminDaoImpl( this );
+	}
 	}
 

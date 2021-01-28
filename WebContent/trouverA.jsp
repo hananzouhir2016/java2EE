@@ -71,17 +71,21 @@
                         </div>
                     </div>
 
-                              <form class="d-flex" action="TrouverAdmin" method="get">
-					            <input class="form-control me-2" type="search" name="nomA" placeholder="Search" aria-label="Search">
-					            <button class="btn btn-outline-warning" type="submit">Chercher</button>
-					          </form>
+                   
 
                 </div>
             </div>
           </header>
           
+                       <div class="form-inline">
+                            <form class="search-form"  action="TrouverAdmin" method="get">
+                                <input class="form-control mr-sm-2" type="text" name="nomA" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+
             <h1 class="principTitle">GESTION Administrateur</h1>
-              <c:if test="${!empty admins}">  
+              
               <div>
                         <table class="container" style="max-width:95%;margin-top: 35px">
                           <thead>
@@ -95,7 +99,7 @@
                             </tr>
                           </thead>
                           <tbody>
-                  <c:forEach  var="admin" items="${ admins }" >
+                  <c:forEach  var="admin" items="${ adminss }" varStatus="loop">
                             
                             <tr>
                              
@@ -117,16 +121,8 @@
     
                     </div>
 
-             </c:if> 
 
-<div class="test" style="margin-top: 150px;">
-<c:if test="${empty admins}">  
-<br>
-   <h1 class="testin"><string style="color:#d81414cf; text-align:center"><i class="fa fa-times-circle" aria-hidden="true" style="color:#d81414cf;" ></i> &nbsp; Aucun Admin enregistré</string><h1>  
-</c:if> 
-</div>
   </div>
-
 
 
 
