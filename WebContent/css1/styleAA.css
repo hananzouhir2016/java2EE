@@ -1,0 +1,33 @@
+.titre{
+    
+  color: rgb(64, 52, 231);
+  text-shadow: 2px 2px gray;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 2px;
+}
+
+.container{
+  margin-top: 4%;
+  
+  
+}
+form{
+  width: 300px;
+  margin-left: 39%;
+}
+
+button{
+  width: 301px;
+}
+
+label{
+  color: rgb(64, 52, 231) !important;
+  font-size: 20px;
+}
+
+.container {
+    max-width: 407px;
+}
+
+

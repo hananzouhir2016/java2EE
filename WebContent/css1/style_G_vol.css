@@ -52,3 +52,19 @@ i{
 	vertical-align: top;
 	text-align: justify;
 }
+.ajouter {
+	background-color:#272c33; BORDER: none;cursor: pointer
+}
+
+.principTitle{
+	text-align:center
+}
+
+.test
+{
+	margin-top: 150px;
+}
+
+.testin{
+	color:#d81414cf; text-align:center
+}

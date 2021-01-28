@@ -19,8 +19,13 @@
   text-transform: uppercase;
   text-align: center;
 }
-label,span{
-  color: white;
+label{
+
+  text-transform: uppercase;
+   
+}
+span{
+  color:  rgb(255, 0, 0);
   text-transform: uppercase;
  
   

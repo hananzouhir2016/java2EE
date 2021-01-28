@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
   <head>
      <meta charset="utf-8">
-      <title>Gestion Ville</title>
+      <title>Gestion administrateur</title>
       <link rel="stylesheet" href="css1/style_G_vol.css">
       <link rel="stylesheet" href="css1/style_ajout_vol.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   </head>
 
   <body>
+
 <jsp:include page="left_panel.jsp"></jsp:include>
 
     <!-- Right Panel -->
@@ -39,17 +40,10 @@
                                 <span class="count bg-danger">5</span>
                             </button>
                             
+                            
                         </div>
 
-                        <div class="dropdown for-message">
-                            
-                            <div class="dropdown-menu" aria-labelledby="message">
-                                
-                                
-                                
-                                
-                            </div>
-                        </div>
+                    
                     </div>
                 </div>
 
@@ -59,6 +53,7 @@
                             <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                         </a>
 
+
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> Mon Profile</a>
 
@@ -67,108 +62,77 @@
                             <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Déconnecter</a>
                         </div>
                     </div>
-
+                              <form class="d-flex" action="TrouverVille" method="get">
+					            <input class="form-control me-2" type="search" name="nomV" placeholder="Search" aria-label="Search">
+					            <button class="btn btn-outline-warning" type="submit">Chercher</button>
+					          </form>
                    
 
                 </div>
             </div>
           </header>
 
-            <h1 class="principTitle">GESTION VILLE</h1>
-              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-                      <i class="ti-plus"></i> </button>
+                       
 
+            <h1 class="principTitle">GESTION VILLE</h1>
+              <c:if test="${!empty villes}">  
               
               <div>
-                        <table class="container" style="max-width:70%;">
+              
+                        <table class="container" style="max-width:70%;margin-top: 35px">
                           <thead>
                             <tr class="id">
                               <th><h1>Id</h1></th>
-                              <th><h1>Nom</h1></th>
-                              <th><h1>Code</h1></th>
+                              <th><h1>Libellé Ville</h1></th>
+                             
                               
                               <th><h1>Action</h1></th>
                              
                               
                             </tr>
                           </thead>
-                          <tbody>
+                           <tbody>
+                            <c:forEach  var="ville" items="${ villes }" >
+                         
                             <tr>
-                              <td>Google</td>
-                              <td>9518</td>
-                              <td>6369</td>
+                              <td><c:out value="${ ville.id }"></c:out></td>
+                              <td><c:out value="${ ville.nom }"></c:out></td>
+                           
                              
                               <td>
-                                <button type="button" class="btn btn-primary" title="Modifier" data-toggle="modal" data-target="#myMod"><i class="fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                              
+                               <a href="<c:url value="/SupprimerV"><c:param name="idVille" value="${ ville.id }" ></c:param>
+                               <c:param name="villes" value="${ villes }" ></c:param>
+                               </c:url>">
+                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button></a>
                               </td>
                              
                             </tr>
-                          
+                          </c:forEach>
                           </tbody>
+                          
+                           
                         </table>
-
-    
-                    </div>
-
-            
-
-
-                    <!-- The Modal -->
-  <div class="modal fade" id="myModal" >
-    <div class="modal-dialog" style="margin-left: 28%">
-      <div class="modal-content" style="width: 650px ;background-color:#191919; height: 400px">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          
-          <button type="button" class="close" data-dismiss="modal" style="color: white">×</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-           		<div class="login-box">
-        	
-		      <form class="box" action="ajout_vol.html" method="post">
-		          <h1 class="title">Ajouter Ville</h1>
-		          <br>
-		          	 
-		          	 <table   width="100%" align="center">
-		          	 	<tr>
-		          	 		<td width="20%" align="center">
-			          	 		<label for="nom">Nom</label>	
-			          	 	</td>
-			          	 	<td width="30%">
-								<input class="nom" type="text" required="required">
-							</td>
-					 		<td width="20%" align="center">
-							 	<label for="code">Code</label>
-							 </td>
-							 <td width="30%">	
-				            	<input class="code" type="text" required="required">
-					 		</td>
-					
-		            	</tr>
-
-		            </table>
-
-		             
-		             <input type="submit" name="" value="Ajouter Ville">
-		      	</form>
-
-    	 </div>
-        </div>
-        </div>
-    </div>
-  </div>
-
-</div>
-
-
-         
-          
+     
   
-
+                    </div>
+  </c:if>
+            
+<div class="test" style="margin-top: 150px;">
+<c:if test="${empty villes}">  
+<br>
+   <h1 class="testin"><string  style="color:#d81414cf; text-align:center"><i class="fa fa-times-circle" aria-hidden="true" style="color:#d81414cf;" ></i> &nbsp; Aucune ville enregistrée</string><h1>  
+</c:if> 
+</div>
+</div>
+     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="css1/js/main.js"></script>
+    
+    
 </body>
 
 </html>
