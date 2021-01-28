@@ -32,61 +32,98 @@
             <div id="main-menu" class="">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Tableau de Bord </a>
+                        <a href="dashboard.jsp"> <i class="menu-icon fa fa-line-chart"></i>Tableau de Bord </a>
                     </li>
                     <h3 class="menu-title">Liste des Gestions</h3><!-- /.menu-title -->
                     <li class="">
                         <a href="G_vol.jsp" > <i class="menu-icon fa fa-plane" ></i>Gestion Vol</a>
                        
                     </li>
-                    <li class="">
-                        <a href="G_reservation.jsp"> <i class="menu-icon fa fa-calendar"></i>Gestion Réservation</a>
-                        
-                    </li>
+                 
                     <li class="">
                         <a href="G_Aeroport.jsp" > <i class="menu-icon fa fa-th"></i>Gestion Aéroport</a>
                         
                     </li>
 
+
+
+
+                   
+                    </li>
                     
-                    <li class="">
-                        <a href="G_utilisateur.jsp"> <i class="menu-icon fa fa-user-circle"></i>Gestion Utilisateur</a>
-                       
+                    
+                      <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-user"></i>Gestion Admin</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                            
+                            <form action="GestionA" method="get">
+                                 <button class="ajouter" type="submit" title="Ajouter"> <i class="fa fa-plus-circle"></i> &nbsp;  &nbsp; Ajouter Admin</button>
+                            </form>
+                             
+                            </li>
+                            <br>
+                            <li>
+                            
+                            <form action="ListerA" method="get">
+                               <button class="ajouter" type="submit"  title="Affichage"> <i class="fa fa-eye"></i> &nbsp; &nbsp; Voir Des Admins</button>       
+                            </form>
+                            </li>
+                            
+                        </ul>
                     </li>
                     
 
-                    
-                    <li class="">
-                        <a href="G_admin.jsp"> <i class="menu-icon ti-user"></i>Gestion Admin</a>
-                        
+                   <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-flag"></i>Gestion Ville</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                            
+                            <form action="GestionV" method="get">
+                                 <button class="ajouter" type="submit"  title="Ajouter"> <i class="fa fa-plus-circle"></i> &nbsp;  &nbsp; Ajouter Ville</button>
+                            </form>
+                             
+                            </li>
+                            <br>
+                            <li>
+                            
+                            <form action="ListerVilles" method="get">
+                               <button class="ajouter" type="submit" style="background-color:#272c33; BORDER: none;cursor: pointer" title="Affichage"> <i class="fa fa-eye"></i> &nbsp; &nbsp; Voir Des Villes</button>       
+                            </form>
+                            </li>
+                            
+                        </ul>
                     </li>
-
-
-                    <li class="">
-                        <a href="G_ville.jsp"> <i class="menu-icon ti-user"></i>Gestion Ville</a>
-                        
-                    </li>
-
+                  
                    </ul>
                    
             </div><!-- /.navbar-collapse -->
         </nav>
-    </aside><!-- /#left-panel -->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     </aside>   
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="css1/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    
     <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="css1/js/dashboard.js"></script>
-    <script src="css1/js/widgets.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/widgets.js"></script>
     <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
     <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  
+  <!-- --> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="css1/js/main.js"></script>
+
+   
+   
+  
+  
   <!-- si on a un cas d'erreur lié au js alors j'ai deja suppr un code jq-->
 </body>
 </html>

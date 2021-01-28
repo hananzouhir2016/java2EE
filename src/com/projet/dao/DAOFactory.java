@@ -120,6 +120,7 @@ public class DAOFactory
 		*/
 	return new AdminDaoImpl( this );
 	}
+<<<<<<< main
 	
 	public VolDAO getVolDAO()
 	{
@@ -138,5 +139,7 @@ public class DAOFactory
 	}
 	
 	
+=======
+>>>>>>> main
 	}
 
