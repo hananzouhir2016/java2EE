@@ -11,5 +11,5 @@ public interface VolDAO {
 	void supprimer( Vol vol) throws DAOException;
 	void modifier( Vol vol) throws DAOException;
 	
-	List<Vol> lister()throws DAOException;
+	List<Vol> chercher()throws DAOException;
 }
