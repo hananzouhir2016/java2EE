@@ -118,7 +118,7 @@ public class DAOFactory
 		/*
 		this pour instance de la classe DAOFactory
 		*/
-	return new VolDAOImpl( this );
+	return new AdminDaoImpl( this );
 	}
 	
 	public VolDAO getVolDAO()
