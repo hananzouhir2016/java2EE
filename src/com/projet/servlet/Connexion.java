@@ -6,12 +6,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.projet.dao.DAOFactory;
+import com.projet.dao.Reservationdao;
 import com.projet.dao.Utilisateurdao;
 import com.projet.model.Utilisateur;
 import com.projet.service.UtilisateurService;
-
+import com.projet.service.VerificationDonnée;
+import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Connexion
  */
@@ -26,6 +27,7 @@ public class Connexion extends HttpServlet {
 	public static final String ATT_CLIENT = "utilisateur";
 	public static final String ATT_FORM = "form";
 	private Utilisateurdao utilisateurdao;
+	private Reservationdao reservationdao;
 	private  DAOFactory daofactory;
      public void init() throws ServletException {
 		
@@ -40,19 +42,36 @@ public class Connexion extends HttpServlet {
 		 */
 		this.daofactory= (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY );
 		this.utilisateurdao=daofactory.getUtilisateurDao();
+		this.reservationdao=daofactory.getReservationDao();
+		
+		}
+     public void doGet( HttpServletRequest request,HttpServletResponse response ) throws ServletException, IOException
+		{
+		/* Affichage de la page d'inscription */
+		this.getServletContext().getRequestDispatcher("/Connection.jsp").forward( request, response );
 		}
 
     public void doPost( HttpServletRequest request,HttpServletResponse response ) throws ServletException, IOException
-	{
+	{	
 	/* Affichage de la page d'inscription */
-    	UtilisateurService form = new UtilisateurService ( utilisateurdao );
-		/* Traitement de la requête et récupération du bean en
-		résultant */
-		Utilisateur utilisateur = form.connecterUtilisateur( request);
-		/* Stockage du formulaire et du bean dans l'objet request
-		*/
+    	UtilisateurService form = new UtilisateurService (utilisateurdao);
+    	
+		/* Traitement de la requête et récupération du bean en résultant */
+    	
+		Utilisateur utilisateur = form.connecterUtilisateur( request);		
+		/* Stockage du formulaire et du bean dans l'objet request*/
+		
+		HttpSession session = request.getSession();
 		request.setAttribute(ATT_FORM , form );
-		request.setAttribute( ATT_CLIENT, utilisateur );
-	this.getServletContext().getRequestDispatcher("/utilisateur.jsp").forward( request, response );
-	}
+		request.setAttribute(ATT_CLIENT, utilisateur );
+		session.setAttribute("sessionUtilisateur", utilisateur);
+		if(utilisateur!=null) 
+		{
+		session.setAttribute("sessionUtilisateur", utilisateur);
+	    this.getServletContext().getRequestDispatcher("/utilisateur.jsp").forward( request, response );
+		}
+		else {
+			 this.getServletContext().getRequestDispatcher("/Connection.jsp").forward( request, response );
+		}
+		}	
 }

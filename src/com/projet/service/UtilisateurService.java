@@ -94,15 +94,12 @@ public class UtilisateurService {
 	
 	
 	public Utilisateur connecterUtilisateur(HttpServletRequest request)
-	{
+	{ 
 	String email =VerificationDonnée.getValeurChamp(request, "email");
 	String mdp =VerificationDonnée.getValeurChamp(request, "mdp");
-	Utilisateur utilisateur = new Utilisateur();
-	utilisateur.setEmail(email);
-	utilisateur.setMdp(mdp);
-
+	Utilisateur utilisateur=utilisateurdao.trouver(email,mdp);
 	return utilisateur;
-}
+    }
 	
 private void setErreur(String champ, String message) 
 {

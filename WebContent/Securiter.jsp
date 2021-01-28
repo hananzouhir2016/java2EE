@@ -43,8 +43,8 @@
 						<td>
 							<div id="myFor">Réinitialisez votre mot de passe.</div>
 							<div id="myForm" style="display: none;">
-								<label class="er" style="margin-right:10px;">Nom </label>
-                        <input id="rtt" type="text" value="entrer nom" /> <br> 
+								<label class="er" style="margin-right:10px;">Mots de passe</label>
+                        <input id="rtt" type="text" value="${sessionScope.sessionUtilisateur.mdp}" /> <br> 
 						<input type="submit" class="btn default" value="enregistrer" />	
 						</div>
 							</div>

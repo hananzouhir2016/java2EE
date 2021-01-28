@@ -1,4 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
+
 <html>
 <head>
 <title>Travel</title>
@@ -44,27 +46,18 @@
 							</div>
 							<div class="collapse navbar-collapse">
 								<ul class="nav navbar-nav navbar-right">
-									<li class="smooth-menu"><a href="#home">home</a></li>
+									<li class="smooth-menu"><a href="/index.jsp">
+					
+
+									home</a></li>
 									<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 									<li>
-										<button class="book-btn"  onclick="document.getElementById('id01').style.display='block'">Connecter</button>
-										<div id="id01" class="modal">
-											<form class="modal-content animate" style="width: 30%;" method="post" action="Connexions">
-												<div class="imgcontainer">
-													<span onclick="document.getElementById('id01').style.display='none'"class="close" title="Close Modal">&times;</span> 
-												</div>
-												<div class="container" >
-													<label><b>Email</b></label> </br>
-													<input type="text" placeholder="Enter email" name="email"required></br> 
-													<label><b>Mots passe</b></label></br>
-													<input type="password" placeholder="Enter mots passe" name="mdp" required></br>
-													
-													<button type="submit" class="book-btn" style="width: 30%;">SE CONNECTER</button>
-													</form>
-													<form method="post" action="GestionUtilis">
-													<button type="submit" class="book-btn" style="width: 30%;margin-top:30px;">CREER UN COMPTE</button>
-													</form>
-												</div>
+									<form method="get" action="Connexions">
+										<button type="submit" class="book-btn"  onclick="document.getElementById('id01').style.display='block'">
+										Se connecter
+										</button>
+					               </form>					
+										
 									</li>
 								</ul>
 							</div>
@@ -79,6 +72,7 @@
 	
 	<script src="assets/js/jquery.js"></script>
 	<script type="text/javascript">
+	
 	var modal = document.getElementById('id01');
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) 

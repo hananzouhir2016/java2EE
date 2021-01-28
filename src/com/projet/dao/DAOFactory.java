@@ -75,7 +75,7 @@ public class DAOFactory
 	/*les informations lues avec succès, nous tentons de charger le driver JDBC dont le nom est précisé dans le fichierdao.properties*/
 	try 
 	{
-	Class.forName(driver);
+	Class.forName("com.mysql.jdbc.Driver");
 	} 
 	catch ( ClassNotFoundException e ) 
 	{

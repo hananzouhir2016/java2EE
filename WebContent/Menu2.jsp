@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html>
 <head>
@@ -49,11 +50,18 @@
 							</div>
 							<div class="collapse navbar-collapse">
 								<ul class="nav navbar-nav navbar-right">
-									<li class="smooth-menu"><a href="#home">home</a></li>
+									<li class="smooth-menu"><a href="index.jsp">home</a></li>
+											
 									<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 									<li>
-										<button class="book-btn"
-											onclick="document.getElementById('id01').style.display='block'">Connecter</button>
+										<button class="book-btn" style="width:200px;"
+											onclick="document.getElementById('id01').style.display='block'">
+											<c:if test="${!empty sessionScope.sessionUtilisateur}">
+                                            <%-- Si l'utilisateur existe en session, alors
+                                             on affiche son adresse email. --%>
+                                             <p class="succes"> bonjour;${sessionScope.sessionUtilisateur.nom}${sessionScope.sessionUtilisateur.prenom}</p>
+                                                  </c:if>
+											</button>
 										<div id="id01" class="modal">
 											<form class="modal-content animate" style="width: 26%;">
 												<div class="imgcontainer">
@@ -94,12 +102,9 @@
 							<div class="about-us-txt" style="margin-top: 200px;">
 								<div class="collapse navbar-collapse">
 									<ul class="nav1 navbar-nav ">
-										<li class="smooth-menu"><a href="utilisateur.jsp"
-											style="color: #f3f4f4;">Accuiel</a></li>
-										<li class="smooth-menu"><a href="index.jsp"
-											style="color: #f3f4f4;">Mes voyages</a></li>
-										<li class="smooth-menu"><a href="parametre.jsp"
-											style="color: #f3f4f4;">Details du compte</a></li>
+										<a href="utilisateur.jsp"style="color: #f3f4f4; margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Accuiel</a>
+										<a href="MesVoyage.jsp" style="color: #f3f4f4;margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Mes voyages</a>
+								        <a href="parametre.jsp" style="color: #f3f4f4;margin-right:50px; font-family: 'Poppins', sans-serif;font-size: 14px;">Details du compte</a>
 									</ul>
 								</div>
 

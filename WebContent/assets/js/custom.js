@@ -166,13 +166,7 @@ $(document).ready(function(){
         
         //=============
 
-        $('li.smooth-menu a').bind("click", function(event) {
-            event.preventDefault();
-            var anchor = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $(anchor.attr('href')).offset().top - -1
-            }, 1200,'easeInOutExpo');
-        });
+       
         
         $('body').scrollspy({
             target:'.navbar-collapse',
