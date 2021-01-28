@@ -8,14 +8,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 /*
-* la mise en place de notre couche de données
-* classe qui va être en charge de l'instanciation des différents DAO de notre application
+* la mise en place de notre couche de donnï¿½es
+* classe qui va ï¿½tre en charge de l'instanciation des diffï¿½rents DAO de notre application
 */
 
 /*
 * lire les informations de configuration depuis le fichier propertie
-charger le driver JDBC du SGBD utilisé
-fournir une connexion à la base de données
+charger le driver JDBC du SGBD utilisï¿½
+fournir une connexion ï¿½ la base de donnï¿½es
 */
 public class DAOFactory 
 {
@@ -35,32 +35,32 @@ public class DAOFactory
 	this.password = password;
 	}
 	/*
-	* Méthode chargée de récupérer les informations de connexion à la
-	base de données, charger le driver JDBC et retourner une instance de la
+	* Mï¿½thode chargï¿½e de rï¿½cupï¿½rer les informations de connexion ï¿½ la
+	base de donnï¿½es, charger le driver JDBC et retourner une instance de la
 	Factory nous voulons instancier notre DAOFactory uniquement sous certaines conditions :
     si le fichier dao.properties est accessible ;
-    si les données qu'il contient sont valides ;
-    si le driver JDBC est bien présent dans l'application.
+    si les donnï¿½es qu'il contient sont valides ;
+    si le driver JDBC est bien prï¿½sent dans l'application.
 	*/
 	public static DAOFactory getInstance() throws DAOConfigurationException
 	{
-	/*permettre de gérer notre fichier de configuration*/
-	Properties properties = new Properties();
-	String url;
-	String driver;
-	String nomUtilisateur;
-	String motDePasse;
+	/*permettre de gï¿½rer notre fichier de configuration*/
+				Properties properties = new Properties();
+				String url;
+				String driver;
+				String nomUtilisateur;
+				String motDePasse;
 	
 	/*l'ouverture du fichier dao.properties*/
-	ClassLoader classLoader =Thread.currentThread().getContextClassLoader();
-	InputStream fichierProperties =classLoader.getResourceAsStream( FICHIER_PROPERTIES );
+		ClassLoader classLoader =Thread.currentThread().getContextClassLoader();
+		InputStream fichierProperties =classLoader.getResourceAsStream( FICHIER_PROPERTIES );
 	if ( fichierProperties == null ) 
-	{
-	throw new DAOConfigurationException( "Le fichier properties " + FICHIER_PROPERTIES + " est introuvable." );
-	}
-	try 
-	{
-	/*chargement des propriétés contenues dans le fichier*/
+			{
+			throw new DAOConfigurationException( "Le fichier properties " + FICHIER_PROPERTIES + " est introuvable." );
+			}
+			try 
+			{
+	/*chargement des propriï¿½tï¿½s contenues dans le fichier*/
 	properties.load( fichierProperties );
 	url = properties.getProperty( PROPERTY_URL );
 	driver = properties.getProperty( PROPERTY_DRIVER );
@@ -72,7 +72,7 @@ public class DAOFactory
 	{
 	throw new DAOConfigurationException( "format du fichier properties incorrect " + FICHIER_PROPERTIES, e );
 	}
-	/*les informations lues avec succès, nous tentons de charger le driver JDBC dont le nom est précisé dans le fichierdao.properties*/
+	/*les informations lues avec succï¿½s, nous tentons de charger le driver JDBC dont le nom est prï¿½cisï¿½ dans le fichierdao.properties*/
 	try 
 	{
 	Class.forName("com.mysql.jdbc.Driver");
@@ -85,17 +85,17 @@ public class DAOFactory
 	DAOFactory instance = new DAOFactory( url, nomUtilisateur,motDePasse );
 	return instance;
 	}
-	/* Méthode chargée de fournir une connexion à la base de
-	données */
+	/* Mï¿½thode chargï¿½e de fournir une connexion ï¿½ la base de
+	donnï¿½es */
 	
 	public Connection getConnection() throws SQLException 
 	{
 	return DriverManager.getConnection( url, username, password);
 	}
 	/*
-	Méthodes de récupération de l'implémentation des différents DAO dans application
-	qui va permetre que le DAO va pouvoir acquérir une connexion à la base de données,
-     en appelant sa méthode getConnection().
+	Mï¿½thodes de rï¿½cupï¿½ration de l'implï¿½mentation des diffï¿½rents DAO dans application
+	qui va permetre que le DAO va pouvoir acquï¿½rir une connexion ï¿½ la base de donnï¿½es,
+     en appelant sa mï¿½thode getConnection().
 	*/
 	public Utilisateurdao getUtilisateurDao()
 	{
@@ -120,5 +120,26 @@ public class DAOFactory
 		*/
 	return new AdminDaoImpl( this );
 	}
+<<<<<<< main
+	
+	public VolDAO getVolDAO()
+	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
+	return new VolDAOImpl( this );
+	}
+	
+	public AeropDAO getAeropDAO()
+	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
+	return new AeropDAOImpl( this );
+	}
+	
+	
+=======
+>>>>>>> main
 	}
 
