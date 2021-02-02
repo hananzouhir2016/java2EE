@@ -45,11 +45,30 @@
                         
                     </li>
 
-
+					<li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-flag"></i>Gestion Avion</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                            
+                            <form action="GestionAv" method="get">
+                                 <button class="ajouter" type="submit"  title="Ajouter"> <i class="fa fa-plus-circle"></i> &nbsp;  &nbsp; Ajouter Avion</button>
+                            </form>
+                             
+                            </li>
+                            <br>
+                            <li>
+                            
+                            <form action="ListerAvions" method="get">
+                               <button class="ajouter" type="submit" style="background-color:#272c33; BORDER: none;cursor: pointer" title="Affichage"> <i class="fa fa-eye"></i> &nbsp; &nbsp; Voir les avions </button>       
+                            </form>
+                            </li>
+                            
+                        </ul>
+                    </li>
 
 
                    
-                    </li>
+                   
                     
                     
                       <li class="menu-item-has-children dropdown">
