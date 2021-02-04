@@ -2,16 +2,14 @@ package com.projet.dao;
 
 import static com.projet.dao.DAOUtilitaire2.fermeturesSilencieuses;
 import static com.projet.dao.DAOUtilitaire2.initialisationRequetePreparee;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.projet.model.Utilisateur;
-import com.projet.model.Ville;
+
 
 public class AdminDaoImpl implements AdminDao {
 

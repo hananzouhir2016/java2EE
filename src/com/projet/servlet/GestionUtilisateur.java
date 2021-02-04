@@ -54,14 +54,17 @@ public class GestionUtilisateur extends HttpServlet {
 		Utilisateur utilisateur = form.creerUtilisateur( request);
 		/* Stockage du formulaire et du bean dans l'objet request
 		*/
+		HttpSession session = request.getSession();
 		request.setAttribute(ATT_FORM , form );
 		request.setAttribute( ATT_CLIENT, utilisateur );
 		request.setAttribute("erreurs", form.getErreurs());
-		if (form.getErreurs().isEmpty()) {
-			this.getServletContext().getRequestDispatcher("/utilisateur.jsp").forward( request, response );
+		request.setAttribute("resultat", form.getResultat());
+		session.setAttribute("sessionUtilisateur", utilisateur);
+		if (form.getResultat()!=null) {
+			this.getServletContext().getRequestDispatcher(VUE).forward( request, response );
 		}
 		else {
-		this.getServletContext().getRequestDispatcher( VUE).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/utilisateur.jsp").forward( request, response );
 		}
 		}
 	}

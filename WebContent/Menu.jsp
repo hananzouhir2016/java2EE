@@ -46,19 +46,51 @@
 							</div>
 							<div class="collapse navbar-collapse">
 								<ul class="nav navbar-nav navbar-right">
-									<li class="smooth-menu"><a href="/index.jsp">
-					
-
-									home</a></li>
+									<li><a href="index.jsp">home</a></li>
 									<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
+									
+								
+									<c:if test="${!empty sessionScope.sessionUtilisateur}">
 									<li>
-									<form method="get" action="Connexions">
-										<button type="submit" class="book-btn"  onclick="document.getElementById('id01').style.display='block'">
-										Se connecter
-										</button>
-					               </form>					
-										
-									</li>
+									<button class="book-btn" style="width:200px;"
+											onclick="document.getElementById('id01').style.display='block'">
+											<c:if test="${!empty sessionScope.sessionUtilisateur}">
+                                            <%-- Si l'utilisateur existe en session, alors
+                                             on affiche son adresse email. --%>
+                                             <p class="succes"> bonjour;${sessionScope.sessionUtilisateur.nom}${sessionScope.sessionUtilisateur.prenom}</p>
+                                                  </c:if>
+											</button>
+										<div id="id01" class="modal">
+											<form class="modal-content animate" style="width: 26%;" method="get" action="Deconnexions">
+												<div class="imgcontainer">
+													<span
+														onclick="document.getElementById('id01').style.display='none'"
+														class="close" title="Close Modal">&times;</span>
+												</div>
+												<div class="container">
+													<a  href="gerercompte.jsp" style="color: #00d8ff; margin-left: 40px;"><i
+														style='font-size: 24px' class='fas'>&#xf502;</i>Détails compte</a><br> 
+														<a href="MesVoyage.jsp" style="color: #00d8ff; margin-left: 40px;"><i style='font-size: 24px' class='fas'>&#xf072;</i>Mes voyages</a><br> 
+													
+														
+										               <button type="submit" class="book-btn" >Se deconnecter
+										        </button>
+					           
+												</div>
+												</form>
+												</div>
+									 </li>
+								
+                                     </c:if>
+                                     <c:if test="${empty sessionScope.sessionUtilisateur}">
+                                             <li> 
+                                               <form method="get" action="Connexions">
+										        <button type="submit" class="book-btn"  onclick="document.getElementById('id01').style.display='block'">
+										            Se Connecter
+										        </button>
+					                          </form>
+					                         </li>
+									 </c:if>
 								</ul>
 							</div>
 						</div>

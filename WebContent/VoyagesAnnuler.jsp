@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -16,9 +17,9 @@
 
 
 		
-	
-	
-		<div class="tab-content clearfix col-md-9" style="display: block !important;width: 70%;" id="k">
+			<c:forEach items="${ sessionScope.sessionUtilisateur.reservations2 }" var="reservation" varStatus="boucle">
+	<c:forEach items="${reservation.vols }" var="vol" varStatus="boucle">
+		<div class="tab-content clearfix col-md-9" style="display: block !important;width: 71%;" id="k">
 		
 				<!-- Tab 4 -->
 				<div class="tab-pane " id="4a" style="display: block !important;margin: 4px;">
@@ -29,7 +30,7 @@
 							<div class="tm-recommended-description-box" style="padding:20px;padding-top:0px;">
 								<div class="LegDetails_container__3uhle LegSummary_legDetailsWithChevron__333Y2" aria-hidden="false">
 									<div class="LogoImage_container__2Q2Ny LegLogo_logoContainer__1Zf8A LegSummary_legLogo__3WRVi">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">Royal Air Maroc + transavia + easyJet</span>
+										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">Nom Avion :${vol.avion.nom}</span>
 									</div>
 									<br>
 									<br>
@@ -37,21 +38,21 @@
 									<br>
 									
 								   
-									<div class="LegInfo_legInfo__2UyXp">
+									<div class="LegInfo_legInfo__2UyXp" style="flex-flow: initial;">
 										<div class="LegInfo_routePartialDepart__Ix_Rt">
 											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
 												<div>
-													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">09:35</span>
+													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">${vol.heureDepart}</span>
 												</div>
 											</span>
 											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">AGA</span></br>
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
-											12/03/2020</span>
+												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">Airport Départ:${vol.airport1.nom}</span></br>
+												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">${vol.dateDepart}
+</span>
 											</span>
 										</div>
 										<div class="LegInfo_stopsContainer__2Larg">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">12 h 45</span>
+											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">${vol.duree}h</span>
 											<div class="LegInfo_stopLine__3Zhmj">
 												<span class="LegInfo_stopDot__3pQwb"></span>
 										<span class="LegInfo_stopDot__3pQwb"></span>
@@ -62,7 +63,7 @@
 									</div>
 									<div class="LegInfo_stopsLabelContainer__1S6VX">
 										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 LegInfo_stopsLabelRed__33562">
-											3 escales
+											${vol.nbrescale}Escales
 										</span>
 										&nbsp;
 								</div>
@@ -70,15 +71,15 @@
 								<div class="LegInfo_routePartialArrive__1fHVy">
 									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
 										<div>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">22:20</span>
+											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">${vol.heureArrivee}</span>
 										</div>
 									</span>
 									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
 										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
-											ORY</span><br>
+											Airport D'arrivée:${vol.airport2.nom}</span><br>
 											
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
-											12/03/2020</span>
+											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">${vol.dateArrivee}
+											</span>
 										</span>
 									</div>
 								</div>
@@ -87,41 +88,36 @@
 								
 								</div>
 							</div>
-							<div style="background-color: #00d8ff;width: 300px;padding:20px;">
-								<p class="tm-recommended-price-link">Prix:$440</p>
-								<p class="tm-recommended-price-link">Durée:3h</p>
-								<p class="tm-recommended-price-link">Date  reservation:12/05/2020</p>
-								<p class="tm-recommended-price-link">Nombre de passager:23</p>
-								<p class="tm-recommended-price-link">Etat Reservation:Valider</p>
-									<button class="btn default" style="color:black;font-family:'Poppins', sans-serif;font-size:19px;" id="my"
-							onclick="openFor(document.getElementById('myForm'),document.getElementById('myFor'), document.getElementById('my'), document.getElementById('myt'))">annuler</button>
-							<button class="btn default"  id="my" style="color:black;font-family:'Poppins', sans-serif;font-size:19px;"
-							onclick="openFor(document.getElementById('myForm'),document.getElementById('myFor'), document.getElementById('my'), document.getElementById('myt'))">Valider</button>
-							<button class="btn default"  id="my" style="color:black;font-family:'Poppins', sans-serif;font-size:19px;"
-							onclick="openFor(document.getElementById('myForm'),document.getElementById('myFor'), document.getElementById('my'), document.getElementById('myt'))">Modifier</button>
+							<div style="background-color: #00d8ff;width: 400px;padding:20px;">
+							
+							    <p class="tm-recommended-price-link">Prix:${vol.prix}DH</p>
+							    <p class="tm-recommended-price-link">Date Reservation:${ reservation.date}</p>
+								<p class="tm-recommended-price-link">Nombre de passager:${ reservation.nbpassagers}</p>
+								<p class="tm-recommended-price-link">Etat Reservation:${ reservation.etat}</p>
+								<p class="tm-recommended-price-link">Durée Vol:${ vol.duree}</p>
 							</div>                        
 						</div>
 						</div>
 						</div>
 						</div>
-						
-						
-						
+						</c:forEach>
+						</c:forEach>
+				
 						
 					
 						
 						<div id="s" style="width:20%;margin-right: 80px;">
-			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="gerercompte.jsp"> 
+			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="MesVoyage.jsp"> 
 			<i class='fas'>&#xf4fe;</i>
 			Voyages Valider
 			</a>
 			<hr>
-			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="Securiter.jsp"> 
+			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="ReservationNonEnregistrer.jsp"> 
 			<i class='fas'>&#xf502;</i>
-		Voyages
+		Voyages Non Enregistrer
 			</a>
 			<hr>
-			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif">
+			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="VoyagesAnnuler.jsp">
 		  <i class="fa fas" style="	padding: 15px;">&#xf011;</i>
 		  voyages annuler
 			</a>

@@ -50,7 +50,7 @@
 							</div>
 							<div class="collapse navbar-collapse">
 								<ul class="nav navbar-nav navbar-right">
-									<li class="smooth-menu"><a href="index.jsp">home</a></li>
+									<li><a href="index.jsp">home</a></li>
 											
 									<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 									<li>
@@ -63,7 +63,7 @@
                                                   </c:if>
 											</button>
 										<div id="id01" class="modal">
-											<form class="modal-content animate" style="width: 26%;">
+											<form class="modal-content animate" style="width: 26%;" method="get" action="Deconnexions">
 												<div class="imgcontainer">
 													<span
 														onclick="document.getElementById('id01').style.display='none'"
@@ -71,24 +71,25 @@
 												</div>
 												<div class="container">
 													<a style="color: #00d8ff; margin-left: 40px;"><i
-														style='font-size: 24px' class='fas'>&#xf502;</i>Détails compte</a></br> 
-														<a style="color: #00d8ff; margin-left: 40px;"><i style='font-size: 24px' class='fas'>&#xf072;</i>Mes voyages</a></br> 
-														<a style="color: #00d8ff; margin-left: 40px;">Déconnexion</a></br>
+														style='font-size: 24px' class='fas'>&#xf502;</i>Détails compte</a><br> 
+														<a style="color: #00d8ff; margin-left: 40px;"><i style='font-size: 24px' class='fas'>&#xf072;</i>Mes voyages</a><br> 
+														          
+										        <button type="submit" class="book-btn" >Se deconnecter
+										        </button>
+												</div>
+												</form>
+												
 												</div>
 									</li>
 								</ul>
 							</div>
-
-
-							</li>
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="home-border"></div>
 		</div>
-		</div>
+		
 
 	</header>
 
@@ -104,7 +105,7 @@
 									<ul class="nav1 navbar-nav ">
 										<a href="utilisateur.jsp"style="color: #f3f4f4; margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Accuiel</a>
 										<a href="MesVoyage.jsp" style="color: #f3f4f4;margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Mes voyages</a>
-								        <a href="parametre.jsp" style="color: #f3f4f4;margin-right:50px; font-family: 'Poppins', sans-serif;font-size: 14px;">Details du compte</a>
+								        <a href="gerercompte.jsp" style="color: #f3f4f4;margin-right:50px; font-family: 'Poppins', sans-serif;font-size: 14px;">Details du compte</a>
 									</ul>
 								</div>
 

@@ -140,5 +140,20 @@ public class DAOFactory
 		*/
 	return new AdminDaoImpl( this );
 	}
+	public 	AvionDao 	getAvionDao()
+	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
+	return new AvionDaoImpl( this );
+	}
+	
+	public 	EscaleDao 	getEscaleDao()
+	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
+	return new EscaleDaoImpl( this );
+	}
 	}
 

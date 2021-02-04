@@ -1,20 +1,11 @@
 package com.projet.service;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.Part;
 import com.projet.model.Utilisateur;
-import com.projet.dao.DAOException;
 import com.projet.dao.Utilisateurdao;
-import com.projet.service.*;
+
+
 public class UtilisateurService {
 	
 	
@@ -23,6 +14,11 @@ public class UtilisateurService {
 	public Map<String, String> getErreurs() 
 	{
 		return erreurs;
+	}
+	
+	public String getResultat() 
+	{
+		return resultat;
 	}
 	private Utilisateurdao utilisateurdao;
 	
@@ -38,15 +34,15 @@ public class UtilisateurService {
 	String telephone =VerificationDonnée.getValeurChamp(request, "telephone");
 	String email =VerificationDonnée.getValeurChamp(request, "email");
 	String mdp =VerificationDonnée.getValeurChamp(request, "mdp");
-
 	Utilisateur utilisateur = new Utilisateur();
+	Utilisateur u = new Utilisateur();
 	try 
 	{
 		VerificationDonnée.validationNom(nom);
 	} 
 	catch (Exception e) 
 	{
-		setErreur("nom", e.getMessage());
+		setErreurs("nom", e.getMessage());
 	}
 	utilisateur.setNom(nom);
 	try 
@@ -55,7 +51,7 @@ public class UtilisateurService {
 	} 
 	catch (Exception e) 
 	{
-		setErreur("prenom", e.getMessage());
+		setErreurs("prenom", e.getMessage());
 	}
 	utilisateur.setPrenom(prenom);
 	utilisateur.setCin(cin);
@@ -65,7 +61,7 @@ public class UtilisateurService {
 	} 
 	catch (Exception e) 
 	{
-		setErreur("email", e.getMessage());
+		setErreurs("email", e.getMessage());
 	}
 	utilisateur.setEmail(email);
 	utilisateur.setMdp(mdp);
@@ -75,20 +71,29 @@ public class UtilisateurService {
 	} 
 	catch (Exception e) 
 	{
-		setErreur("telephone", e.getMessage());
+		setErreurs("telephone", e.getMessage());
 	}
 	utilisateur.setTelephone(telephone);
 	
 	if (erreurs.isEmpty())
-	{
-		utilisateurdao.ajouter( utilisateur);
-		resultat = "Succès de la création du client.";
+	{ 
+	   u= utilisateurdao.Chercher(email);
+	   if(u==null)
+	   {
+		   utilisateurdao.ajouter(utilisateur);
+	   }
+	   else
+	   {
+			resultat = "Adresse email déja utilisé"; 
+	   }
 	} 
 	else 
 	{
 		resultat = "Échec de la création du client.";
 	}
+	
 	return utilisateur;
+	
 }
 	
 	
@@ -98,11 +103,80 @@ public class UtilisateurService {
 	String email =VerificationDonnée.getValeurChamp(request, "email");
 	String mdp =VerificationDonnée.getValeurChamp(request, "mdp");
 	Utilisateur utilisateur=utilisateurdao.trouver(email,mdp);
+	if(utilisateur==null)
+	   {
+		resultat = "Adresse email ou mots passe incorrecte"; 
+	   }
 	return utilisateur;
     }
 	
-private void setErreur(String champ, String message) 
+	
+	public Utilisateur ModifierUtilisateur(HttpServletRequest request, Utilisateur utilisateur)
+	{
+	String nom =VerificationDonnée.getValeurChamp(request, "nom");
+	String prenom= VerificationDonnée.getValeurChamp(request, "prenom");
+	String cin =VerificationDonnée.getValeurChamp(request, "cin");
+	String telephone =VerificationDonnée.getValeurChamp(request, "telephone");
+	String email =VerificationDonnée.getValeurChamp(request, "email");
+	String mdp =VerificationDonnée.getValeurChamp(request, "mdp");
+	String valeur =VerificationDonnée.getValeurChamp(request, "id");
+	utilisateur.setId(Integer.parseInt(valeur));
+	try 
+	{
+		VerificationDonnée.validationNom(nom);
+	} 
+	catch (Exception e) 
+	{
+		setErreurs("nom", e.getMessage());
+	}
+	utilisateur.setNom(nom);
+	try 
+	{
+		VerificationDonnée.validationPrenom(prenom);
+	} 
+	catch (Exception e) 
+	{
+		setErreurs("prenom", e.getMessage());
+	}
+	utilisateur.setPrenom(prenom);
+	utilisateur.setCin(cin);
+	try 
+	{
+		VerificationDonnée.validationEmail(email);
+	} 
+	catch (Exception e) 
+	{
+		setErreurs("email", e.getMessage());
+	}
+	utilisateur.setEmail(email);
+	utilisateur.setMdp(mdp);
+	try 
+	{
+		VerificationDonnée.validationTelephone(telephone);
+	} 
+	catch (Exception e) 
+	{
+		setErreurs("telephone", e.getMessage());
+	}
+	utilisateur.setTelephone(telephone);
+	
+	if (erreurs.isEmpty())
+	{
+		utilisateurdao.modifier( utilisateur);
+	
+		resultat = "Reussite de la Modification du Information Personnelles";
+	
+	} 
+	else 
+	{
+		resultat = "Échec de la Modification du Information Personnelles";	
+	}
+	return utilisateur;
+}
+	
+private void setErreurs(String champ, String message) 
 {
 	erreurs.put(champ, message);
 }
+
 }

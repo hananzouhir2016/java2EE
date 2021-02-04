@@ -33,20 +33,17 @@
 												<div class="gallary-header ">
 												<h2 style="font-size: 20px;margin-left:150px;">Utilisateur - Se connecter</h2>
 												</div>
-													<label style="font-family: 'Poppins', sans-serif"><b>Email</b></label> </br>
-													<input style="width: 45%;" type="text" placeholder="Enter email" name="email"required></br>
+													<label style="font-family: 'Poppins', sans-serif"><b>Email</b></label> <br>
+													<input style="width: 45%;" type="text" placeholder="Enter email" name="email"required><br>
 													 
-													<label style="font-family: 'Poppins', sans-serif"><b>Mots passe</b></label></br>
-													<input style="width: 45%;"type="password" placeholder="Enter mots passe" name="mdp" required></br>
-													<span id="er" style="display:none;">
-													<c:if test="${empty sessionScope.sessionUtilisateur}">
-                                               <%-- Si l'utilisateur existe en session, alors
-                                             on affiche son adresse email. --%>
-                                                 <p class="succes">Les données incorrect</p>
-                                                  </c:if>
-													</span>
+													<label style="font-family: 'Poppins', sans-serif"><b>Mots passe</b></label><br>
+													<input style="width: 45%;"type="password" placeholder="Enter mots passe" name="mdp" required><br>
+													<span> ${form.resultat}</span><br>
 													<button type="submit" class="book-btn" style="width: 45%;margin-top:10px;">SE CONNECTER</button>
 													</form>
+													
+													
+													
 													<div class="gallary-header ">
 												    <h2 style="font-size: 20px;margin-left:150px;margin-top:20px;">Nouveau utilisateur</h2>
 												      </div>
@@ -56,6 +53,7 @@
 													<button type="submit" class="book-btn" style="width: 45%;margin-top:5px;">CREER UN COMPTE</button>
 		                                             </form>
 		</div>
+		
 		</section>
 		
 		

@@ -15,38 +15,49 @@ public class VerificationDonnée
 	}
 	
 	
-	static void validationNom(String nom) throws Exception 
-	{ 
-		if (nom != null && nom.length() < 2)
-			{
-				throw new Exception("Le nom d'utilisateur doit contenir au moins 2 caractères.");
+	static void validationNom(String nom) throws Exception {
+		if (nom != null) {
+			if (nom.length() < 2) {
+				throw new Exception("Le nom doit contenir au moins 2 caractères.");
 			}
-		
+		} else {
+			throw new Exception("Merci d'entrer un nom.");
+		}
 	}
 	
-	static void validationPrenom(String prenom) throws Exception 
-	{
-			if (prenom != null && prenom.length() < 2)
-			{
-				throw new Exception("Le prenom d'utilisateur doit contenir au moins 2 caractères.");
+	static void validationPrenom(String prenom)throws Exception {
+		if (prenom != null) {
+			if (prenom.length() < 2) {
+				throw new Exception("Le prenom doit contenir au moins 2 caractères.");
 			}
+		} else {
+			throw new Exception("Merci d'entrer un prenom.");
+		}
 	}
+	
+	
 	
 	static void validationAdresse(String adresse) throws Exception 
 	{
-
-	    if(adresse != null &&  adresse.length() < 10) 
+       if(adresse!=null)
+       {
+	    if(  adresse.length() < 10) 
 		{
 			throw new Exception("L'Adresse doit contenir au moins 2 caractères.");
-		}  
+		} 
+       }
+       else {
+			throw new Exception("Merci d'entrer l'adresse.");
+		}
+       
 		
 	}
 	
 	static void validationTelephone(String telephone) throws Exception 
 	{
-	 
+	 if(telephone != null) {
 		
-			if (telephone != null && !telephone.matches("^\\d+$")) 
+			if ( !telephone.matches("^\\d+$")) 
 			{
 				throw new Exception("Le numéro de téléphone doit uniquement contenir des chiffres.");
 			} 
@@ -54,14 +65,24 @@ public class VerificationDonnée
 			{
 				throw new Exception("Le numéro de téléphone doit contenir au moins 4 chiffres.");
 			}
+	 }
+	 else {
+			throw new Exception("Merci d'entrer Numéro téléphone.");
+		}
 		} 
 		
 	
 	static void validationEmail(String email) throws Exception
 	{
+		if(email!=null)
+		{
 		if (email != null && !email.matches("([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)")) 
 		{
 			throw new Exception("Merci de saisir une adresse mail valide.");
+		}
+		}
+		else {
+			throw new Exception("Merci d'entrer l'email.");
 		}
 	}
 }

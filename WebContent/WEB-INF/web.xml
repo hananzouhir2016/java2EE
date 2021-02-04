@@ -11,6 +11,8 @@
 			<url-pattern>/GestionUtilis</url-pattern>
 	</servlet-mapping>
 	
+	 
+	
 	<servlet>
 		<servlet-name>Connexion</servlet-name>
 		<servlet-class>com.projet.servlet.Connexion</servlet-class>

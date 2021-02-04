@@ -4,12 +4,11 @@ import com.projet.model.Vol;
 import java.util.List;
 
 public interface VolDAO {
-	
 	void ajouter( Vol vol ) throws DAOException;
 	Boolean	annuler(Vol vol) throws DAOException;
-	
 	void supprimer( Vol vol) throws DAOException;
 	void modifier( Vol vol) throws DAOException;
-	
 	List<Vol> chercher()throws DAOException;
+	List<Vol> trouver( int id )throws DAOException;
+	void CompterNbrReservation(int nbrpassager,int id)throws DAOException;
 }

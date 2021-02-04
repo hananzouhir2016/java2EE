@@ -94,14 +94,15 @@ color:blue;}
 						<div class="col-sm-12">
 							<div class="single-about-us">
 								<div class="about-us-txt">
+							
 									<form method="post" action="GestionUtilis">
                                       <div class="row">
                                         <div class="col-25">
                                                 <label for="fname">Nom</label>
                                         </div>
                                         <div class="col-75">
-                                                <input type="text" id="fname" name="nom" placeholder="Your name.." value="${utilisateur.nom}">
-                                                </br><span>${form.erreurs['nom']}</span> 
+                                                <input type="text" id="fname" name="nom" placeholder="Enter votre nom" value="${utilisateur.nom}">
+                                                <br><span>${form.erreurs['nom']}</span> 
                                          </div>
                                        </div>
                                        <div class="row">
@@ -109,50 +110,31 @@ color:blue;}
                                                  <label for="lname">Prénom</label>
                                        </div>
                                        <div class="col-75">
-                                       <input type="text" id="lname" name="prenom" placeholder="Your last name.."value="${utilisateur.prenom}">
-                                       </br><span>${form.erreurs['prenom']}</span>
+                                       <input type="text" id="lname" name="prenom" placeholder="Entrer votre prenom" value="${utilisateur.prenom}">
+                                       <br><span>${form.erreurs['prenom']}</span>
                                        </div>
                                       </div>
                                       
-                                      <div class="row">
-                                         <div class="col-25">
-                                                 <label for="lname" >CIN</label>
-                                       </div>
-                                       <div class="col-75">
-                                       <input type="text" id="lname" name="cin" placeholder="Your last name.." value="${utilisateur.cin}">
-                                      
-                                       </div>
-                                      </div>
-                                      
-                                       <div class="row">
-                                         <div class="col-25">
-                                                 <label for="lname">Sexe</label>
-                                       </div>
-                                       <div class="col-75">
-                                         <select id="country" name="country">
-                                              <option value="australia">Femme</option>
-                                              <option value="canada">homme</option>
-                                         </select>
-                                       </div>
-                                       </div>
+                          
                                        
                                       <div class="row">
                                          <div class="col-25">
                                                  <label for="lname">Numero Téléphone</label>
                                        </div>
                                        <div class="col-75">
-                                       <input type="text" id="lname" name="telephone" placeholder="Your last name.."value="${utilisateur.telephone}">
-                                       </br> <span>${form.erreurs['telephone']}</span>
+                                       <input type="text" id="lname" name="telephone" placeholder="Votre telephone"value="${utilisateur.telephone}">
+                                       <br> <span>${form.erreurs['telephone']}</span>
                                        </div>
                                       </div>
+                                      
                                       
                                       <div class="row">
                                          <div class="col-25">
                                                  <label for="lname">Email</label>
                                        </div>
                                        <div class="col-75">
-                                       <input type="text" id="lname" name="email" placeholder="Your last name.." value="${utilisateur.email}">
-                                       </br> <span>${form.erreurs['email']}</span>
+                                       <input type="text" id="lname" name="email" placeholder="Entrer votre email" value="${utilisateur.email}">
+                                       <br> <span>${form.erreurs['email']}</span>
                                        </div>
                                       </div>
                                       
@@ -161,10 +143,10 @@ color:blue;}
                                                  <label for="lname">mots de passe</label>
                                        </div>
                                        <div class="col-75">
-                                       <input type="text" id="lname" name="mdp" placeholder="Your last name.." >
+                                       <input type="text" id="lname" name="mdp" placeholder="Entrer votre mots de passe " >
                                        </div>
                                       </div>
-                                      
+                                    <span> ${form.resultat}</span> 
                                   <div class="row">
                                       <input type="submit" value="Submit">
                                    </div>

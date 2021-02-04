@@ -1,17 +1,11 @@
 package com.projet.model;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 public class Utilisateur {
-	private List<Reservation> reservations; 
-	public List<Reservation> getReservations() {
-		return reservations;
-	}
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
-	}
+	private List<Reservation> reservations;
+	private List<Reservation> reservations2;
+	private List<Reservation> reservations3;
 	private int id;
 	private String nom;
 	private String prenom;
@@ -21,6 +15,29 @@ public class Utilisateur {
 	private String mdp;
 	private String telephone;
 	private String email;
+	
+	
+	public List<Reservation> getReservations2() {
+		return reservations2;
+	}
+	public void setReservations2(List<Reservation> reservations2) {
+		this.reservations2 = reservations2;
+	}
+	public List<Reservation> getReservations3() {
+		return reservations3;
+	}
+	public void setReservations3(List<Reservation> reservations3) {
+		this.reservations3 = reservations3;
+	}
+	
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
+
+	
 	
 
 	public int getId() {

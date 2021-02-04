@@ -1,9 +1,9 @@
 package com.projet.model;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Vol {
-	
 	private int id;
 	private Airport AeroportA;
 	private Airport AeroportD;
@@ -15,8 +15,27 @@ public class Vol {
 	private Double prix;
 	private int nbPlaceReserve;
 	private int duree;
-	
-	
+	private Airport airport1;
+	private Airport airport2;
+	private int nbrescale;
+	public int getNbrescale() {
+		return nbrescale;
+	}
+	public void setNbrescale(int nbrescale) {
+		this.nbrescale = nbrescale;
+	}
+	public Airport getAirport1() {
+		return airport1;
+	}
+	public void setAirport1(Airport airport1) {
+		this.airport1 = airport1;
+	}
+	public Airport getAirport2() {
+		return airport2;
+	}
+	public void setAirport2(Airport airport2) {
+		this.airport2 = airport2;
+	}
 	public int getId() {
 		return id;
 	}

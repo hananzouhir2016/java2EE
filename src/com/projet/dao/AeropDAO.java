@@ -10,7 +10,7 @@ public interface AeropDAO {
 	
 	void supprimer( Airport airport) throws DAOException;
 	void modifier( Airport airport) throws DAOException;
-	
 	List<Airport> rechercher()throws DAOException;
+      Airport trouver(int id)throws DAOException;
 
 }

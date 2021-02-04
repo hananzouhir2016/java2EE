@@ -4,15 +4,23 @@
 <head>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <link rel="stylesheet" href="assets/css/style2.css" />
-<link rel="stylesheet" href="assets/css/style2.css" />
+<link rel="stylesheet" href="assets/css/style2.css">
+
+
 </head>
 <body>
 	<jsp:include page="Menu2.jsp" />
-	<article>
+	
+	
+
+	<article style="height: 800px;">
+
+
 		
-	<c:forEach items="${ sessionScope.sessionUtilisateur.reservations }" var="reservation" varStatus="boucle">
-	<c:forEach items="${reservation.vols }" var="vol" varStatus="boucle">
+			<c:forEach items="${sessionScope.sessionUtilisateur.reservations3 }" var="reservation" varStatus="boucle">
+	        <c:forEach items="${reservation.vols }" var="vol" varStatus="boucle">
 		<div class="tab-content clearfix col-md-9" style="display: block !important;width: 71%;" id="k">
+		
 				<!-- Tab 4 -->
 				<div class="tab-pane " id="4a" style="display: block !important;margin: 4px;">
 				<!-- Current Active Tab WITH "show active" classes in DIV tag -->
@@ -28,6 +36,8 @@
 									<br>
 									<br>
 									<br>
+									
+								   
 									<div class="LegInfo_legInfo__2UyXp" style="flex-flow: initial;">
 										<div class="LegInfo_routePartialDepart__Ix_Rt">
 											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
@@ -37,7 +47,8 @@
 											</span>
 											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
 												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">Airport Départ:${vol.airport1.nom}</span></br>
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">${vol.dateDepart}</span>
+												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">${vol.dateDepart}
+                                                </span>
 											</span>
 										</div>
 										<div class="LegInfo_stopsContainer__2Larg">
@@ -72,14 +83,50 @@
 										</span>
 									</div>
 								</div>
+								
+								
+								
 								</div>
+							
 							</div>
 							<div style="background-color: #00d8ff;width: 400px;padding:20px;">
+							
 							    <p class="tm-recommended-price-link">Prix:${vol.prix}DH</p>
 							    <p class="tm-recommended-price-link">Date Reservation:${ reservation.date}</p>
 								<p class="tm-recommended-price-link">Nombre de passager:${ reservation.nbpassagers}</p>
 								<p class="tm-recommended-price-link">Etat Reservation:${ reservation.etat}</p>
 								<p class="tm-recommended-price-link">Durée Vol:${ vol.duree}</p>
+								
+								
+								<button class="btn default" style="color:white;background-color: #d2c9c9;width:200px;"
+							     onclick="openFor(document.getElementById('${ reservation.id}'))">Modifier</button>
+								 <form method="post" action="ValiderReservations">
+								 <input type="hidden" name="id" value="${ reservation.id}"/>
+								 <input type="hidden" name="id" value="${sessionScope.sessionUtilisateur.id}"/>
+								 <input type="hidden" name="id2" value="${ reservation.nbpassagers}"/>
+								 <input type="hidden" name="id_vol" value="${ vol.id}"/>
+							     <button class="btn default" style="color:white;background-color: #d2c9c9;width:200px;"
+							     >Valider</button>
+							     </form>
+							     
+							     <form method="post" action="AnnulerReservations">
+							     <input type="hidden" name="id" value="${ reservation.id}"/>
+							     <button class="btn default" style="color:white;background-color: #d2c9c9;width:200px;"
+							     >Annuler</button>
+							     </form>
+							     
+								<div id="${reservation.id}" style="display: none;">
+					            <form method="post" action="ModifierReservations">
+						      	<label class="er" style="margin-right:70px;">Date Reservation</label>
+						        <input id="rtt" type="date" name="departure" class="form-control"  placeholder="${ reservation.date}" ><br> 
+                                <label class="er" style="margin-right:51px;">Nombre passager</label>
+                                <input id="rtt" type="number" value="${ reservation.nbpassagers}"  name="NB"/><br>
+                                <input type="hidden" name="id" value="${ reservation.id}"/>
+								<button type="submit" class="book-btn">Modifier</button>
+						  
+						        <button class="btn default" style="color:white;background-color: #d2c9c9;width:90px;margin-left:20px;"onclick="closeFor(document.getElementById('${ reservation.id}'))">annuler</button>
+					               </form>
+						</div>
 							</div>                        
 						</div>
 						</div>
@@ -91,44 +138,40 @@
 						
 					
 						
-				<div id="s" style="width:20%;margin-right: 80px;">
-			         <a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="MesVoyage.jsp"> 
-			         <i class='fas'>&#xf4fe;</i>
-			         Voyages Valider
-			         </a>
-			         <hr>
-			         <a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="ReservationNonEnregistrer.jsp"> 
-			         <i class='fas'>&#xf502;</i>
-		             Voyages Non Enregistrer
-			         </a>
-			         <hr>
-			         <a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="VoyagesAnnuler.jsp">
-		             <i class="fa fas" style="	padding: 15px;">&#xf011;</i>
-		             voyages annuler
-			         </a>
+						<div id="s" style="width:20%;margin-right: 80px;">
+			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="MesVoyage.jsp"> 
+			<i class='fas'>&#xf4fe;</i>
+			Voyages Valider
+			</a>
+			<hr>
+			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="ReservationNonEnregistrer.jsp"> 
+			<i class='fas'>&#xf502;</i>
+		Voyages Non Enregistrer
+			</a>
+			<hr>
+			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="VoyagesAnnuler.jsp">
+		  <i class="fa fas" style="	padding: 15px;">&#xf011;</i>
+		  voyages annuler
+			</a>
 			<hr>
 		</div>
 						</article>
-						
+
+		<!--travel-box start-->
+		
+
 	<jsp:include page="footer.jsp" />
 
-
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 
-        function openForm(a,b,c,d) 
+        function openFor(a) 
         {
         	  a.style.display = "block";
-        	  b.style.display = "none";
-        	  c.style.display = "block";
-        	  d.style.display = "none";
          }
-        
-        function openFor(a1,b1,c1,d1) 
+        function closeFor(a) 
         {
-        	  a1.style.display = "none";
-        	  b1.style.display = "block";
-        	  c1.style.display = "none";
-        	  d1.style.display = "block";
+        	  a.style.display = "none";
          }
         	
 </script>
