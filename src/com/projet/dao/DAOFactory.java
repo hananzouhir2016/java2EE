@@ -155,5 +155,13 @@ public class DAOFactory
 		*/
 	return new EscaleDaoImpl( this );
 	}
+	
+	public DashboarsDao getDashborsDao()
+	{
+		/*
+		this pour instance de la classe DAOFactory
+		*/
+	return new DashboardDaoImpl( this );
+	}
 	}
 
