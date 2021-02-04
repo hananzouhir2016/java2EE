@@ -73,7 +73,7 @@
 														<a href="MesVoyage.jsp" style="color: #00d8ff; margin-left: 40px;"><i style='font-size: 24px' class='fas'>&#xf072;</i>Mes voyages</a><br> 
 													
 														
-										               <button type="submit" class="book-btn" >Se deconnecter
+										               <button type="submit" class="book-btn" style="margin-left:70px;width:200px;">Se deconnecter
 										        </button>
 					           
 												</div>

@@ -85,4 +85,14 @@ public class VerificationDonnée
 			throw new Exception("Merci d'entrer l'email.");
 		}
 	}
+	
+	static void validationMdp(String mdp) throws Exception {
+		if (mdp != null) {
+			if (mdp.length() < 8) {
+				throw new Exception("Les mots de passe doivent contenir au moins 8 caractères.");
+			}
+		} else {
+			throw new Exception("Merci d'entrer un mots passe valide");
+		}
+	}
 }

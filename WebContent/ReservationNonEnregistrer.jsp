@@ -118,7 +118,7 @@
 								<div id="${reservation.id}" style="display: none;">
 					            <form method="post" action="ModifierReservations">
 						      	<label class="er" style="margin-right:70px;">Date Reservation</label>
-						        <input id="rtt" type="date" name="departure" class="form-control"  placeholder="${ reservation.date}" ><br> 
+						        <input id="rtt" type="date" name="departure" class="form-control"  placeholder="${ reservation.date}" required="required" ><br> 
                                 <label class="er" style="margin-right:51px;">Nombre passager</label>
                                 <input id="rtt" type="number" value="${ reservation.nbpassagers}"  name="NB"/><br>
                                 <input type="hidden" name="id" value="${ reservation.id}"/>

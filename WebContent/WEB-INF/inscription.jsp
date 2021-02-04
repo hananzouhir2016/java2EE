@@ -33,6 +33,8 @@ input[type=text], select, textarea {
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
 
 }
 
@@ -59,11 +61,11 @@ input[type=submit]:hover {
   float: left;
   width: 20%;
   margin-top: 6px;
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
 }
 
 .col-75 {
-  
-
   margin-top: 6px;
 }
 
@@ -75,7 +77,15 @@ input[type=submit]:hover {
 }
 span
 {
-color:blue;}
+position: relative;
+color: white;
+font-size: 15px;
+font-weight: 500;
+text-transform: capitalize;
+font-family: 'Poppins', sans-serif;
+padding-bottom: 14px;
+
+}
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -101,7 +111,7 @@ color:blue;}
                                                 <label for="fname">Nom</label>
                                         </div>
                                         <div class="col-75">
-                                                <input type="text" id="fname" name="nom" placeholder="Enter votre nom" value="${utilisateur.nom}">
+                                                <input type="text" id="fname" name="nom" placeholder="Enter votre nom" value="${utilisateur.nom}"><span class="input-group-text" id="addon-wrapping"><i class="fas fa-user"></i></span>
                                                 <br><span>${form.erreurs['nom']}</span> 
                                          </div>
                                        </div>
@@ -144,6 +154,7 @@ color:blue;}
                                        </div>
                                        <div class="col-75">
                                        <input type="text" id="lname" name="mdp" placeholder="Entrer votre mots de passe " >
+                                         <br> <span>${form.erreurs['mdp']}</span>
                                        </div>
                                       </div>
                                     <span> ${form.resultat}</span> 

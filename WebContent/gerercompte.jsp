@@ -28,7 +28,6 @@ text-align: justify;
 			Information personnelles
 			</a>
 			<hr>
-			
 			<hr>
 			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif">
 		  <i class="fa fas" style="	padding: 15px;">&#xf011;</i>
@@ -50,15 +49,12 @@ text-align: justify;
             <label for="pre" class="form-label">Prénom </label>
                 <input type="text" class="form-control" placeholder="Prénom" name="prenom" id="pre" aria-describedby=""  value="${sessionScope.sessionUtilisateur.prenom}" style="margin-left: 38px;width: 210px;"> 
                 <span class="input-group-text" id="addon-wrapping"><i class="fas fa-user"></i></span>
-                <p><span>${form.erreurs['prenom']}</span> 
-               
-           
-           
+                <p><span>${form.erreurs['prenom']}</span>   
         </div>
         
         <div class="mb-3">
             <label for="nom" class="form-label">Email </label>
-                 <input type="text" class="form-control" placeholder="Nom" name="email" id="nom" aria-describedby=""  value="${sessionScope.sessionUtilisateur.email}" style="margin-left: 57px;width: 210px;">
+                 <input type="text" class="form-control" placeholder="Email" name="email" id="nom" aria-describedby=""  value="${sessionScope.sessionUtilisateur.email}" style="margin-left: 57px;width: 210px;">
                  <span class="input-group-text" id="addon-wrapping"><i class="fas fa-envelope-open"></i></span>
                  <p><span>${form.erreurs['email']}</span></p>
              </div>
@@ -73,7 +69,7 @@ text-align: justify;
         
         <div class="mb-3">
             <label for="tel" class="form-label">CIN </label>
-                <input  type="text" class="form-control" placeholder="téléphone" id="tel" name="cin" aria-describedby="" value="${sessionScope.sessionUtilisateur.cin}" style="margin-left: 70px;width: 210px;">
+                <input  type="text" class="form-control" placeholder="CIN" id="tel" name="cin" aria-describedby="" value="${sessionScope.sessionUtilisateur.cin}" style="margin-left: 70px;width: 210px;">
                 <span class="input-group-text" id="addon-wrapping"><i class="fas fa-phone"></i></span>
                 <p><span>${form.erreurs['cin']}</span></p> 
            

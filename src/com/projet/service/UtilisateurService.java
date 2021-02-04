@@ -64,6 +64,14 @@ public class UtilisateurService {
 		setErreurs("email", e.getMessage());
 	}
 	utilisateur.setEmail(email);
+	try 
+	{
+		VerificationDonnée.validationMdp(mdp);
+	}
+	catch (Exception e) 
+	{
+		setErreurs("mdp", e.getMessage());
+	}
 	utilisateur.setMdp(mdp);
 	try 
 	{
@@ -87,10 +95,10 @@ public class UtilisateurService {
 			resultat = "Adresse email déja utilisé"; 
 	   }
 	} 
-	else 
-	{
-		resultat = "Échec de la création du client.";
-	}
+	else
+	   {
+			resultat = "Echec du creation client"; 
+	   }
 	
 	return utilisateur;
 	
