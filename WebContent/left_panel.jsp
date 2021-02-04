@@ -31,8 +31,14 @@
 
             <div id="main-menu" class="">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="dashboard.jsp"> <i class="menu-icon fa fa-line-chart"></i>Tableau de Bord </a>
+                    <li class="active" style="margin-top: 15px">
+                        
+                        
+                        <form action="DashboardJ" method="get">
+                          <i class="menu-icon fa fa-line-chart"></i> <button class="ajouter" type="submit"  title="Ajouter"> Tableau de Bord</button>
+                        </form>
+                         
+                         
                     </li>
                     <h3 class="menu-title">Liste des Gestions</h3><!-- /.menu-title -->
                     <li class="">
@@ -75,25 +81,26 @@
                     
 
                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-flag"></i>Gestion Ville</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-flag"></i>Gestion Aéroport</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
                             
-                            <form action="GestionV" method="get">
-                                 <button class="ajouter" type="submit"  title="Ajouter"> <i class="fa fa-plus-circle"></i> &nbsp;  &nbsp; Ajouter Ville</button>
+                            <form action="GestionAe" method="get">
+                                 <button class="ajouter" type="submit"  title="Ajouter"> <i class="fa fa-plus-circle"></i> &nbsp;  &nbsp; Ajouter Aéroport</button>
                             </form>
                              
                             </li>
                             <br>
                             <li>
                             
-                            <form action="ListerVilles" method="get">
-                               <button class="ajouter" type="submit" style="background-color:#272c33; BORDER: none;cursor: pointer" title="Affichage"> <i class="fa fa-eye"></i> &nbsp; &nbsp; Voir Des Villes</button>       
+                            <form action="ListerAe" method="get">
+                               <button class="ajouter" type="submit" style="background-color:#272c33; BORDER: none;cursor: pointer" title="Affichage"> <i class="fa fa-eye"></i> &nbsp; &nbsp; Voir Des Aéroport</button>       
                             </form>
                             </li>
                             
                         </ul>
                     </li>
+              
                   
                    </ul>
                    
@@ -113,8 +120,13 @@
     <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
     <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
   
-  
-
+  <!--  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="css1/js/main.js"></script>
+-->
    
    
   

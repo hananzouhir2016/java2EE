@@ -6,11 +6,12 @@ import com.projet.model.Airport;
 
 public interface AeropDAO {
 	
-	void ajouter( Airport airport ) throws DAOException;
 	
-	void supprimer( Airport airport) throws DAOException;
-	void modifier( Airport airport) throws DAOException;
-	List<Airport> rechercher()throws DAOException;
       Airport trouver(int id)throws DAOException;
-
+      void ajouter( Airport aeroport ) throws DAOException;
+    	List<Airport> trouver( String nom)throws DAOException;
+  	   List<Airport> lister() throws DAOException;
+     	void supprimer( int id  ) throws DAOException;
+  	
+  	int trouverId(String nom) throws DAOException;
 }

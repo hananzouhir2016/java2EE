@@ -74,14 +74,162 @@
             </div>
           </header>
 
-    
-        
-
-
-
-         
-          
   
+        
+<div class="container">
+    <div class="row my-3">
+        <div class="col">
+            <h4>Variation Des <span style="color:green">Reservations</span> Et Des <span style="color:blue"> Utilisateurs </span> par chaque mois</h4>
+           
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="chLine" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<script>
+
+/* chart.js chart examples */
+
+//chart colors
+var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
+
+/* large line chart */
+var chLine = document.getElementById("chLine");
+var chartData = {
+labels: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet","Août", "Septembre","Octobre","Novembre","Décembre"],
+datasets: [{
+	
+data: [589, 445, 483, 503, 689, 692, 634,465, 493, 478, 589, 632, 674,],	
+ //data: [${ jan }, ${ fev }, ${ mar }, ${ avr }, ${ mai }, ${ jun }, ${ juil }, ${ aout }, ${ sep }, ${ oct }, ${ nov }, ${ dec }],
+ backgroundColor: 'transparent',
+ borderColor: colors[0],
+ borderWidth: 4,
+ pointBackgroundColor: colors[0]
+},
+{
+ data: [639, 465, 493, 478, 589, 632, 674, 634, 483, 478, 589, 632, 674,],
+ //data: [${ janV }, ${ fevV }, ${ marV }, ${ avrV }, ${ maiV }, ${ junV }, ${ juilV }, ${ aoutV }, ${ sepV }, ${ octV }, ${ novV }, ${ decV }],
+ backgroundColor: colors[3],
+ borderColor: colors[1],
+ borderWidth: 4,
+ pointBackgroundColor: colors[1]
+}]
+};
+
+if (chLine) {
+new Chart(chLine, {
+type: 'line',
+data: chartData,
+options: {
+ scales: {
+   yAxes: [{
+     ticks: {
+       beginAtZero: false
+     }
+   }]
+ },
+ legend: {
+   display: false
+ }
+}
+});
+}
+
+</script>
+
+<div class="sta" style="margin-top: -135px;">  
+
+<div class="container" >
+    <div class="row my-3">
+        <div class="col">
+            <h4>Certains Statistiques</h4>
+        </div>
+    </div>
+    <div class="row py-2">
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body">
+                    <canvas id="chDonut1"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+             <div >
+               <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa fa-flag text-primary border-primary"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Nombre Des Aéroport</div>
+                                <div class="stat-digit">${ nbAe }</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+            <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="fa fa-plane text-warning border-warning"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Nombre Des Avions</div>
+                                <div class="stat-digit">${ nbAv }</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+
+/* chart.js chart examples */
+
+//chart colors
+var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
+
+/* 3 donut charts */
+var donutOptions = {
+cutoutPercentage: 85, 
+legend: {position:'bottom', padding:5, labels: {pointStyle:'circle', usePointStyle:true}}
+};
+
+//donut 1
+var chDonutData1 = {
+ labels: ['Utilisateurs', 'Reservations', 'Vols'],
+ datasets: [
+   {
+     backgroundColor: colors.slice(0,3),
+     borderWidth: 0,
+     data: [${ nbU }, ${ nbR }, ${ nbV }]
+   }
+ ]
+};
+
+var chDonut1 = document.getElementById("chDonut1");
+if (chDonut1) {
+new Chart(chDonut1, {
+   type: 'pie',
+   data: chDonutData1,
+   options: donutOptions
+});
+}
+</script>
+         
 
 </body>
 
