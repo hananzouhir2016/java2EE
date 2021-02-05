@@ -1,10 +1,13 @@
 package com.projet.dao;
+import com.projet.model.Airport;
+import com.projet.model.Avion;
 import com.projet.model.Reservation;
 import com.projet.model.Vol;
 import static com.projet.dao.DAOUtilitaire2.fermeturesSilencieuses;
 import static com.projet.dao.DAOUtilitaire2.initialisationRequetePreparee;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public  class VolDAOImpl implements VolDAO {
@@ -13,6 +16,8 @@ public  class VolDAOImpl implements VolDAO {
 	private static final String SQL_Aj_V = "INSERT INTO Vol (dateDepart,dateArrivee,heureDepart,heureArrivee,prix,nbPlaceReserve,duree) VALUES (?,?,?,?,?,?,?)";
 	private static final String SQL_SELECT_PAR_ID="SELECT * FROM Vol WHERE id = ?";
 	private static final String SQL_UPDATE_PAR_ID="UPDATE vol SET nbPlaceReserve=? WHERE id=?";
+	private static final String sql_recuperer="SELECT * FROM vol  WHERE dateDepart = ? && Aer_id=? && Aer_id2=? " ;
+	
 	
 	private static DAOFactory daoFactory;
 
@@ -212,5 +217,70 @@ public  class VolDAOImpl implements VolDAO {
 	}
 
 	
+	
+	
+	
+	public List<Vol> recupererVol(Date date_depart, int id1, int id2) throws DAOException {
+		List<Vol> vol_aff = new ArrayList<Vol>();
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		try {
+		/* Récupération d'une connexion depuis la Factory */
+		connexion = daoFactory.getConnection();
+		/*
+		* Préparation de la requête avec les objets passés en arguments
+	
+		*/
+		preparedStatement = initialisationRequetePreparee(connexion, sql_recuperer,date_depart,id1,id2);
+		resultSet = preparedStatement.executeQuery();
+		/* Parcours de la ligne de données retournée dans le
+		ResultSet */
+		while ( resultSet.next() ) {
+
+		 vol_aff.add(map( resultSet ));
+		}
+		}
+		catch ( SQLException e ) {
+		throw new DAOException( e );
+		} 
+		finally {
+		fermeturesSilencieuses( resultSet, preparedStatement,connexion );
+		}
+		return vol_aff;
+		}
+
+	private static Vol map1( ResultSet resultat	 ) throws SQLException {
+		Vol vol_affichage = new Vol();
+	
+       
+  
+         vol_affichage.setId(resultat.getInt("id"));
+         vol_affichage.setDuree(resultat.getInt("duree"));
+         vol_affichage.setHeureDepart(resultat.getString("heureDepart"));
+         vol_affichage.setHeureArrivee( resultat.getString("heureArrivee"));
+         vol_affichage.setPrix(resultat.getDouble("prix"));
+         vol_affichage.setDateDepart(resultat.getDate("dateDepart"));
+        
+         AeropDAO aero = daoFactory.getAeropDAO();
+         Airport aerD=aero.trouver(resultat.getInt("Aer_id"));
+         Airport aerA=aero.trouver(resultat.getInt("Aer_id2"));
+         vol_affichage.setAeroportD(aerD);
+         vol_affichage.setAeroportA(aerA);
+         
+         
+     
+        AvionDao avion_n = daoFactory.getAvionDao();
+        Avion avion=avion_n.trouver(resultat.getInt("Avi_id"));
+        vol_affichage.setAvion(avion);
+		
+	    return vol_affichage;
+	}
+
+	@Override
+	public int chercher_id_avion(Vol vol) throws DAOException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 		
 }

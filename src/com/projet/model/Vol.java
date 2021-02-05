@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Vol {
 	private int id;
-	private Airport AeroportA;
-	private Airport AeroportD;
-	private Avion Avion;
+	private Airport aeroportA;
+	private Airport aeroportD;
+	private Avion avion;
 	private Date dateDepart;
 	private Date dateArrivee;
 	private String heureDepart;
@@ -18,6 +18,21 @@ public class Vol {
 	private Airport airport1;
 	private Airport airport2;
 	private int nbrescale;
+	private String nbAdultes;
+	private String nbEnfants;
+	
+	public String getNbAdultes() {
+		return nbAdultes;
+	}
+	public void setNbAdultes(String nbAdultes) {
+		this.nbAdultes = nbAdultes;
+	}
+	public String getNbEnfants() {
+		return nbEnfants;
+	}
+	public void setNbEnfants(String nbEnfants) {
+		this.nbEnfants = nbEnfants;
+	}
 	public int getNbrescale() {
 		return nbrescale;
 	}
@@ -42,23 +57,24 @@ public class Vol {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public Airport getAeroportA() {
-		return AeroportA;
+		return aeroportA;
 	}
 	public void setAeroportA(Airport aeroportA) {
-		AeroportA = aeroportA;
+		this.aeroportA = aeroportA;
 	}
 	public Airport getAeroportD() {
-		return AeroportD;
+		return aeroportD;
 	}
 	public void setAeroportD(Airport aeroportD) {
-		AeroportD = aeroportD;
+		this.aeroportD = aeroportD;
 	}
 	public Avion getAvion() {
-		return Avion;
+		return avion;
 	}
 	public void setAvion(Avion avion) {
-		Avion = avion;
+		this.avion = avion;
 	}
 	public Date getDateDepart() {
 		return dateDepart;

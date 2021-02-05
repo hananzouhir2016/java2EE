@@ -82,6 +82,9 @@
           </header>
   
     <div class="container"  style="max-width: 360px;">  
+      <div style="color :green"> <h5> ${form.resultat}	</h5></div>  
+      <br> <br>
+    
         <h4 class="titre"><strong>Ajouter Admin</strong></h4>
         <p></p>
     <form method="post" action="GestionA">
@@ -149,5 +152,3 @@
    </div>
 </body>
 </html>
-
-    

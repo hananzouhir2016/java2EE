@@ -15,8 +15,14 @@ public class Utilisateur {
 	private String mdp;
 	private String telephone;
 	private String email;
+	 private String profil;
 	
-	
+	public String getProfil() {
+		return profil;
+	}
+	public void setProfil(String profil) {
+		this.profil = profil;
+	}
 	public List<Reservation> getReservations2() {
 		return reservations2;
 	}

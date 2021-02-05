@@ -105,9 +105,11 @@
                               <td><c:out value="${ admin.telephone }"></c:out></td>
                               <td><c:out value="${ admin.email }"></c:out></td>
                              <td>
-                                
                               
-                                <button  id="s" type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button>
+                               <a href="<c:url value="/SupprimerA"><c:param name="idAdmin" value="${ admin.id }" ></c:param>
+                               <c:param name="villes" value="${ admins }" ></c:param>
+                               </c:url>">
+                                <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button></a>
                               </td>
                             </tr>
                           </c:forEach>  

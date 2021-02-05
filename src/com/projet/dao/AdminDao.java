@@ -10,5 +10,5 @@ public interface AdminDao {
 	void ajouter( Utilisateur utilisateur ) throws DAOException;
 	 List<Utilisateur> trouver( String nom)throws DAOException;
 	 List<Utilisateur> lister() throws DAOException;
-	 void supprimer( Utilisateur utilisateur ) throws DAOException;
+	 void supprimer( int id ) throws DAOException;
 }

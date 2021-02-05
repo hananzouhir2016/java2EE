@@ -1,6 +1,8 @@
 <!doctype html>
 <html class="no-js"  lang="en">
 	<head>
+	                <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	
 		<title>Travel</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,6 +54,7 @@
         		<div class="row">
         			<div class="col-md-12">
         				<div class="single-travel-boxes">
+        				<form  method="post"  action="AffichageVol">
         					<div id="desc-tabs" class="desc-tabs">
 								<ul class="nav nav-tabs" role="tablist">
 									<li role="presentation">
@@ -65,7 +68,7 @@
 										<div class="tab-para">
 											<div class="trip-circle">
 												<div class="single-trip-circle">
-													<input type="radio" id="radio01" name="radio" />
+													<input type="radio" id="radio01" value="radio01" name="radio" onclick="fct()" checked="checked" />
   													<label for="radio01">
   														<span class="round-boarder">
   															<span class="round-boarder1"></span>
@@ -73,11 +76,11 @@
   													</label>
 												</div>
 												<div class="single-trip-circle">
-													<input type="radio" id="radio02" name="radio" />
+													<input type="radio" id="radio02" value="radio02" name="radio" onclick="fonct()"/>
   													<label for="radio02">
   														<span class="round-boarder">
   															<span class="round-boarder1"></span>
-  														</span>en route
+  														</span>aller-simple
   													</label>
 												</div>
 											</div>
@@ -86,11 +89,13 @@
 													<div class="single-tab-select-box">
 														<h2>De</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-															  	<option value="default">entrez votre emplacement</option>
-															  	<option value="turkey">turkey</option>
-															  	<option value="russia">russia</option>
-															  	<option value="egept">egypt</option>
+															<select class="form-control "  name="de" value="de">
+															<c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
+					
+															  	<option  value="${nom_aero.nom}" >
+															  	<c:out value="${ nom_aero.nom }"></c:out>
+															  	</option>
+															 </c:forEach> 	
 															</select>
 														</div>
 													</div>
@@ -100,18 +105,18 @@
 														<h2>Départ</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="departure" class="form-control" data-toggle="datepicker"
+																<input type="text"  name="depart" value="depart" class="form-control" data-toggle="datepicker"
 																placeholder="12 -01 - 2017 ">
 															</form>
 														</div>
 													</div>
 												</div>
-												<div class="col-lg-2 col-md-3 col-sm-4">
+												<div class="col-lg-2 col-md-3 col-sm-4"  id="retour">
 													<div class="single-tab-select-box">
 														<h2>retour</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="return" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
+																<input type="text"  name="retour" value="retour" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
 															</form>
 														</div>
 													</div>
@@ -121,7 +126,7 @@
 													<div class="single-tab-select-box">
 														<h2>adultes</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
+															<select class="form-control "  name="adulte" value="adulte">
 															  	<option value="default">5</option>
 															  	<option value="10">10</option>
 															  	<option value="15">15</option>
@@ -134,7 +139,7 @@
 													<div class="single-tab-select-box">
 														<h2>Enfants</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
+															<select class="form-control "  name="enfant" value="enfant">
 															  	<option value="default">1</option>
 															  	<option value="2">2</option>
 															  	<option value="4">4</option>
@@ -149,32 +154,22 @@
 													<div class="single-tab-select-box">
 														<h2>à</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-															  	<option value="default">entrez votre emplacement</option>
-															  	<option value="istambul">istambul</option>
-															  	<option value="mosko">mosko</option>
-															  	<option value="cairo">cairo</option>
+															<select class="form-control "  name="a" value="a">
+															  <c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
+					
+															  	<option value="${nom_aero.nom}" >
+															  	<c:out value="${nom_aero.nom}"></c:out>
+															  	</option>
+															 </c:forEach>
 															</select>
 														</div>
 													</div>
 												</div>
-												<div class="col-lg-3 col-md-3 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>class</h2>
-														<div class="travel-select-icon">
-															<select class="form-control ">
-															  	<option value="default">enter class</option>
-															  	<option value="A">A</option>
-															  	<option value="B">B</option>
-															  	<option value="C">C</option>
-															</select>
-														</div>
-													</div>
-												</div>
+												
 												<div class="clo-sm-5">
 													<div class="about-btn pull-right">
-														<button  class="about-view travel-btn">
-								                               chercher du vols
+														<button  class="about-view travel-btn" id="chercherVol" value="chercherVol" name="chercherVol">
+								                               Chercher 
 														</button>
 													</div>
 												</div>
@@ -182,6 +177,7 @@
 										</div>
 									</div>
 								</div>
+								</form>
 							</div>
         				</div>
         			</div>
@@ -298,7 +294,26 @@
 		<jsp:include page="footer.jsp"/>
 		
 		
-		
+		   <script>
+		   function fct() {
+				 var x = document.getElementById("retour");
+				 
+			       
+			        	
+			        	
+			            
+				    x.style.display = "block";
+				
+				}
+			function  fonct()  {
+				 var x = document.getElementById("retour");
+
+				 
+			    	x.style.display="none";
+
+				 
+				}
+             </script>
 		
 		<script  src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 		<script  src="assets/js/bootstrap.min.js"></script>
@@ -316,3 +331,4 @@
 
 		
 </html>
+

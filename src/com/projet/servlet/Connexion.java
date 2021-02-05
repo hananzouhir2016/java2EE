@@ -67,8 +67,11 @@ public class Connexion extends HttpServlet {
 		session.setAttribute("sessionUtilisateur", utilisateur);
 		if(utilisateur!=null) 
 		{
+
 		session.setAttribute("sessionUtilisateur", utilisateur);
 	    this.getServletContext().getRequestDispatcher("/utilisateur.jsp").forward( request, response );
+		    
+			
 		}
 		else {
 			 this.getServletContext().getRequestDispatcher("/Connection.jsp").forward( request, response );

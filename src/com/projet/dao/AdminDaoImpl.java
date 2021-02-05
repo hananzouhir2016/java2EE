@@ -2,14 +2,15 @@ package com.projet.dao;
 
 import static com.projet.dao.DAOUtilitaire2.fermeturesSilencieuses;
 import static com.projet.dao.DAOUtilitaire2.initialisationRequetePreparee;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.projet.model.Utilisateur;
 
+import com.projet.model.Utilisateur;
 
 public class AdminDaoImpl implements AdminDao {
 
@@ -118,19 +119,17 @@ public class AdminDaoImpl implements AdminDao {
 
 	/*--------------------------------------------------------------------------------------------- */
 	@Override
-	public void supprimer(Utilisateur admin) throws DAOException {
+	public void supprimer(int id) throws DAOException {
 		 Connection connexion = null;
 	        PreparedStatement preparedStatement = null;
 
 	        try {
 	            connexion = daoFactory.getConnection();
-	            preparedStatement = initialisationRequetePreparee( connexion, SQL_DELETE_PAR_ID, true, admin.getId() );
+	            preparedStatement = initialisationRequetePreparee( connexion, SQL_DELETE_PAR_ID,id );
 	            int statut = preparedStatement.executeUpdate();
 	            if ( statut == 0 ) {
 	                throw new DAOException( "Échec de la suppression du client, aucune ligne supprimée de la table." );
-	            } else {
-	                admin.setId((Integer) null);
-	            }
+	            } 
 	        } catch ( SQLException e ) {
 	            throw new DAOException( e );
 	        } finally {

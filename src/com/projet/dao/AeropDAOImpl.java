@@ -15,14 +15,15 @@ import com.projet.model.Airport;
 public class AeropDAOImpl implements AeropDAO {
 	
 	private static final String Sql_V = "SELECT nom FROM Ville";
-
 	private static final String SQL_SELECT_PAR_ID= "SELECT * FROM aeroport WHERE id= ?";
-	
 	private static final String SQL_INSERT = "INSERT INTO aeroport (id,nom) VALUES (?, ?)";
 	private static final String sql_Trouver="SELECT * FROM aeroport WHERE nom = ? ";
 	private static final String sql_Trouver_tout="SELECT * FROM aeroport ORDER BY id ";
 	private static final String SQL_DELETE_PAR_ID = "DELETE FROM aeroport WHERE id = ?";
 	private static final String sql_Trouver_ID="SELECT id FROM `aeroport` WHERE nom = ?";
+	private static final String sql_chercher_id="SELECT * FROM aeroport WHERE nom=? ";
+	private static final String sql_select="SELECT nom FROM aeroport";
+	private static final String sql_select_aero="SELECT * FROM aeroport WHERE id=?";
 	
 	
 	private DAOFactory daoFactory;
@@ -61,6 +62,7 @@ public class AeropDAOImpl implements AeropDAO {
 	
 	/*--------------------------------------------------------------------------------------------- */
 	
+
 	public List<Airport> trouver( String nom ) throws DAOException
 	{
 		Connection connexion = null;
@@ -178,7 +180,7 @@ public class AeropDAOImpl implements AeropDAO {
 
 
 
-	@Override
+	
 	public Airport trouver(int id) throws DAOException {
 		return trouver( SQL_SELECT_PAR_ID, id);
 	}
@@ -215,9 +217,66 @@ public class AeropDAOImpl implements AeropDAO {
 		private static Airport map(ResultSet resultSet ) throws SQLException 
 		{
 			Airport airport = new Airport();
-			airport.setId(resultSet.getLong( "id" ));
+			airport.setId(resultSet.getInt( "id" ));
 			airport.setNom(resultSet.getString("nom"));
 			
 		    return airport;
 		}
+		
+		public Airport chercher(String nom) throws DAOException {
+			
+			Connection connexion=null;
+	        PreparedStatement preparedStatement = null;
+	        ResultSet resultat = null;
+	        
+		    Airport airport = null;
+
+		    try {
+		        /* Récupération d'une connexion depuis la Factory */
+		    	connexion = daoFactory.getConnection();
+	    		preparedStatement = initialisationRequetePreparee(connexion,sql_Trouver,nom);
+	            resultat = preparedStatement.executeQuery();
+		        /* Parcours de la ligne de données de l'éventuel ResulSet retourné */
+		        if ( resultat.next() ) {
+		        	airport = map( resultat );
+		        }
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+	    		fermeturesSilencieuses(preparedStatement, connexion );
+	    		}
+	        
+
+		    return airport;
+		}
+
+		public List<Airport> selectionner() throws DAOException {
+			List<Airport> nom_aero = new ArrayList<Airport>();
+			Connection connexion=null;
+	        PreparedStatement preparedStatement = null;
+	        ResultSet resultat = null;
+	       
+
+		    try {
+		        /* Récupération d'une connexion depuis la Factory */
+		    	connexion = daoFactory.getConnection();
+	    		preparedStatement = initialisationRequetePreparee(connexion, sql_select);
+	            resultat = preparedStatement.executeQuery();
+		        /* Parcours de la ligne de données de l'éventuel ResulSet retourné */
+		        while ( resultat.next() ) {
+		        	Airport aero=new Airport();
+		        	String nom_airport = resultat.getString("nom");
+		        	aero.setNom(nom_airport);
+		        	nom_aero.add(aero);
+		        }
+		    } catch ( SQLException e ) {
+		        throw new DAOException( e );
+		    } finally {
+	    		fermeturesSilencieuses(preparedStatement, connexion );
+	    		}
+	        
+
+		    return nom_aero;
+		}
+
 }

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
+	                <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html class="no-js"  lang="en">
 	<body>
 	<jsp:include page="Menu.jsp"/>
@@ -15,7 +17,6 @@
 							<div class="single-about-us">
 								<div class="about-us-txt">
 									<h2>
-									
 
 									</h2>
 									
@@ -53,13 +54,14 @@
 
 														<div class="travel-select-icon">
 															<select class="form-control ">
-
-															  	<option value="default">ville...</option><!-- /.option-->
-
-															  	<option value="turkey">turkey</option><!-- /.option-->
-
-															  	<option value="russia">russia</option><!-- /.option-->
-															  	<option value="egept">egypt</option><!-- /.option-->
+															
+															
+															  <c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
+					
+															  	<option value="${nom_aero.nom }">
+															  	<c:out value="${nom_aero.nom }"></c:out>
+															  	</option>
+															 </c:forEach> 	
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
@@ -73,13 +75,14 @@
 														<h2>A</h2>
                                                 <div class="travel-select-icon">
 													<select class="form-control ">
+                                              
+															  <c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
+					
+															  	<option value="${ nom_aero.nom }" >
+															  	<c:out value="${ nom_aero.nom }"></c:out>
+															  	</option>
+															 </c:forEach> 	
 
-														  <option value="default">ville...</option><!-- /.option-->
-
-														  <option value="istambul">istambul</option><!-- /.option-->
-
-														  <option value="mosko">mosko</option><!-- /.option-->
-														  <option value="cairo">cairo</option><!-- /.option-->
 
 													</select><!-- /.select-->
 												</div><!-- /.travel-select-icon -->
@@ -90,7 +93,7 @@
 														<h2>Aller</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="Aller" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
+																<input type="text" name="Aller" class="form-control" data-toggle="datepicker" placeholder="${volform.dateDepart }">
 															</form>
 														</div><!-- /.travel-check-icon -->
 													</div><!--/.single-tab-select-box-->
@@ -102,9 +105,8 @@
 														<h2>Adultes</h2>
 														<div class="travel-select-icon">
 															<select class="form-control ">
-
-															  	<option value="default">1</option><!-- /.option-->
-
+															       
+															  	
 															  	<option value="2">2</option><!-- /.option-->
 
 															  	<option value="4">4</option><!-- /.option-->
@@ -119,10 +121,12 @@
 														<h2>Enfants</h2>
 														<div class="travel-select-icon">
 															<select class="form-control ">
+																		        <option value="default">
+                                             <c:out value="${volform.nbEnfants }"></c:out>
+                                             
+                                             </option>
 
-															  	<option value="default">1</option><!-- /.option-->
 
-															  	<option value="2">2</option><!-- /.option-->
 
 															  	<option value="4">4</option><!-- /.option-->
 															  	<option value="8">8</option><!-- /.option-->
@@ -138,6 +142,7 @@
 																<button  class="about-view travel-btn">
 																	Modifier	
 																</button><!--/.travel-btn-->
+																
 															</div><!--/.about-btn-->
 														
 													</div><!--/.single-tab-select-box-->
@@ -316,12 +321,17 @@
 				<div class="tab-pane " id="4a" style="display: block !important;">
 				<!-- Current Active Tab WITH "show active" classes in DIV tag -->
 					<div class="tm-recommended-place-wrap" style="display: block !important;">
+					
+				<c:forEach items="${vol}" var="liste_vol" varStatus="boucle">
+					
 						<div class="tm-recommended-place">
-							<img src="img/tm-img-06.jpg" alt="Image" class="img-fluid tm-recommended-img">
+							<img src="img/vol.jpg" alt="Image" class="img-fluid tm-recommended-img">
 							<div class="tm-recommended-description-box">
 								<div class="LegDetails_container__3uhle LegSummary_legDetailsWithChevron__333Y2" aria-hidden="false">
 									<div class="LogoImage_container__2Q2Ny LegLogo_logoContainer__1Zf8A LegSummary_legLogo__3WRVi">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">Royal Air Maroc + transavia + easyJet</span>
+										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">
+											<c:out value="${ liste_vol.avion.nom }"></c:out>
+											</span>
 									</div>
 									<br>
 									<br>
@@ -333,15 +343,24 @@
 										<div class="LegInfo_routePartialDepart__Ix_Rt">
 											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
 												<div>
-													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">09:35</span>
+													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">
+													<c:out value="${ liste_vol.heureDepart }"></c:out>
+													
+													</span>
 												</div>
 											</span>
 											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">AGA</span>
+												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
+									          
+											<c:out value="${ liste_vol.airport1.nom }"></c:out>
+												</span>
 											</span>
 										</div>
 										<div class="LegInfo_stopsContainer__2Larg">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">12 h 45</span>
+											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">
+											<c:out value="${ liste_vol.duree }"></c:out>
+											
+											</span>
 											<div class="LegInfo_stopLine__3Zhmj">
 												<span class="LegInfo_stopDot__3pQwb"></span>
 										<span class="LegInfo_stopDot__3pQwb"></span>
@@ -360,12 +379,19 @@
 								<div class="LegInfo_routePartialArrive__1fHVy">
 									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
 										<div>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">22:20</span>
+											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">
+										<c:out value="${ liste_vol.heureArrivee }"></c:out>
+											
+											</span>
 										</div>
 									</span>
 									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
 										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
-											ORY</span>
+								
+	                               	
+									<c:out value="${ liste_vol.airport1.nom }"></c:out>
+											
+											</span>
 										</span>
 									</div>
 								</div>
@@ -374,314 +400,21 @@
 								</div>
 							</div>
 							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$440</p>
+								<p class="tm-recommended-price">
+							<c:out value="${ liste_vol.prix }"></c:out>
+								
+								</p>
 								<p class="tm-recommended-price-link">Résérver le vol</p>
 							</a>                        
 						</div>
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-07.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<div class="LegDetails_container__3uhle LegSummary_legDetailsWithChevron__333Y2" aria-hidden="false">
-									<div class="LogoImage_container__2Q2Ny LegLogo_logoContainer__1Zf8A LegSummary_legLogo__3WRVi">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">Royal Air Maroc + transavia + easyJet</span>
-									</div>
-									<br>
-									<br>
-									<br>
-									<br>
-									
-								   
-									<div class="LegInfo_legInfo__2UyXp">
-										<div class="LegInfo_routePartialDepart__Ix_Rt">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
-												<div>
-													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">09:35</span>
-												</div>
-											</span>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">AGA</span>
-											</span>
-										</div>
-										<div class="LegInfo_stopsContainer__2Larg">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">12 h 45</span>
-											<div class="LegInfo_stopLine__3Zhmj">
-												<span class="LegInfo_stopDot__3pQwb"></span>
-										<span class="LegInfo_stopDot__3pQwb"></span>
-										<span class="LegInfo_stopDot__3pQwb"></span>
-										<svg version="1.1" id="Layer_1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 12" enable-background="new 0 0 12 12" xml:space="preserve" class="LegInfo_planeEnd__sWZ93">
-											<path fill="#898294" d="M3.922,12h0.499c0.181,0,0.349-0.093,0.444-0.247L7.949,6.8l3.233-0.019C11.625,6.791,11.989,6.44,12,6 c-0.012-0.44-0.375-0.792-0.818-0.781L7.949,5.2L4.866,0.246C4.77,0.093,4.602,0,4.421,0L3.922,0c-0.367,0-0.62,0.367-0.489,0.71 L5.149,5.2l-2.853,0L1.632,3.87c-0.084-0.167-0.25-0.277-0.436-0.288L0,3.509L1.097,6L0,8.491l1.196-0.073 C1.382,8.407,1.548,8.297,1.632,8.13L2.296,6.8h2.853l-1.716,4.49C3.302,11.633,3.555,12,3.922,12"></path>
-										</svg>
-									</div>
-									<div class="LegInfo_stopsLabelContainer__1S6VX">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 LegInfo_stopsLabelRed__33562">
-											3 escales
-										</span>
-										&nbsp;
-								</div>
-								</div>
-								<div class="LegInfo_routePartialArrive__1fHVy">
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
-										<div>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">22:20</span>
-										</div>
-									</span>
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
-											ORY</span>
-										</span>
-									</div>
-								</div>
-								
-								
-								</div>
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$440</p>
-								<p class="tm-recommended-price-link">Résérver le vol</p>
-							</a>                        
-						</div>
-
-					 
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-05.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<div class="LegDetails_container__3uhle LegSummary_legDetailsWithChevron__333Y2" aria-hidden="false">
-									<div class="LogoImage_container__2Q2Ny LegLogo_logoContainer__1Zf8A LegSummary_legLogo__3WRVi">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">Royal Air Maroc + transavia + easyJet</span>
-									</div>
-									<br>
-									<br>
-									<br>
-									<br>
-									<div class="LegInfo_legInfo__2UyXp">
-										<div class="LegInfo_routePartialDepart__Ix_Rt">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
-												<div>
-													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">09:35</span>
-												</div>
-											</span>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">AGA</span>
-											</span>
-										</div>
-										<div class="LegInfo_stopsContainer__2Larg">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">12 h 45</span>
-											<div class="LegInfo_stopLine__3Zhmj">
-												<span class="LegInfo_stopDot__3pQwb"></span>
-										<span class="LegInfo_stopDot__3pQwb"></span>
-										<span class="LegInfo_stopDot__3pQwb"></span>
-										<svg version="1.1" id="Layer_1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 12" enable-background="new 0 0 12 12" xml:space="preserve" class="LegInfo_planeEnd__sWZ93">
-											<path fill="#898294" d="M3.922,12h0.499c0.181,0,0.349-0.093,0.444-0.247L7.949,6.8l3.233-0.019C11.625,6.791,11.989,6.44,12,6 c-0.012-0.44-0.375-0.792-0.818-0.781L7.949,5.2L4.866,0.246C4.77,0.093,4.602,0,4.421,0L3.922,0c-0.367,0-0.62,0.367-0.489,0.71 L5.149,5.2l-2.853,0L1.632,3.87c-0.084-0.167-0.25-0.277-0.436-0.288L0,3.509L1.097,6L0,8.491l1.196-0.073 C1.382,8.407,1.548,8.297,1.632,8.13L2.296,6.8h2.853l-1.716,4.49C3.302,11.633,3.555,12,3.922,12"></path>
-										</svg>
-									</div>
-									<div class="LegInfo_stopsLabelContainer__1S6VX">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 LegInfo_stopsLabelRed__33562">
-											3 escales
-										</span>
-										&nbsp;
-								</div>
-								</div>
-								<div class="LegInfo_routePartialArrive__1fHVy">
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
-										<div>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">22:20</span>
-										</div>
-									</span>
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
-											ORY</span>
-										</span>
-									</div>
-								</div>
-								
-								</div>
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$460</p>
-								<p class="tm-recommended-price-link">Résérver le vol</p>
-							</a>
-						</div>
-
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-04.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<div class="LegDetails_container__3uhle LegSummary_legDetailsWithChevron__333Y2" aria-hidden="false">
-									<div class="LogoImage_container__2Q2Ny LegLogo_logoContainer__1Zf8A LegSummary_legLogo__3WRVi">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">Royal Air Maroc + transavia + easyJet</span>
-									</div>
-									<br>
-									<br>
-									<br>
-									<br>
-									<div class="LegInfo_legInfo__2UyXp">
-										<div class="LegInfo_routePartialDepart__Ix_Rt">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
-												<div>
-													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">09:35</span>
-												</div>
-											</span>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">AGA</span>
-											</span>
-										</div>
-										<div class="LegInfo_stopsContainer__2Larg">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">12 h 45</span>
-											<div class="LegInfo_stopLine__3Zhmj">
-												<span class="LegInfo_stopDot__3pQwb"></span>
-										<span class="LegInfo_stopDot__3pQwb"></span>
-										<span class="LegInfo_stopDot__3pQwb"></span>
-										<svg version="1.1" id="Layer_1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12 12" enable-background="new 0 0 12 12" xml:space="preserve" class="LegInfo_planeEnd__sWZ93">
-											<path fill="#898294" d="M3.922,12h0.499c0.181,0,0.349-0.093,0.444-0.247L7.949,6.8l3.233-0.019C11.625,6.791,11.989,6.44,12,6 c-0.012-0.44-0.375-0.792-0.818-0.781L7.949,5.2L4.866,0.246C4.77,0.093,4.602,0,4.421,0L3.922,0c-0.367,0-0.62,0.367-0.489,0.71 L5.149,5.2l-2.853,0L1.632,3.87c-0.084-0.167-0.25-0.277-0.436-0.288L0,3.509L1.097,6L0,8.491l1.196-0.073 C1.382,8.407,1.548,8.297,1.632,8.13L2.296,6.8h2.853l-1.716,4.49C3.302,11.633,3.555,12,3.922,12"></path>
-										</svg>
-									</div>
-									<div class="LegInfo_stopsLabelContainer__1S6VX">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 LegInfo_stopsLabelRed__33562">
-											3 escales
-										</span>
-										&nbsp;
-								</div>
-								</div>
-								<div class="LegInfo_routePartialArrive__1fHVy">
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
-										<div>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">22:20</span>
-										</div>
-									</span>
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
-											ORY</span>
-										</span>
-									</div>
-								</div>
-								
-								</div> 
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$470</p>
-								<p class="tm-recommended-price-link">Résérver le vol</p>
-							</a>
-						</div>    
+						</c:forEach>
+						
 					</div>                        
 
 					<a href="#" class="text-uppercase btn-primary tm-btn mx-auto tm-d-table" style="display: table ;">plus de vols</a>
 				</div> <!-- tab-pane -->
 				
-				<!-- Tab 5 -->
-				<div class="tab-pane fade" id="5a">
-
-					<div class="tm-recommended-place-wrap">
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-05.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Africa Resort Hotel</h3>
-								<p class="tm-text-highlight">First City</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$550</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>                        
-						</div>
-
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-04.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Aenean ac magna diam</h3>
-								<p class="tm-text-highlight">Second City</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$560</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>
-						</div>
-
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-07.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Beach Barbecue Sunset</h3>
-								<p class="tm-text-highlight">Third City</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$570</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>
-						</div>
-
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-06.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Grand Resort Pasha</h3>
-								<p class="tm-text-highlight">Fourth City</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$580</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>
-						</div>    
-					</div>                        
-
-					<a href="#" class="text-uppercase btn-primary tm-btn mx-auto tm-d-table">plus de vols</a>
-				</div> <!-- tab-pane -->   
-				
-				<!-- Tab 6 -->            
-				<div class="tab-pane fade" id="6a">
-
-					<div class="tm-recommended-place-wrap">
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-04.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Hotel Australia</h3>
-								<p class="tm-text-highlight">City One</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$660</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>                        
-						</div>
-
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-05.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Proin interdum ullamcorper</h3>
-								<p class="tm-text-highlight">City Two</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$650</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>
-						</div>
-
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-06.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Beach Barbecue Sunset</h3>
-								<p class="tm-text-highlight">City Three</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$640</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>
-						</div>
-
-						<div class="tm-recommended-place">
-							<img src="img/tm-img-07.jpg" alt="Image" class="img-fluid tm-recommended-img">
-							<div class="tm-recommended-description-box">
-								<h3 class="tm-recommended-title">Grand Resort Pasha</h3>
-								<p class="tm-text-highlight">City Four</p>
-								<p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">$630</p>
-								<p class="tm-recommended-price-link">Continue Reading</p>
-							</a>
-						</div>    
-					</div>                        
+			          
 
 					<a href="#" class="text-uppercase btn-primary tm-btn mx-auto tm-d-table" style="border-radius: 5px;
     box-shadow: 0 5px 20px rgba(14,15,18,.2);">Précédent</a>
