@@ -29,7 +29,7 @@
 												<div class="imgcontainer">
 													<span class="close" title="Close Modal">&times;</span> 
 												</div>
-												<div  class="container">
+												<div  class="container connection">
 												<div class="gallary-header ">
 												<h2 style="font-size: 20px;margin-left:150px;">Utilisateur - Se connecter</h2>
 												</div>
