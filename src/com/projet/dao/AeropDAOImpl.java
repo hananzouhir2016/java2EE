@@ -229,7 +229,7 @@ public class AeropDAOImpl implements AeropDAO {
 	        PreparedStatement preparedStatement = null;
 	        ResultSet resultat = null;
 	        
-		    Airport airport = null;
+		    Airport airport = new Airport();
 
 		    try {
 		        /* Récupération d'une connexion depuis la Factory */

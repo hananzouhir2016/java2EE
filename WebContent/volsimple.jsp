@@ -55,7 +55,9 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 															
-															
+															 	<option value="default">
+															 		<c:out value="AeroportDepart"></c:out>
+															 	</option>
 															  <c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
 					
 															  	<option value="${nom_aero.nom }">
@@ -75,7 +77,10 @@
 														<h2>A</h2>
                                                 <div class="travel-select-icon">
 													<select class="form-control ">
-                                              
+                                              <option value="default">
+															 		<c:out value="AeroportArrivee"></c:out>
+															 	</option>
+															
 															  <c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
 					
 															  	<option value="${ nom_aero.nom }" >
@@ -106,7 +111,10 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 															       
-															  	
+																		        <option value="default">
+                                             <c:out value="${volform.nbAdultes }"></c:out>
+                                             
+                                             </option>				  	
 															  	<option value="2">2</option><!-- /.option-->
 
 															  	<option value="4">4</option><!-- /.option-->
@@ -320,17 +328,19 @@
 				<!-- Tab 4 -->
 				<div class="tab-pane " id="4a" style="display: block !important;">
 				<!-- Current Active Tab WITH "show active" classes in DIV tag -->
-					<div class="tm-recommended-place-wrap" style="display: block !important;">
+					<div class="tm-recommended-place-wrap" style="width:890px;">
 					
 				<c:forEach items="${vol}" var="liste_vol" varStatus="boucle">
-					
+					<form method="post"  action="details.vol">
 						<div class="tm-recommended-place">
 							<img src="img/vol.jpg" alt="Image" class="img-fluid tm-recommended-img">
 							<div class="tm-recommended-description-box">
 								<div class="LegDetails_container__3uhle LegSummary_legDetailsWithChevron__333Y2" aria-hidden="false">
 									<div class="LogoImage_container__2Q2Ny LegLogo_logoContainer__1Zf8A LegSummary_legLogo__3WRVi">
 										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">
+											
 											<c:out value="${ liste_vol.avion.nom }"></c:out>
+									
 											</span>
 									</div>
 									<br>
@@ -371,7 +381,8 @@
 									</div>
 									<div class="LegInfo_stopsLabelContainer__1S6VX">
 										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 LegInfo_stopsLabelRed__33562">
-											3 escales
+											<c:out value="${ liste_vol.nbrescale } escales"></c:out>
+										
 										</span>
 										&nbsp;
 								</div>
@@ -389,24 +400,43 @@
 										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
 								
 	                               	
-									<c:out value="${ liste_vol.airport1.nom }"></c:out>
+									<c:out value="${ liste_vol.airport2.nom }"></c:out>
 											
 											</span>
 										</span>
 									</div>
+								
+									
 								</div>
 								
 								
 								</div>
 							</div>
-							<a href="#" class="tm-recommended-price-box">
-								<p class="tm-recommended-price">
-							<c:out value="${ liste_vol.prix }"></c:out>
-								
-								</p>
-								<p class="tm-recommended-price-link">Résérver le vol</p>
-							</a>                        
+							<form method="post"  action="details.vol">
+						<input id="aero1" name="aero1" type="hidden" value="${ liste_vol.airport1.nom }">
+						<input id="aero2" name="aero2" type="hidden" value="${ liste_vol.airport2.nom }">
+						<input id="heureD" name="heureD" type="hidden" value="${ liste_vol.heureDepart }">
+						<input id="heureA" name="heureA" type="hidden" value="${ liste_vol.heureArrivee }">
+						<input id="avion" name="avion" type="hidden" value="${ liste_vol.avion.nom }">
+						<input id="duree" name="duree" type="hidden" value="${ liste_vol.duree }">
+						<input id="escale" name="escale" type="hidden" value="${ liste_vol.nbrescale } ">
+					    <input id="adulte" name="adulte" type="hidden" value="${volform.nbAdultes}">
+						<input id="enfant" name="enfant" type="hidden" value="${volform.nbEnfants}">
+						
+						<div class="tm-recommended-price-box">
+					<p class="tm-recommended-price-link" style="font-size:1.3 rem;"  ><c:out value="${ liste_vol.prix }DH"></c:out></p>
+					<br>
+						
+						<input type="submit" value="<c:out value="Voir le vol"></c:out>" name="chercher"  class="tm-recommended-price"  style="background-color:#00d8ff;font-size:1.3 rem;">
+						
+						
 						</div>
+						
+							
+						</form>
+							                      
+						</div>
+						
 						</c:forEach>
 						
 					</div>                        

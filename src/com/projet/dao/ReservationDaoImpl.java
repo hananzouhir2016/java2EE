@@ -4,12 +4,15 @@ import java.sql.*;
 import java.util.*;
 import static com.projet.dao.DAOUtilitaire2.*;
 
+import com.projet.model.Airport;
 import com.projet.model.Reservation;
 
 public class ReservationDaoImpl implements Reservationdao{
 	private static final String SQL_SELECT_PAR_CIN = "SELECT * FROM reservation WHERE id_utili = ? && Etatreservation=?";
 	private static final String SQL_UPDATE = "UPDATE reservation SET date=?,nbPassagers=? WHERE id=?";
 	private static final String SQL_UPDATE2 = "UPDATE reservation SET Etatreservation=? WHERE id=?";
+	private static final String SQL_INSERT = "INSERT INTO reservation (id_utili,date,nbPassagers) VALUES (?, ?,?)";
+
 	
 	private static DAOFactory daoFactory;
 	ReservationDaoImpl( DAOFactory daoFactory ) {
@@ -107,6 +110,30 @@ public class ReservationDaoImpl implements Reservationdao{
 		VolDAO voldao = daoFactory.getVolDAO();
 		reservation.setVols( voldao.trouver( resultSet.getInt("Vol_id" )));
 	    return reservation;
+	}
+	@Override
+	public void insert(Reservation reservation) throws DAOException {
+		
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+		try 
+		{
+			/* Récupération d'une connexion depuis la Factory */
+			connexion = daoFactory.getConnection();
+			preparedStatement = initialisationRequetePreparee(connexion, SQL_INSERT,reservation.getUtilisateur().getId(),reservation.getDate(),reservation.getNbpassagers());
+			int statut = preparedStatement.executeUpdate();
+			if ( statut == 0 ) 
+			{
+				throw new DAOException( "Échec de la création du aeroport, aucune ligne ajoutée dans la table." );
+			}
+		}
+		catch ( SQLException e ) 
+		{
+			throw new DAOException( e );
+		}
+		finally {
+			fermeturesSilencieuses(preparedStatement, connexion );
+			}
 	}
 	
 	

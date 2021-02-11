@@ -22,7 +22,8 @@ public class UtilisateurDaoImpl implements Utilisateurdao
 	private static final String sql2="SELECT * FROM utilisateur WHERE email = ?";
 	private static final String SQL_UPDATE = "UPDATE utilisateur SET cin=?, nom=?,prenom=?,mdp=?,telephone=?,email=? WHERE  id= ?";
 	private static  DAOFactory daoFactory;
-	
+	private static final String sql55="SELECT * FROM utilisateur WHERE email = ?";
+
 	/*récupérer une connexion, le DAO doit donc avoir accès à une instance de
 	la DAOFactory.*/
 	
@@ -169,6 +170,37 @@ public class UtilisateurDaoImpl implements Utilisateurdao
 	utilisateur.setReservations3( reservationdao.trouver( resultSet.getInt("id"),"encore"));
 	return utilisateur;
 	}
+
+	@Override
+	public Utilisateur chercher(String email) throws DAOException {
+		Connection connexion = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		Utilisateur utilisateur = null;
+		try {
+		/* Récupération d'une connexion depuis la Factory */
+		connexion = daoFactory.getConnection();
+		/*
+		* Préparation de la requête avec les objets passés en arguments
+		* (ici, uniquement un id) et exécution.
+		*/
+		preparedStatement = initialisationRequetePreparee(connexion, sql55,email );
+		resultSet = preparedStatement.executeQuery();
+		/* Parcours de la ligne de données retournée dans le
+		ResultSet */
+		if ( resultSet.next() ) {	
+		 utilisateur= map( resultSet );
+		}
+		}
+		catch ( SQLException e ) {
+		throw new DAOException( e );
+		} 
+		finally {
+		fermeturesSilencieuses( resultSet, preparedStatement,connexion );
+		}
+		return utilisateur;
+		}
+	
 	}
 
 

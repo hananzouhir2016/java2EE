@@ -11,6 +11,16 @@
 			<url-pattern>/GestionUtilis</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ReservSql</servlet-name>
+		<servlet-class>com.projet.servlet.ReservSql</servlet-class>
+	</servlet>
+	
+  <servlet-mapping>
+			<servlet-name>ReservSql</servlet-name>
+			<url-pattern>/Reserv.sql</url-pattern>
+	</servlet-mapping>
+	
 	 
 	
 	<servlet>
@@ -21,6 +31,48 @@
   <servlet-mapping>
 			<servlet-name>Connexion</servlet-name>
 			<url-pattern>/Connexions</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>GestionReserv</servlet-name>
+		<servlet-class>com.projet.servlet.GestionReserv</servlet-class>
+	</servlet>
+	
+  <servlet-mapping>
+			<servlet-name>GestionReserv</servlet-name>
+			<url-pattern>/Gestion.reserv</url-pattern>
+	</servlet-mapping>
+	
+	
+		<servlet>
+	
+	<servlet-name>AffichageVol</servlet-name>
+		<servlet-class>com.projet.servlet.AffichageVol</servlet-class>
+	</servlet>
+	
+  <servlet-mapping>
+			<servlet-name>AffichageVol</servlet-name>
+			<url-pattern>/Affichage.vol</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+	
+	<servlet-name>ReservationVol</servlet-name>
+		<servlet-class>com.projet.servlet.ReservationVol</servlet-class>
+	</servlet>
+	
+  <servlet-mapping>
+			<servlet-name>ReservationVol</servlet-name>
+			<url-pattern>/Reservation.vol</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DetailsVols</servlet-name>
+		<servlet-class>com.projet.servlet.DetailsVols</servlet-class>
+	</servlet>
+	
+  <servlet-mapping>
+			<servlet-name>DetailsVols</servlet-name>
+			<url-pattern>/details.vol</url-pattern>
 	</servlet-mapping>
 	
 	<listener>
