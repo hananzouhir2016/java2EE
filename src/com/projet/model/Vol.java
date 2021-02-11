@@ -18,9 +18,25 @@ public class Vol {
 	private Airport airport1;
 	private Airport airport2;
 	private int nbrescale;
+	private int nbPassagers;
+
 	private String nbAdultes;
 	private String nbEnfants;
+	private String nbescale;
 	
+	
+	public int getNbPassagers() {
+		return nbPassagers;
+	}
+	public void setNbPassagers(int nbPassagers) {
+		this.nbPassagers = nbPassagers;
+	}
+	public String getNbescale() {
+		return nbescale;
+	}
+	public void setNbescale(String nbescale) {
+		this.nbescale = nbescale;
+	}
 	public String getNbAdultes() {
 		return nbAdultes;
 	}

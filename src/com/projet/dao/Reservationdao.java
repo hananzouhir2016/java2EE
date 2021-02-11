@@ -7,4 +7,5 @@ public interface Reservationdao {
 	List<Reservation> trouver( int id, String etat )throws DAOException;
 	void modifier( Reservation reservation) throws DAOException;
 	void annuler( Reservation reservation) throws DAOException;
+	void insert(Reservation reservation) throws DAOException;
 }

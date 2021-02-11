@@ -273,6 +273,9 @@ public  class VolDAOImpl implements VolDAO {
         AvionDao avion_n = daoFactory.getAvionDao();
         Avion avion=avion_n.trouver(resultat.getInt("Avi_id"));
         vol_affichage.setAvion(avion);
+    	EscaleDao escaledao = daoFactory.getEscaleDao();
+    	vol_affichage.setNbrescale(escaledao.compter(resultat.getInt("id" )));
+	    
 		
 	    return vol_affichage;
 	}

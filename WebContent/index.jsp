@@ -54,7 +54,7 @@
         		<div class="row">
         			<div class="col-md-12">
         				<div class="single-travel-boxes">
-        				<form  method="post"  action="AffichageVol">
+        				<form  method="post"  action="Affichage.vol">
         					<div id="desc-tabs" class="desc-tabs">
 								<ul class="nav nav-tabs" role="tablist">
 									<li role="presentation">
@@ -127,10 +127,11 @@
 														<h2>adultes</h2>
 														<div class="travel-select-icon">
 															<select class="form-control "  name="adulte" value="adulte">
-															  	<option value="default">5</option>
-															  	<option value="10">10</option>
-															  	<option value="15">15</option>
-															  	<option value="20">20</option>
+															  
+															  	<option value="1">1</option>
+															  	<option value="2">2</option>
+															  	<option value="3">3</option>
+															  	<option value="4">4</option>
 															</select>
 														</div>
 													</div>
@@ -140,10 +141,12 @@
 														<h2>Enfants</h2>
 														<div class="travel-select-icon">
 															<select class="form-control "  name="enfant" value="enfant">
-															  	<option value="default">1</option>
+															  																  	<option value="1">0</option>
+															  	
+															  	<option value="1">1</option>
 															  	<option value="2">2</option>
+															  	<option value="3">3</option>
 															  	<option value="4">4</option>
-															  	<option value="8">8</option>
 															</select>
 														</div>
 													</div>

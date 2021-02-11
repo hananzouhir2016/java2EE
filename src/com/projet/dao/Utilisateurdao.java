@@ -7,5 +7,7 @@ public interface Utilisateurdao
 	Utilisateur trouver( String mdp , String email)throws DAOException;
 	Utilisateur Chercher(String emaile) throws DAOException ;
 	void modifier( Utilisateur utilisateur) throws DAOException;
+	Utilisateur chercher(String email) throws DAOException ;
+	
 	
 }
