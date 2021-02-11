@@ -29,7 +29,7 @@
 												<div class="imgcontainer">
 													<span class="close" title="Close Modal">&times;</span> 
 												</div>
-												<div  class="container connection">
+												<div class="container connection">
 												<div class="gallary-header ">
 												<h2 style="font-size: 20px;margin-left:150px;">Utilisateur - Se connecter</h2>
 												</div>
@@ -52,7 +52,7 @@
 													<form method="get" action="GestionUtilis">
 													<button type="submit" class="book-btn" style="width: 45%;margin-top:5px;">CREER UN COMPTE</button>
 		                                             </form>
-		</div>
+		                                        </div>
 		
 		</section>
 		
