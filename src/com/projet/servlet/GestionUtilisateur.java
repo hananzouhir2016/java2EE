@@ -22,7 +22,7 @@ public class GestionUtilisateur extends HttpServlet {
         public static final String CONF_DAO_FACTORY= "daofactory";
 		public static final String ATT_CLIENT = "utilisateur";
 		public static final String ATT_FORM = "form";
-		public static final String VUE = "/WEB-INF/inscription.jsp";
+		public static final String VUE = "/inscription.jsp";
 		private Utilisateurdao utilisateurdao;
 		private  DAOFactory daofactory;
          public void init() throws ServletException {
@@ -59,11 +59,12 @@ public class GestionUtilisateur extends HttpServlet {
 		request.setAttribute( ATT_CLIENT, utilisateur );
 		request.setAttribute("erreurs", form.getErreurs());
 		request.setAttribute("resultat", form.getResultat());
-		session.setAttribute("sessionUtilisateur", utilisateur);
+		
 		if (form.getResultat()!=null) {
 			this.getServletContext().getRequestDispatcher(VUE).forward( request, response );
 		}
 		else {
+			session.setAttribute("sessionUtilisateur", utilisateur);
 		this.getServletContext().getRequestDispatcher( "/utilisateur.jsp").forward( request, response );
 		}
 		}
