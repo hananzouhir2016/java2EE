@@ -54,20 +54,17 @@
 											
 									<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 									<li>
-										<button class="book-btn" style="width:200px;"
-											onclick="document.getElementById('id01').style.display='block'">
+										<button class="book-btn" onclick="document.getElementById('id01').style.display='block'">
 											<c:if test="${!empty sessionScope.sessionUtilisateur}">
                                             <%-- Si l'utilisateur existe en session, alors
                                              on affiche son adresse email. --%>
-                                             <p class="succes"> bonjour;${sessionScope.sessionUtilisateur.nom}${sessionScope.sessionUtilisateur.prenom}</p>
+                                             <p class="succes " style="white-space: nowrap;text-align: center;color: #fff;font-size: 14px;font-family: 'Poppins', sans-serif;text-transform: capitalize;">  ${sessionScope.sessionUtilisateur.nom} ${sessionScope.sessionUtilisateur.prenom}</p>
                                                   </c:if>
 											</button>
 										<div id="id01" class="modal">
 											<form class="modal-content animate" style="width: 26%;" method="get" action="Deconnexions">
-												<div class="imgcontainer">
-													<span
-														onclick="document.getElementById('id01').style.display='none'"
-														class="close" title="Close Modal">&times;</span>
+												<div class="imgcontainer" style="margin:0 0 0 0;">
+													<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" style="margin-right:10px;margin-top:10px;">×</span>
 												</div>
 												<div class="container">
 													<a  href="gerercompte.jsp" style="color: #00d8ff; margin-left: 40px;"><i
@@ -93,22 +90,22 @@
 
 	</header>
 
-	<section id="home" class="about-flights"
-		style="min-height: 260px; background: url(assets/images/home/banner.jpg) no-repeat center fixed;">
+	<section id="home" class="about-flights" 
+		>
 		<div class="container">
 			<div class="about-us-content">
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="single-about-us">
-							<div class="about-us-txt" style="margin-top: 200px;">
-								<div class="collapse navbar-collapse">
+							<div class="about-us-txt" style="margin-top: 90px;">
+								
+                              <div class="collapse navbar-collapse">
 									<ul class="nav1 navbar-nav ">
-										<a href="utilisateur.jsp"style="color: #f3f4f4; margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Accuiel</a>
-										<a href="MesVoyage.jsp" style="color: #f3f4f4;margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Mes voyages</a>
-								        <a href="gerercompte.jsp" style="color: #f3f4f4;margin-right:50px; font-family: 'Poppins', sans-serif;font-size: 14px;">Details du compte</a>
+										<li><a href="Acceuil"style="color: #f3f4f4; margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Accuiel</a><li>
+										<li><a href="MesVoyage.jsp" style="color: #f3f4f4;margin-right:50px;font-family: 'Poppins', sans-serif;font-size: 14px;">Mes voyages</a><li>
+								        <li><a href="gerercompte.jsp" style="color: #f3f4f4;margin-right:50px; font-family: 'Poppins', sans-serif;font-size: 14px;">Details du compte</a><li>
 									</ul>
 								</div>
-
 							</div>
 							<!--/.about-us-txt-->
 						</div>

@@ -54,7 +54,7 @@
 							 <input type="password" name="mdp" class="input-form"
 								placeholder="Your Password" required="required" >
                              <br> <span>${form.erreurs['mdp']}</span><br><br>
-							 <button type="submit" class="book-btn">se connecter</button><br><br>
+							 <button type="submit" class="book-btn">S'inscrire</button><br><br>
 							</form>
 							  <span> ${form.resultat}</span> 
 							<p>Deja un membre? <a href="Connection.jsp">Connecte toi!</a></p>
@@ -65,8 +65,6 @@
 			</div>
 		</div>
 		</section>
-		
-		
 		<jsp:include page="footer.jsp" />
 		
 		

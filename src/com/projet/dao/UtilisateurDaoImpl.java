@@ -156,7 +156,9 @@ public class UtilisateurDaoImpl implements Utilisateurdao
 	private static Utilisateur map( ResultSet resultSet ) throws SQLException 
 	{
 	Utilisateur utilisateur = new Utilisateur();
+	
 	utilisateur.setId(resultSet.getInt("id"));
+	utilisateur.setProfil(resultSet.getString("profil"));
 	utilisateur.setNom(resultSet.getString("nom"));
 	utilisateur.setCin(resultSet.getString("cin"));
 	utilisateur.setPrenom(resultSet.getString("prenom") );

@@ -1,14 +1,20 @@
 package com.projet.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.projet.dao.AeropDAO;
 import com.projet.dao.DAOFactory;
 import com.projet.dao.Reservationdao;
 import com.projet.dao.Utilisateurdao;
+import com.projet.model.Airport;
 import com.projet.model.Utilisateur;
 import com.projet.service.UtilisateurService;
 import com.projet.service.VerificationDonnée;
@@ -29,6 +35,7 @@ public class Connexion extends HttpServlet {
 	private Utilisateurdao utilisateurdao;
 	private Reservationdao reservationdao;
 	private  DAOFactory daofactory;
+	private AeropDAO  aeroport;
      public void init() throws ServletException {
 		
 		/* Récupération d'une instance de notre DAO Utilisateur
@@ -43,6 +50,7 @@ public class Connexion extends HttpServlet {
 		this.daofactory= (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY );
 		this.utilisateurdao=daofactory.getUtilisateurDao();
 		this.reservationdao=daofactory.getReservationDao();
+		this.aeroport = daofactory.getAeropDAO();
 		
 		}
      public void doGet( HttpServletRequest request,HttpServletResponse response ) throws ServletException, IOException
@@ -69,7 +77,18 @@ public class Connexion extends HttpServlet {
 		{
 
 		session.setAttribute("sessionUtilisateur", utilisateur);
-	    this.getServletContext().getRequestDispatcher("/utilisateur.jsp").forward( request, response );
+		List<Airport> nom_aero = new ArrayList<Airport>();
+        nom_aero= aeroport.selectionner();
+        request.setAttribute("list_nomAeroports", nom_aero);
+       
+        if(utilisateur.getProfil().equals("utilisateur"))
+        {
+        	 this.getServletContext().getRequestDispatcher("/utilisateur.jsp").forward( request, response );
+        }
+        else
+        {
+        	 this.getServletContext().getRequestDispatcher("/dashboard.jsp").forward( request, response );
+        }
 		    
 			
 		}

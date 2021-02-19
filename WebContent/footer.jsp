@@ -17,28 +17,42 @@
 							<div class="single-footer-item">
 								<div class="footer-logo">
 									<a href="index.html">
-										Sky<span>Fly</span>
+										tour<span>Nest</span>
 									</a>
 									<p>
-										Une excellente façon de voler
+										best travel agency
 									</p>
 								</div>
-							</div>
-						</div>
+							</div><!--/.single-footer-item-->
+						</div><!--/.col-->
 
 						<div class="col-sm-3">
 							<div class="single-footer-item">
-								<h2>lien</h2>
+								<h2>link</h2>
 								<div class="single-footer-txt">
-									<p><a href="#">Acuiel</a></p>
-									<p><a href="#">Offres spéciales</a></p>
+									<p><a href="#">home</a></p>
+									<p><a href="#">destination</a></p>
+									<p><a href="#">spacial packages</a></p>
+									<p><a href="#">special offers</a></p>
+									<p><a href="#">blog</a></p>
 									<p><a href="#">contacts</a></p>
-								</div>
-							</div>
+								</div><!--/.single-footer-txt-->
+							</div><!--/.single-footer-item-->
 
-						</div>
+						</div><!--/.col-->
 
-					
+						<div class="col-sm-3">
+							<div class="single-footer-item">
+								<h2>popular destination</h2>
+								<div class="single-footer-txt">
+									<p><a href="#">china</a></p>
+									<p><a href="#">venezuela</a></p>
+									<p><a href="#">brazil</a></p>
+									<p><a href="#">australia</a></p>
+									<p><a href="#">london</a></p>
+								</div><!--/.single-footer-txt-->
+							</div><!--/.single-footer-item-->
+						</div><!--/.col-->
 
 						<div class="col-sm-3">
 							<div class="single-footer-item text-center">
@@ -46,11 +60,15 @@
 								<div class="single-footer-txt text-left">
 									<p>+1 (300) 1234 6543</p>
 									<p class="foot-email"><a href="#">info@tnest.com</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+									<p>North Warnner Park 336/A</p>
+									<p>Newyork, USA</p>
+								</div><!--/.single-footer-txt-->
+							</div><!--/.single-footer-item-->
+						</div><!--/.col-->
+
+					</div><!--/.row-->
+
+				</div><!--/.footer-content-->
 				<hr>
 				<div class="foot-icons ">
 					<ul class="footer-social-links list-inline list-unstyled">
@@ -58,14 +76,16 @@
 		                <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
 		                <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
 		        	</ul>
-		        	<p>&copy; 2020<a href="https://www.themesine.com">ThèmeSINE</a>. Tous droits réservés</p>
-		        </div>
+		        	<p>&copy; 2017 <a href="https://www.themesine.com">ThemeSINE</a>. All Right Reserved</p>
+
+		        </div><!--/.foot-icons-->
 				<div id="scroll-Top">
 					<i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
-				</div>
-			</div>
+				</div><!--/.scroll-Top-->
+			</div><!-- /.container-->
 
-		</footer>
+		</footer><!-- /.footer-copyright-->
+		<!-- footer-copyright end -->
 		
 		<script src="assets/js/custom.js"></script>
 

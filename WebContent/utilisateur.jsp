@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -28,108 +29,102 @@
 										</h1>
 									</a></li>
 								</ul>
+										<form  method="post"  action="AffichageVol">
+									<div role="tabpanel" id="flights">
 										<div class="tab-para">
-	
-											<div class="row">
-															
-												<div class="col-lg-2 col-md-3 col-sm-4">
-											
-												
-													<div class="single-tab-select-box">
-									
-														<h2>De</h2>
-
-														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">ville...</option><!-- /.option-->
-
-															  	<option value="turkey">turkey</option><!-- /.option-->
-
-															  	<option value="russia">russia</option><!-- /.option-->
-															  	<option value="egept">egypt</option><!-- /.option-->
-
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
-
-														
-
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-												<div class="col-lg-2 col-md-3 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>A</h2>
-                                                <div class="travel-select-icon">
-													<select class="form-control ">
-
-														  <option value="default">ville...</option><!-- /.option-->
-
-														  <option value="istambul">istambul</option><!-- /.option-->
-
-														  <option value="mosko">mosko</option><!-- /.option-->
-														  <option value="cairo">cairo</option><!-- /.option-->
-
-													</select><!-- /.select-->
-												</div><!-- /.travel-select-icon -->
+											<div class="single-trip-circle">
+													<input type="radio" id="radio02" value="radio02" name="radio" onclick="fonct()"/>
+  													<label for="radio02">
+  														<span class="round-boarder">
+  															<span class="round-boarder1"></span>
+  														</span>aller-simple
+  													</label>
 												</div>
-										     	</div> 
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-12">
+													<div class="single-tab-select-box">
+														<h2>De</h2>
+														<div class="travel-select-icon">
+															<select class="form-control "  name="de" value="de">
+															<c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
+					
+															  	<option  value="${nom_aero.nom}" >
+															  	<c:out value="${ nom_aero.nom }"></c:out>
+															  	</option>
+															 </c:forEach> 	
+															</select>
+														</div>
+													</div>
+												</div>
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>Aller</h2>
+														<h2>Départ</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="Aller" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
+																<input type="text"  name="depart" value="depart" class="form-control" data-toggle="datepicker"
+																placeholder="12 -01 - 2017 ">
 															</form>
-														</div><!-- /.travel-check-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
+														</div>
+													</div>
+												</div>
 												
+
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>Adultes</h2>
+														<h2>adultes</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">1</option><!-- /.option-->
-
-															  	<option value="2">2</option><!-- /.option-->
-
-															  	<option value="4">4</option><!-- /.option-->
-															  	<option value="8">8</option><!-- /.option-->
-
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
+															<select class="form-control "  name="adulte" value="adulte">
+															  	<option value="default">5</option>
+															  	<option value="10">10</option>
+															  	<option value="15">15</option>
+															  	<option value="20">20</option>
+															</select>
+														</div>
+													</div>
+												</div>
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
 														<h2>Enfants</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">1</option><!-- /.option-->
-
-															  	<option value="2">2</option><!-- /.option-->
-
-															  	<option value="4">4</option><!-- /.option-->
-															  	<option value="8">8</option><!-- /.option-->
-
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-												<div class="col-lg-1 col-md-1 col-sm-4">
+															<select class="form-control "  name="enfant" value="enfant">
+															  	<option value="default">1</option>
+															  	<option value="2">2</option>
+															  	<option value="4">4</option>
+															  	<option value="8">8</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-12">
 													<div class="single-tab-select-box">
-													
-															<div class="about-btn">
-																<button  class="about-view travel-btn">
-																	Rechercher	
-																</button><!--/.travel-btn-->
-															</div><!--/.about-btn-->
-														
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
+														<h2>à</h2>
+														<div class="travel-select-icon">
+															<select class="form-control "  name="a" value="a">
+															  <c:forEach items="${list_nomAeroports}" var="nom_aero" varStatus="boucle">
+					
+															  	<option value="${nom_aero.nom}" >
+															  	<c:out value="${nom_aero.nom}"></c:out>
+															  	</option>
+															 </c:forEach>
+															</select>
+														</div>
+													</div>
+												</div>
+												
+												<div class="clo-sm-5">
+													<div class="about-btn pull-right">
+														<button  class="about-view travel-btn" id="chercherVol" value="chercherVol" name="chercherVol">
+								                               Chercher 
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								
+								</form>
 
 											</div><!--/.row-->
 
@@ -143,7 +138,7 @@
         				</div><!--/.single-travel-box-->
         			</div><!--/.col-->
         		</div><!--/.row-->
-        	</div><!--/.container-->
+        	
 
         </section><!--/.travel-box-->
 

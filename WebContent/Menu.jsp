@@ -57,15 +57,13 @@
 											<c:if test="${!empty sessionScope.sessionUtilisateur}">
                                             <%-- Si l'utilisateur existe en session, alors
                                              on affiche son adresse email. --%>
-                                             <p class="succes"> bonjour;${sessionScope.sessionUtilisateur.nom}${sessionScope.sessionUtilisateur.prenom}</p>
+                                             <p class="succes " style="white-space: nowrap;text-align: center;color: #fff;font-size: 14px;font-family: 'Poppins', sans-serif;text-transform: capitalize;">  ${sessionScope.sessionUtilisateur.nom} ${sessionScope.sessionUtilisateur.prenom}</p>
                                                   </c:if>
 											</button>
 										<div id="id01" class="modal">
 											<form class="modal-content animate" style="width: 26%;" method="get" action="Deconnexions">
-												<div class="imgcontainer">
-													<span
-														onclick="document.getElementById('id01').style.display='none'"
-														class="close" title="Close Modal">&times;</span>
+												<div class="imgcontainer" style="margin:0 0 0 0;">
+													<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" style="margin-right:10px;margin-top:10px;">×</span>
 												</div>
 												<div class="container">
 													<a  href="gerercompte.jsp" style="color: #00d8ff; margin-left: 40px;"><i

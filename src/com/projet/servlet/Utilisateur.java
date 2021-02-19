@@ -19,8 +19,8 @@ import com.projet.model.Airport;
 /**
  * Servlet implementation class Acceuil
  */
-@WebServlet("/Acceuil")
-public class Acceuil extends HttpServlet {
+@WebServlet("/Utilisateur")
+public class Utilisateur extends HttpServlet {
 	 /**
 	 * 
 	 */
@@ -44,7 +44,7 @@ public class Acceuil extends HttpServlet {
             nom_aero= aeroport.selectionner();
             req.setAttribute("list_nomAeroports", nom_aero);
     		
-           this.getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+           this.getServletContext().getRequestDispatcher("/utilisateur.jsp").forward(req, resp);
 		
 		}
 	    }

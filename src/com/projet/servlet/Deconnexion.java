@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/Deconnexions")
 public class Deconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String URL_REDIRECTION ="index.jsp";
+	public static final String URL_REDIRECTION ="Acceuil";
 public void doGet( HttpServletRequest request,HttpServletResponse response ) throws ServletException, IOException
 {
 /* Récupération et destruction de la session en cours */

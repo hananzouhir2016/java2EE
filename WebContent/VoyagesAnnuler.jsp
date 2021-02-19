@@ -3,8 +3,8 @@
 <html class="no-js" lang="en">
 <head>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<link rel="stylesheet" href="assets/css/style2.css" />
-<link rel="stylesheet" href="assets/css/style2.css" />
+<link rel="stylesheet" href="assets/css/acceuil.css" />
+
 
 
 </head>
@@ -14,45 +14,89 @@
 	
 
 	<article>
-
-
-		
-			<c:forEach items="${ sessionScope.sessionUtilisateur.reservations2 }" var="reservation" varStatus="boucle">
-	<c:forEach items="${reservation.vols }" var="vol" varStatus="boucle">
-		<div class="tab-content clearfix col-md-9" style="display: block !important;width: 71%;" id="k">
-		
+<div class="container-fluid mt--7" style="margin-bottom:40px;">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img src="assets/images/client/user.png" class="rounded-circle">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <button class="btn book-btn btn-sm btn-info mr-4" style="width:110px;font-size: .75rem;" onclick="document.location='gerercompte.jsp'">Mon compte</button>
+                <button onclick="document.location='Deconnexions'" class="btn book-btn btn-sm btn-default float-right" style="width:110px;font-size: .75rem;">deconnexion</button>
+              </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              
+              <div class="text-center">
+                <h3>
+                  ${sessionScope.sessionUtilisateur.nom} ${sessionScope.sessionUtilisateur.prenom}<span class="font-weight-light"></span>
+                </h3>
+                <div class="h5 font-weight-300">
+                  <i class="ni location_pin mr-2"></i>${sessionScope.sessionUtilisateur.email}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0">Mes voyages</h3>
+                </div>
+               <div class="col-4 text-right">
+                   <button onclick="document.location='MesVoyage.jsp'" class="btn book-btn btn-sm btn-info mr-4" style="width:80px;font-size: .75rem;margin-right: 0px !important;">Validees</button>
+                    <button onclick="document.location='ReservationNonEnregistrer.jsp'" class="btn book-btn btn-sm btn-info mr-4" style="width:80px;font-size: .75rem;margin-right: 0px !important;">En attente</button>
+                    <button onclick="document.location='VoyagesAnnuler.jsp'" class="btn book-btn btn-sm btn-info mr-4" style="width:80px;font-size: .75rem;margin-right: 0px !important;">Annulees</button>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form>
+                <h6 class="heading-small text-muted mb-4">Voyages annulees</h6>
+                <div class="pl-lg-4">
+                 	<c:forEach items="${ sessionScope.sessionUtilisateur.reservations }" var="reservation" varStatus="boucle">
+	                <c:forEach items="${reservation.vols }" var="vol" varStatus="boucle">
+	                  	<div class="tab-content clearfix col-md-9" style="display: block !important;width: 100%;" id="k">
 				<!-- Tab 4 -->
-				<div class="tab-pane " id="4a" style="display: block !important;margin: 4px;">
+			               	<div class="tab-pane " id="4a" style="display: block !important;margin: 4px;">
 				<!-- Current Active Tab WITH "show active" classes in DIV tag -->
 					<div class="tm-recommended-place-wrap" style="display: block !important;">
-						<div class="tm-recommended-place" style="margin-bottom:0px;">
+						<div class="tm-recommended-place" style="margin-bottom:0px;border-radius:5px 5px 5px 5px;">
 					
 							<div class="tm-recommended-description-box" style="padding:20px;padding-top:0px;">
-								<div class="LegDetails_container__3uhle LegSummary_legDetailsWithChevron__333Y2" aria-hidden="false">
-									<div class="LogoImage_container__2Q2Ny LegLogo_logoContainer__1Zf8A LegSummary_legLogo__3WRVi">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8">Nom Avion :${vol.avion.nom}</span>
+								<div class="LegDetails_container_3uhle LegSummary_legDetailsWithChevron_333Y2" aria-hidden="false">
+									<div class="LogoImage_container_2Q2Ny LegLogo_logoContainer1Zf8A LegSummary_legLogo_3WRVi"style="padding-top: 30px;font-weight: normal;">
+										<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--xs_1ycc8">Nom Avion :${vol.avion.nom}</span>
 									</div>
 									<br>
-									<br>
-									<br>
-									<br>
+									
 									
 								   
-									<div class="LegInfo_legInfo__2UyXp" style="flex-flow: initial;">
+									<div class="LegInfo_legInfo__2UyXp" style="flex-flow: initial;font-weight: initial;">
 										<div class="LegInfo_routePartialDepart__Ix_Rt">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
+											<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--lg1PdnC LegInfo_routePartialTime_ngmkT">
 												<div>
-													<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">${vol.heureDepart}</span>
+													<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--xl_HqAik">${vol.heureDepart}</span>
 												</div>
 											</span>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">Airport Départ:${vol.airport1.nom}</span></br>
-												<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">${vol.dateDepart}
+											<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--base_3REoZ">
+												<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--base3REoZ LegInfo_routePartialCityTooltip_Ao7U-">Airport Départ:${vol.airport1.nom}</span></br>
+												<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--base3REoZ LegInfo_routePartialCityTooltip_Ao7U-">${vol.dateDepart}
 </span>
 											</span>
 										</div>
 										<div class="LegInfo_stopsContainer__2Larg">
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 Duration_duration__2Evn6">${vol.duree}h</span>
+											<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--xs1ycc8 Duration_duration_2Evn6">${vol.duree}h</span>
 											<div class="LegInfo_stopLine__3Zhmj">
 												<span class="LegInfo_stopDot__3pQwb"></span>
 										<span class="LegInfo_stopDot__3pQwb"></span>
@@ -62,23 +106,23 @@
 										</svg>
 									</div>
 									<div class="LegInfo_stopsLabelContainer__1S6VX">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xs__1ycc8 LegInfo_stopsLabelRed__33562">
+										<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--xs1ycc8 LegInfo_stopsLabelRed_33562">
 											${vol.nbrescale}Escales
 										</span>
 										&nbsp;
 								</div>
 								</div>
 								<div class="LegInfo_routePartialArrive__1fHVy">
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--lg__1PdnC LegInfo_routePartialTime__ngmkT">
+									<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--lg1PdnC LegInfo_routePartialTime_ngmkT">
 										<div>
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--xl__HqAik">${vol.heureArrivee}</span>
+											<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--xl_HqAik">${vol.heureArrivee}</span>
 										</div>
 									</span>
-									<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ">
-										<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">
+									<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--base_3REoZ">
+										<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--base3REoZ LegInfo_routePartialCityTooltip_Ao7U-">
 											Airport D'arrivée:${vol.airport2.nom}</span><br>
 											
-											<span class="BpkText_bpk-text__2VouB BpkText_bpk-text--base__3REoZ LegInfo_routePartialCityTooltip__Ao7U-">${vol.dateArrivee}
+											<span class="BpkText_bpk-text_2VouB BpkText_bpk-text--base3REoZ LegInfo_routePartialCityTooltip_Ao7U-">${vol.dateArrivee}
 											</span>
 										</span>
 									</div>
@@ -88,7 +132,7 @@
 								
 								</div>
 							</div>
-							<div style="background-color: #00d8ff;width: 400px;padding:20px;">
+							<div style="background-color: #00d8ff;width: 400px;padding:20px;border-radius:5px 5px 5px 5px;">
 							
 							    <p class="tm-recommended-price-link">Prix:${vol.prix}DH</p>
 							    <p class="tm-recommended-price-link">Date Reservation:${ reservation.date}</p>
@@ -97,32 +141,21 @@
 								<p class="tm-recommended-price-link">Durée Vol:${ vol.duree}</p>
 							</div>                        
 						</div>
-						</div>
-						</div>
+					</div>
+				</div>
 						</div>
 						</c:forEach>
-						</c:forEach>
-				
-						
-					
-						
-						<div id="s" style="width:20%;margin-right: 80px;">
-			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="MesVoyage.jsp"> 
-			<i class='fas'>&#xf4fe;</i>
-			Voyages Valider
-			</a>
-			<hr>
-			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="ReservationNonEnregistrer.jsp"> 
-			<i class='fas'>&#xf502;</i>
-		Voyages Non Enregistrer
-			</a>
-			<hr>
-			<a style="color: #00d8ff;font-family: 'Poppins', sans-serif" href="VoyagesAnnuler.jsp">
-		  <i class="fa fas" style="	padding: 15px;">&#xf011;</i>
-		  voyages annuler
-			</a>
-			<hr>
-		</div>
+					       	</c:forEach>
+                 	
+                </div>
+                 
+              </form>
+            </div>     
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+    </div>
 						</article>
 
 		<!--travel-box start-->

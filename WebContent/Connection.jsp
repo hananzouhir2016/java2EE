@@ -42,7 +42,7 @@
 										required="required" />
 								<input type="password" name="mdp" class="input-form"
 										placeholder="Your Password" required="required" />
-								<button type="submit" class="book-btn">se connecter</button>
+								<button type="submit" class="book-btn">se connecter</button><br>
 								<span> ${form.resultat}</span><br>
 							</form>
 							<p>Pas un membre? <a href="inscription.jsp">Inscrie toi!</a></p>

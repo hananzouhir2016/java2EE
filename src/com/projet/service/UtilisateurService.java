@@ -111,6 +111,7 @@ public class UtilisateurService {
 	String email =VerificationDonnée.getValeurChamp(request, "email");
 	String mdp =VerificationDonnée.getValeurChamp(request, "mdp");
 	Utilisateur utilisateur=utilisateurdao.trouver(email,mdp);
+
 	if(utilisateur==null)
 	   {
 		resultat = "Adresse email ou mots passe incorrecte"; 
