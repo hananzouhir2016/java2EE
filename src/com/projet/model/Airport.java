@@ -2,7 +2,15 @@ package com.projet.model;
 
 public class Airport {
 	
-	 private String nom;
+	private int id;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	private String nom;
 	 private Ville ville;
 	 
 	public String getNom() {

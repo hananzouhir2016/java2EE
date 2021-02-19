@@ -1,6 +1,7 @@
 package com.projet.service;
 
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,6 +16,7 @@ public class AvionService {
 	private String resultat;
 	private Map<String, String> erreurs = new HashMap<String, String>();
 	
+	
 	public String getResultat() 
 			{
 				return resultat;
@@ -28,6 +30,7 @@ public class AvionService {
 	public AvionService( Aviondao  aviondao) 
 			{
 				this.aviondao = aviondao;
+				
 			}
 	
 	
@@ -76,7 +79,62 @@ public class AvionService {
 		return avion;
 		
 	  }
+	
+	
+	public Avion modifAvion(HttpServletRequest request)
+	{
+		Avion avion= new Avion();
+		String nom =VerificationDonneeAv.getValeurChamp(request, "nom");
+		String reference =VerificationDonneeAv.getValeurChamp(request, "reference");
+		
+		String idAvion=request.getParameter("idAvion");
+		int id=Integer.parseInt(idAvion);
 
+			
+		
+		String date=VerificationDonneeAv.getValeurChamp(request, "dateEntree");
+		Date dateEntree= Date.valueOf(date);
+	
+		
+		String nbPla =VerificationDonneeAv.getValeurChamp(request, "nbPlace");
+		int nbPlace=Integer.parseInt(nbPla); //cast du nbplace 
+		
+						try 
+						{
+							VerificationDonneeAv.validationNom(nom);
+							VerificationDonneeAv.validationReference(reference);
+							
+						} 
+						catch (Exception e) 
+						{
+							setErreur("nom", e.getMessage());
+							setErreur("reference", e.getMessage());
+							setErreur("dateEntree", e.getMessage());
+						}
+		
+		avion.setNom(nom);
+		avion.setReference(reference);
+		avion.setNbPlace(nbPlace);
+		avion.setDateEntree(dateEntree);
+		avion.setId(id);
+		
+		
+		
+		if (erreurs.isEmpty())
+		{
+			aviondao.modifier(avion);
+			resultat = "Succés de la modification d'avion.";
+		} 
+		else 
+		{
+			resultat = "échec de la modification d'avion.";
+		}
+		return avion;
+		
+	  }
+
+
+		
 
 		private void setErreur(String champ, String message) 
 		{

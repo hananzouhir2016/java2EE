@@ -5,8 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-    <link rel="stylesheet" href="css1/style_G_vol.css">
-      <link rel="stylesheet" href="css1/style_ajout_vol.css">
+    
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
@@ -35,9 +34,25 @@
                         <a href="dashboard.jsp"> <i class="menu-icon fa fa-line-chart"></i>Tableau de Bord </a>
                     </li>
                     <h3 class="menu-title">Liste des Gestions</h3><!-- /.menu-title -->
-                    <li class="">
-                        <a href="G_vol.jsp" > <i class="menu-icon fa fa-plane" ></i>Gestion Vol</a>
-                       
+                    	<li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-fighter-jet"></i>Gestion Vol</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li>
+                            
+                            <form action="GestionVol" method="get">
+                                 <button class="ajouter" type="submit"  title="Ajouter"> <i class="fa fa-plus-circle"></i> &nbsp;  &nbsp; Ajouter Vol</button>
+                            </form>
+                             
+                            </li>
+                            <br>
+                            <li>
+                            
+                            <form action="ListerVol" method="get">
+                               <button class="ajouter" type="submit" style="background-color:#272c33; BORDER: none;cursor: pointer" title="Affichage"> <i class="fa fa-eye"></i> &nbsp; &nbsp; Voir les Vols </button>       
+                            </form>
+                            </li>
+                            
+                        </ul>
                     </li>
                  
                     <li class="">
@@ -46,7 +61,7 @@
                     </li>
 
 					<li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-flag"></i>Gestion Avion</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="menu-icon fa fa-plane"></i>Gestion Avion</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li>
                             

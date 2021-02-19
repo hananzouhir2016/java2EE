@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.projet.model.Avion;
-import com.projet.model.Ville;
+
 
 
 public class AviondaoImpl implements Aviondao {
@@ -19,7 +19,11 @@ public class AviondaoImpl implements Aviondao {
 	private static final String sql_Lister="SELECT * FROM avion ORDER BY dateEntree ";
 	private static final String SQL_INSERT = "INSERT INTO avion (reference,nom,nbPlace) VALUES (?, ?,?)";
 	private static final String sql_Trouver="SELECT * FROM avion WHERE nom = ? ";
+	private static final String SQL_DELETE_PAR_ID = "DELETE FROM avion WHERE id = ?";
+	private static final String sql_Trouver_ID="SELECT id FROM avion WHERE nom = ?";
+	private static final String sql_update="UPDATE avion SET reference=?, nom=?, dateEntree=?, nbPlace=? WHERE id=?";
 	
+	private static final String sql_cherch="SELECT * FROM avion WHERE id = ? ";
 	
 	private DAOFactory daoFactory;
 	
@@ -76,9 +80,27 @@ public class AviondaoImpl implements Aviondao {
 							}
 					
 				}
+			
+			/*--------------------------------------requete modif------------------------------------------------------- */
 			@Override
 			public void modifier(Avion avion) throws DAOException {
-				// TODO Auto-generated method stub
+				
+				Connection connexion = null;
+		        PreparedStatement preparedStatement = null;
+
+		        try {
+		            connexion = daoFactory.getConnection();
+		            preparedStatement = initialisationRequetePreparee( connexion,sql_update,avion.getReference(),avion.getNom(),avion.getDateEntree(),avion.getNbPlace(),avion.getId());
+		            int statut = preparedStatement.executeUpdate();
+		            if ( statut == 0 ) {
+		                throw new DAOException( "Échec de la modification d'Avion" );
+		            } 
+		        } catch ( SQLException e ) {
+		            throw new DAOException( e );
+		        } finally {
+		            fermeturesSilencieuses( preparedStatement, connexion );
+		        }
+				
 				
 			}
 			
@@ -112,13 +134,89 @@ public class AviondaoImpl implements Aviondao {
 							fermeturesSilencieuses( resultSet, preparedStatement,connexion );
 					   }
 						return avion;
-					}
-			@Override
-			public void supprimer(Avion avion) throws DAOException {
-				// TODO Auto-generated method stub
 				
+					}
+			
+			
+			/*--------------------------------------requete supprimer ------------------------------------------------------- */
+			@Override
+			public void supprimer(int id) throws DAOException {
+				Connection connexion = null;
+		        PreparedStatement preparedStatement = null;
+
+		        try {
+		            connexion = daoFactory.getConnection();
+		            preparedStatement = initialisationRequetePreparee( connexion, SQL_DELETE_PAR_ID,id );
+		            int statut = preparedStatement.executeUpdate();
+		            if ( statut == 0 ) {
+		                throw new DAOException( "Échec de la suppression d'Avion" );
+		            } 
+		        } catch ( SQLException e ) {
+		            throw new DAOException( e );
+		        } finally {
+		            fermeturesSilencieuses( preparedStatement, connexion );
+		        }
 			}
 
+			
+			
+			
+			/*--------------------------------------requete trouver id par nom ------------------------------------------------------- */
+			@Override
+			public int trouverId(String nom) throws DAOException {
+				Connection connexion = null;
+				PreparedStatement preparedStatement = null;
+				ResultSet resultSet = null;
+				int id;
+				try {
+					
+					connexion = daoFactory.getConnection();
+					preparedStatement = initialisationRequetePreparee(connexion, sql_Trouver_ID,nom);
+					resultSet = preparedStatement.executeQuery();
+					
+					resultSet.next();
+					
+					 id=resultSet.getInt(1);
+				
+					} 
+				  catch ( SQLException e )
+				   {
+					throw new DAOException( e );
+					} 
+				finally 
+				{
+					fermeturesSilencieuses( resultSet, preparedStatement,connexion );
+			   }
+				
+				return id;
+			}
+			
+			/*--------------------------------------requete chercher ------------------------------------------------------- */
+			
+			@Override
+			public Avion chercher(int id) throws DAOException {
+				Connection connection = null;
+		        PreparedStatement preparedStatement = null;
+		        ResultSet resultSet = null;
+		        Avion avion = new Avion();
+		
+		        try {
+		            connection = daoFactory.getConnection();
+		            preparedStatement = initialisationRequetePreparee(connection, sql_cherch,id);
+		           
+		            resultSet = preparedStatement.executeQuery();
+		            while ( resultSet.next() ) {
+		                avion= map( resultSet ) ;
+		            }
+		        } catch ( SQLException e ) {
+		            throw new DAOException( e );
+		        } finally {
+		            fermeturesSilencieuses( resultSet, preparedStatement, connection );
+		        }
+		
+		        return avion;
+				
+			}
 			
 			private static Avion map( ResultSet resultSet ) throws SQLException {
 				Avion avion = new Avion();

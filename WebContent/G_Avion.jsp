@@ -5,9 +5,10 @@
 <html>
   <head>
      <meta charset="utf-8">
-      <title>Gestion administrateur</title>
+      <title>Gestion Avion</title>
       <link rel="stylesheet" href="css1/style_G_vol.css">
       <link rel="stylesheet" href="css1/style_ajout_vol.css">
+      
   </head>
 
   <body>
@@ -26,24 +27,11 @@
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
                     <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
+                        <form class="d-flex" action="TrouverAv" method="get">
+					            <input class="form-control me-2" type="search" name="nom" placeholder="Search" aria-label="Search">
+					            <button class="btn btn-outline-warning" type="submit">Chercher</button>
+					          </form>
 
-                        <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
-                                <span class="count bg-danger">5</span>
-                            </button>
-                            
-                            
-                        </div>
-
-                    
                     </div>
                 </div>
 
@@ -55,17 +43,10 @@
 
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Mon Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-bell"></i> Notifications </a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Déconnecter</a>
+                             <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Déconnecter</a>
                         </div>
                     </div>
-                              <form class="d-flex" action="TrouverVille" method="get">
-					            <input class="form-control me-2" type="search" name="nomV" placeholder="Search" aria-label="Search">
-					            <button class="btn btn-outline-warning" type="submit">Chercher</button>
-					          </form>
+                              
                    
 
                 </div>
@@ -74,10 +55,13 @@
 
                        
 
-          
-            <h1 class="principTitle">GESTION AVION</h1>
-              <c:if test="${!empty avion}">  
+            <h1 class="principTitle">GESTION Avion</h1>
+            
+         
+            
+              <c:if test="${!empty avion}">   
               
+              <div>
               
                         <table class="container" style="max-width:70%;margin-top: 35px">
                           <thead>
@@ -101,20 +85,27 @@
                               <td><c:out value="${ avion.nom }"></c:out></td>
                               <td><c:out value="${ avion.dateEntree }"></c:out></td>
                               <td><c:out value="${ avion.nbPlace }"></c:out></td>
+                           
+                             
                               <td>
-                              
-	                              <a href="<c:url value="/SupprimerV"><c:param name="idVille" value="${ ville.id }" ></c:param>
-                               <c:param name="villes" value="${ villes }" ></c:param>
+                               <a href="<c:url value="/SupprimerAv"><c:param name="idAvion" value="${ avion.id }" ></c:param>
+                               <c:param name="avion" value="${ avion }" ></c:param>
                                </c:url>">
                                 <button type="button" class="btn btn-danger" title="Supprimer"><i class="fa fa-trash"></i></button></a>
-	                                
+                                
+                                <form action="ModifierAvi" method="get">
+                                  <input type="hidden" value="${ avion.id}" name="idAvion">
+                                  
+                                   <button type="submit" class="btn btn-primary" title="Modifier"><i class="fas fa-edit"></i></button>
+                                </form>
+                                
+                                
+                                
+                                
+                               
                               </td>
-                              
-                              
-								                             
+                             
                             </tr>
-                            
-                            
                           </c:forEach>
                           </tbody>
                           
@@ -126,10 +117,13 @@
   </c:if>
             
 <div class="test" style="margin-top: 150px;">
+
 <c:if test="${empty avion}">  
 <br>
    <h1 class="testin"><string  style="color:#d81414cf; text-align:center"><i class="fa fa-times-circle" aria-hidden="true" style="color:#d81414cf;" ></i> &nbsp; Aucun avion enregistré</string><h1>  
 </c:if> 
+</div>
+</div>
      
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
